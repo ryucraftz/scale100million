@@ -235,6 +235,7 @@ const ThankYou = () => {
                                         src={video}
                                         controls
                                         autoPlay
+                                        muted
                                         loop
                                         playsInline
                                         className="w-full h-full object-cover"
