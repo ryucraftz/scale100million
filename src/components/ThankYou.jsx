@@ -270,7 +270,7 @@ const ThankYou = () => {
                         <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none"></div>
 
                         <Marquee speed={40}>
-                            {[testimonial1, testimonial2, testimonial3, testimonial4, testimonial5, testimonial6].map((video, index) => (
+                            {[testimonial1, testimonial2, testimonial3, testimonial4, testimonial5].map((video, index) => (
                                 <div
                                     key={index}
                                     className="flex-shrink-0 w-60 sm:w-72 md:w-80 aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-xl border-4 border-white relative group"
