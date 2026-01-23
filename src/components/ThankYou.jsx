@@ -132,7 +132,7 @@ const ThankYou = () => {
                     <FaTelegram className="text-xl md:text-2xl drop-shadow-sm" />
                     <div className="flex flex-col items-start leading-none">
                         <span className="hidden sm:block text-[10px] font-bold text-blue-100 uppercase tracking-widest mb-0.5">Exclusive Access</span>
-                        <span className="text-base md:text-lg font-bold">Join VIP Telegram</span>
+                        <span className="text-base md:text-lg font-bold">Join Our Community</span>
                     </div>
                     <div className="absolute top-0 right-0 p-2">
                         <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_#4ade80]"></div>
