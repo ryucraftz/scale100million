@@ -185,6 +185,48 @@ const ThankYou = () => {
                     </div>
                 </motion.div>
 
+                {/* Testimonials Section (Marquee Autoplay) */}
+                <div className="w-full mb-16 md:mb-20">
+                    <motion.h2
+                        className="text-2xl md:text-4xl font-bold mb-8 md:mb-10 text-center text-slate-900"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        What Our Clients Say
+                    </motion.h2>
+
+                    <div className="relative w-screen left-1/2 -translate-x-1/2">
+                        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none"></div>
+                        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none"></div>
+
+                        <Marquee speed={40}>
+                            {[testimonial1, testimonial2, testimonial3, testimonial4, testimonial5].map((video, index) => (
+                                <div
+                                    key={index}
+                                    className="flex-shrink-0 w-60 sm:w-72 md:w-80 aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-xl border-4 border-white relative group"
+                                >
+                                    <video
+                                        src={video}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                                    >
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    {/* Unmute Indication */}
+                                    <div className="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] px-2 py-1 rounded-full backdrop-blur-md font-medium">
+                                        🔈 Muted
+                                    </div>
+                                </div>
+                            ))}
+                        </Marquee>
+                    </div>
+                    <p className="text-center text-slate-400 text-xs md:text-sm mt-4 font-medium">Swipe to see more success stories →</p>
+                </div>
+
                 {/* Payment Proof Section (Marquee) */}
                 <div className="w-full mb-16 md:mb-20">
                     <motion.div
@@ -254,47 +296,7 @@ const ThankYou = () => {
                     ))}
                 </motion.div>
 
-                {/* Testimonials Section (Marquee Autoplay) */}
-                <div className="w-full mb-16 md:mb-20">
-                    <motion.h2
-                        className="text-2xl md:text-4xl font-bold mb-8 md:mb-10 text-center text-slate-900"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                    >
-                        What Our Clients Say
-                    </motion.h2>
 
-                    <div className="relative w-screen left-1/2 -translate-x-1/2">
-                        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none"></div>
-                        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none"></div>
-
-                        <Marquee speed={40}>
-                            {[testimonial1, testimonial2, testimonial3, testimonial4, testimonial5].map((video, index) => (
-                                <div
-                                    key={index}
-                                    className="flex-shrink-0 w-60 sm:w-72 md:w-80 aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-xl border-4 border-white relative group"
-                                >
-                                    <video
-                                        src={video}
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                                    >
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    {/* Unmute Indication */}
-                                    <div className="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] px-2 py-1 rounded-full backdrop-blur-md font-medium">
-                                        🔈 Muted
-                                    </div>
-                                </div>
-                            ))}
-                        </Marquee>
-                    </div>
-                    <p className="text-center text-slate-400 text-xs md:text-sm mt-4 font-medium">Swipe to see more success stories →</p>
-                </div>
 
                 {/* Next Step Section (Compact Light Card) */}
                 <motion.div
