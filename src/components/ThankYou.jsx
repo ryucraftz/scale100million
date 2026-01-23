@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaWhatsapp, FaTelegram, FaYoutube, FaInstagram } from 'react-icons/fa6';
+import { FaTelegram, FaYoutube, FaInstagram, FaPaperPlane } from 'react-icons/fa6';
 import { CheckCircle2 } from "lucide-react";
 import BonusCard from './BonusCard';
+import Marquee from './Marquee';
 
 import bonus1 from '../assets/Bonuses1.png';
 import bonus2 from '../assets/Bonuses2.png';
@@ -22,6 +23,7 @@ import testimonial6 from '../assets/testimonials/sula.mp4';
 
 // Payment Screenshots
 const paymentScreenshots = import.meta.glob('../assets/payment screenshots/Result page Data/*.{png,jpg,jpeg,svg}', { eager: true });
+const paymentImages = Object.values(paymentScreenshots).map(img => img.default || img);
 
 const bonusesData = [
     {
@@ -106,26 +108,35 @@ const itemVariants = {
 
 const ThankYou = () => {
     return (
-        <div className="min-h-screen bg-black text-white font-satoshi overflow-hidden relative selection:bg-purple-500 selection:text-white">
+        <div className="min-h-screen bg-black text-white font-satoshi overflow-hidden relative selection:bg-purple-500 selection:text-white pb-32">
             {/* Background Gradients */}
             <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-900/20 blur-[150px] rounded-full"></div>
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-900/10 blur-[150px] rounded-full"></div>
             </div>
 
-            {/* Sticky WhatsApp Button */}
-            <motion.a
-                href="https://chat.whatsapp.com/F0fnpGxFskILGBiU2PZh05?mode=ems_copy_t"
-                target="_blank"
-                rel="noopener noreferrer"
+            {/* Custom Sticky Telegram Button */}
+            <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1, type: "spring", stiffness: 100 }}
-                className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 px-6 py-4 bg-[#25D366] text-white rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] flex items-center space-x-3 transition-all duration-300 hover:scale-105 hover:bg-[#20bd5a] hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] whitespace-nowrap border border-white/10 backdrop-blur-sm"
+                className="fixed bottom-6 w-full z-50 flex justify-center px-4"
             >
-                <FaWhatsapp className="h-6 w-6 flex-shrink-0" />
-                <span className="font-bold tracking-wide">Join Our WhatsApp Community</span>
-            </motion.a>
+                <a
+                    href="https://t.me/+SSG0wArwUcQyYTc1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative group bg-[#0088cc] text-white px-8 py-4 rounded-full shadow-[0_0_30px_rgba(0,136,204,0.6)] flex items-center gap-3 overflow-hidden border border-white/20 backdrop-blur-md hover:scale-105 transition-transform duration-300"
+                >
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-all duration-700 ease-in-out"></div>
+                    <FaTelegram className="text-3xl drop-shadow-md" />
+                    <div className="flex flex-col items-start leading-tight">
+                        <span className="text-xs font-semibold text-blue-100 uppercase tracking-widest">Limited Access</span>
+                        <span className="text-lg font-bold">Join VIP Telegram</span>
+                    </div>
+                    <div className="ml-2 w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-[0_0_10px_#4ade80]"></div>
+                </a>
+            </motion.div>
 
             <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-16 relative z-10 flex flex-col items-center">
 
@@ -172,6 +183,37 @@ const ThankYou = () => {
                     </div>
                 </motion.div>
 
+                {/* Payment Proof Section (Horizontal Scroll Marquee) */}
+                <div className="w-full mb-28">
+                    <motion.div
+                        className="text-center mb-10"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">Real Results</h2>
+                        <p className="text-gray-400">See the wins our community is getting daily</p>
+                    </motion.div>
+
+                    <div className="relative w-screen left-1/2 -translate-x-1/2">
+                        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none"></div>
+                        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none"></div>
+
+                        <Marquee speed={60}>
+                            {paymentImages.map((src, index) => (
+                                <div key={index} className="w-64 md:w-80 h-auto flex-shrink-0 bg-[#111] border border-gray-800 rounded-xl overflow-hidden shadow-lg p-2 hover:border-purple-500/50 transition-colors">
+                                    <img
+                                        src={src}
+                                        alt={`Result ${index}`}
+                                        className="w-full h-full object-contain rounded-lg"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))}
+                        </Marquee>
+                    </div>
+                </div>
+
                 {/* Bonuses Heading */}
                 <motion.div
                     className="text-center mb-16"
@@ -209,54 +251,8 @@ const ThankYou = () => {
                     ))}
                 </motion.div>
 
-                {/* Social Community Section */}
-                <motion.div
-                    className="w-full max-w-4xl mx-auto text-center mb-24"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-10 text-white">
-                        Join Our Communities
-                    </h2>
-
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                        <a
-                            href="https://t.me/+SSG0wArwUcQyYTc1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 px-8 py-4 bg-[#0088cc] hover:bg-[#0077b5] text-white rounded-xl font-bold text-lg shadow-[0_10px_30px_rgba(0,136,204,0.3)] transition-all transform hover:-translate-y-1"
-                        >
-                            <FaTelegram className="text-3xl" />
-                            <span>Join Telegram Community</span>
-                        </a>
-
-                        <div className="flex gap-4">
-                            <a
-                                href="https://www.youtube.com/@scale100million-yt"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-5 bg-[#FF0000] hover:bg-[#cc0000] text-white rounded-xl shadow-[0_10px_30px_rgba(255,0,0,0.3)] transition-all transform hover:-translate-y-1"
-                                title="Subscribe on YouTube"
-                            >
-                                <FaYoutube className="text-3xl" />
-                            </a>
-                            <a
-                                href="https://www.instagram.com/scale100million/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-5 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white rounded-xl shadow-[0_10px_30px_rgba(220,39,67,0.3)] transition-all transform hover:-translate-y-1"
-                                title="Follow on Instagram"
-                            >
-                                <FaInstagram className="text-3xl" />
-                            </a>
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Testimonials Section */}
-                <div className="w-full max-w-7xl mx-auto mb-24">
+                {/* Testimonials Section (Horizontal Autoplay) */}
+                <div className="w-full max-w-7xl mx-auto mb-20 px-4">
                     <motion.h2
                         className="text-3xl md:text-5xl font-bold mb-12 text-center text-white"
                         initial={{ opacity: 0 }}
@@ -265,11 +261,13 @@ const ThankYou = () => {
                     >
                         What Our Clients Say
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    {/* Horizontal Scroll Container */}
+                    <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide">
                         {[testimonial1, testimonial2, testimonial3, testimonial4, testimonial5, testimonial6].map((video, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-[#111] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 aspect-[9/16] group"
+                                className="flex-shrink-0 w-80 md:w-96 aspect-[9/16] bg-[#111] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 snap-center relative"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
@@ -277,50 +275,22 @@ const ThankYou = () => {
                             >
                                 <video
                                     src={video}
-                                    controls
-                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                                    preload="metadata"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover"
                                 >
                                     Your browser does not support the video tag.
                                 </video>
+                                {/* Unmute Indication */}
+                                <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur">
+                                    Muted
+                                </div>
                             </motion.div>
                         ))}
                     </div>
-                </div>
-
-                {/* Payment Proof Section */}
-                <div className="w-full max-w-7xl mx-auto mb-24">
-                    <motion.h2
-                        className="text-3xl md:text-5xl font-bold mb-12 text-center text-white"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                    >
-                        Real Results
-                    </motion.h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {Object.values(paymentScreenshots).map((img, index) => {
-                            const src = img.default || img;
-                            return (
-                                <motion.div
-                                    key={index}
-                                    className="rounded-xl overflow-hidden shadow-lg border border-gray-800 bg-[#111] hover:border-purple-500/50 transition-all duration-300"
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.05 }}
-                                    whileHover={{ scale: 1.05, zIndex: 10 }}
-                                >
-                                    <img
-                                        src={src}
-                                        alt={`Payment Proof ${index + 1}`}
-                                        className="w-full h-auto object-contain"
-                                        loading="lazy"
-                                    />
-                                </motion.div>
-                            );
-                        })}
-                    </div>
+                    <p className="text-center text-gray-500 text-sm mt-4">Swipe to see more success stories →</p>
                 </div>
 
                 {/* Enhanced Next Step Section */}
@@ -351,17 +321,43 @@ const ThankYou = () => {
                     </ul>
 
                     <motion.a
-                        href="https://chat.whatsapp.com/F0fnpGxFskILGBiU2PZh05?mode=ems_copy_t"
+                        href="https://t.me/+SSG0wArwUcQyYTc1"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full shadow-2xl text-white bg-[#25D366] hover:bg-[#1da851] transition-all"
+                        className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full shadow-2xl text-white bg-[#0088cc] hover:bg-[#0077b5] transition-all"
                     >
-                        <FaWhatsapp className="mr-3 h-7 w-7" />
-                        Join Our WhatsApp Group
+                        <FaPaperPlane className="mr-3 h-7 w-7" />
+                        Join Telegram Community
                     </motion.a>
                 </motion.div>
+
+                {/* Social Community Section (Bottom) */}
+                <div className="w-full max-w-4xl mx-auto text-center mb-10">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <div className="flex gap-4">
+                            <a
+                                href="https://www.youtube.com/@scale100million-yt"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-5 bg-[#FF0000] hover:bg-[#cc0000] text-white rounded-xl shadow-[0_10px_30px_rgba(255,0,0,0.3)] transition-all transform hover:-translate-y-1"
+                                title="Subscribe on YouTube"
+                            >
+                                <FaYoutube className="text-3xl" />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/scale100million/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-5 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white rounded-xl shadow-[0_10px_30px_rgba(220,39,67,0.3)] transition-all transform hover:-translate-y-1"
+                                title="Follow on Instagram"
+                            >
+                                <FaInstagram className="text-3xl" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
