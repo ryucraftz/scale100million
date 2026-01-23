@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaTelegram, FaYoutube, FaInstagram } from 'react-icons/fa6';
 import { CheckCircle2 } from "lucide-react";
 import BonusCard from './BonusCard';
 
@@ -10,6 +10,17 @@ import bonus4 from '../assets/Bonuses4.png';
 import bonus5 from '../assets/Bonuses5.png';
 import bonus6 from '../assets/Bonuses6.png';
 import bonus7 from '../assets/Bonuses7.png';
+
+// Testimonials (Videos)
+import testimonial1 from '../assets/testimonials/Aniket.mp4';
+import testimonial2 from '../assets/testimonials/Ankit1.mp4';
+import testimonial3 from '../assets/testimonials/Pranav.mp4';
+import testimonial4 from '../assets/testimonials/Rushikesh.mp4';
+import testimonial5 from '../assets/testimonials/Video-2.mp4';
+import testimonial6 from '../assets/testimonials/sula.mp4';
+
+// Payment Screenshots - using glob as there are many
+const paymentScreenshots = import.meta.glob('../assets/payment screenshots/Result page Data/*.{png,jpg,jpeg,svg}', { eager: true });
 
 const bonusesData = [
     {
@@ -159,6 +170,89 @@ const ThankYou = () => {
                             <BonusCard bonus={bonus} />
                         </div>
                     ))}
+                </div>
+
+                {/* Social Community Section */}
+                <div className="w-full max-w-4xl mx-auto mt-20 text-center px-4">
+                    <h2 className="text-3xl md:text-5xl font-extrabold mb-8 text-gray-900">
+                        Join Our Communities
+                    </h2>
+
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <a
+                            href="https://t.me/+SSG0wArwUcQyYTc1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full font-bold text-lg shadow-lg transition-transform hover:scale-105"
+                        >
+                            <FaTelegram className="text-2xl" />
+                            Join Telegram Community
+                        </a>
+
+                        <div className="flex gap-4">
+                            <a
+                                href="https://www.youtube.com/@scale100million-yt"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-4 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg transition-transform hover:scale-105"
+                                title="Subscribe on YouTube"
+                            >
+                                <FaYoutube className="text-2xl" />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/scale100million/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-4 bg-pink-600 hover:bg-pink-700 text-white rounded-full shadow-lg transition-transform hover:scale-105"
+                                title="Follow on Instagram"
+                            >
+                                <FaInstagram className="text-2xl" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Testimonials Section (Videos) */}
+                <div className="w-full max-w-6xl mx-auto mt-20 px-4">
+                    <h2 className="text-3xl md:text-5xl font-extrabold mb-12 text-center text-gray-900">
+                        What Our Clients Say
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[testimonial1, testimonial2, testimonial3, testimonial4, testimonial5, testimonial6].map((video, index) => (
+                            <div key={index} className="bg-black rounded-xl overflow-hidden shadow-lg aspect-[9/16]">
+                                <video
+                                    src={video}
+                                    controls
+                                    className="w-full h-full object-cover"
+                                    preload="metadata"
+                                >
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Payment Proof Section */}
+                <div className="w-full max-w-6xl mx-auto mt-20 px-4">
+                    <h2 className="text-3xl md:text-5xl font-extrabold mb-12 text-center text-gray-900">
+                        Real Results
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {Object.values(paymentScreenshots).map((img, index) => {
+                            const src = img.default || img;
+                            return (
+                                <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                                    <img
+                                        src={src}
+                                        alt={`Payment Proof ${index + 1}`}
+                                        className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
 
                 {/* Enhanced "Next Step" Section */}
