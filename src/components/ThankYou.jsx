@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaTelegram, FaPaperPlane } from 'react-icons/fa6';
+import { FaTelegram, FaPaperPlane, FaInstagram, FaYoutube } from 'react-icons/fa6';
 import { CheckCircle2 } from "lucide-react";
 import BonusCard from './BonusCard';
 import Marquee from './Marquee';
@@ -154,6 +154,18 @@ const ThankYou = () => {
             </motion.div>
 
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-12 relative z-10 flex flex-col items-center">
+
+                {/* Social Links */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="flex gap-6 mb-8 text-3xl md:text-4xl"
+                >
+                    <a href="https://www.instagram.com/scale100million/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pink-600 transition-colors transform hover:scale-110 duration-200"><FaInstagram /></a>
+                    <a href="https://www.youtube.com/@scale100million-yt" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-600 transition-colors transform hover:scale-110 duration-200"><FaYoutube /></a>
+                    <a href="https://t.me/+SSG0wArwUcQyYTc1" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-500 transition-colors transform hover:scale-110 duration-200"><FaTelegram /></a>
+                </motion.div>
 
                 {/* Header Section */}
                 <motion.div
