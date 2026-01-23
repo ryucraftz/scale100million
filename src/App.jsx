@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
 import HomePage from "./components/Home";
@@ -14,9 +14,12 @@ import ShippingPolicy from "./components/ShippingPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
 import ThankYou from "./components/ThankYou";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isLightMode = location.pathname === '/thank-you';
+
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -53,7 +56,15 @@ function App() {
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
 
-      <Footer />
+      <Footer lightMode={isLightMode} />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
