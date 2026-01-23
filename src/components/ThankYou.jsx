@@ -1,131 +1,197 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa6";
+import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { CheckCircle2 } from "lucide-react";
+import BonusCard from './BonusCard';
 
-const bonuses = [
+const bonusesData = [
     {
-        title: "Bonus #1: High-Ticket Lead Gen Framework",
-        description: "Learn how to consistently attract $2,000+ clients without running expensive ads or complex funnels. We’ll show you the exact system we use to book 15+ high-quality meetings every single week.",
-        icon: "🚀"
+        id: 1,
+        title: "AI Automation Mastery Lectures",
+        tag: "Bonus #1",
+        description: "Get 10+ private recorded lectures where I walk you step-by-step through setting up AI automation for client acquisition, lead follow-ups, and business growth.\n No tech overwhelm. No random YouTube rabbit holes. Just a clear roadmap to mastering the exact AI tools we use daily to enroll 50+ high-ticket clients per month.",
+        value: "₹12,000 Value",
+        cardType: "card1",
     },
     {
-        title: "Bonus #2: AI Toolkit Mastery Course",
-        description: "No tech overwhelm. No random YouTube rabbit holes. Just a clear roadmap to mastering the exact AI tools we use daily to enroll 50+ high-ticket clients per month.",
-        icon: "🤖"
+        id: 2,
+        title: "1-Page Business Model Canvas",
+        tag: "Bonus #2",
+        description: "Design your entire service business in one simple page. Map your offer, clients, pricing, and funnels clearly—so you always know exactly what to do next to scale fast.",
+        value: "₹7,000 Value",
+        cardType: "card2",
     },
     {
-        title: "Bonus #3: Done-for-You AI Funnel Templates",
+        id: 3,
+        title: "Done-for-You AI Funnel Templates",
+        tag: "Bonus #3",
         description: "Skip the trial-and-error. Plug in your business and start attracting leads instantly with ready-to-use AI-powered funnel templates that generate high-ticket prospects on autopilot.",
-        icon: "📊"
+        value: "₹6,000 Value",
+        cardType: "card3",
     },
     {
-        title: "Bonus #4: Lead Magnet & Outreach Swipe Files",
+        id: 4,
+        title: "Lead Magnet & Outreach Swipe Files",
+        tag: "Bonus #4",
         description: "Access proven scripts, emails, and messages to attract premium leads without cold-calling or guesswork. Just copy, paste, and watch your pipeline fill.",
-        icon: "📝"
-    }
+        value: "₹5,000 Value",
+        cardType: "card4",
+    },
+    {
+        id: 5,
+        title: "AI-Powered Growth Tracker & Dashboard",
+        tag: "Bonus #5",
+        description: "Track clients, leads, and revenue with one dashboard. See what’s working, automate follow-ups, and scale confidently with data-driven insights.",
+        value: "₹6,000 Value",
+        cardType: "card5",
+    },
+    {
+        id: 6,
+        title: "Private Community Access & Live Q&A Sessions",
+        tag: "Bonus #6",
+        description: "Join a community of ambitious service owners getting results with AI. Weekly Q&A sessions ensure you never get stuck and can implement strategies fast.",
+        value: "₹6,299 Value",
+        cardType: "card6",
+    },
+    {
+        id: 7,
+        title: "High-Ticket Sales Mastery Script",
+        tag: "Bonus #7",
+        description: "Get the exact step-by-step sales script top 1% online business owners use to consistently close high-ticket clients and scale beyond 7 figures.\n No guessing, no trial-and-error—just plug in your offer and follow the proven system that turns calls into predictable revenue.",
+        value: "₹7,000 Value",
+        cardType: "card7",
+    },
 ];
 
-export default function ThankYou() {
+const ThankYou = () => {
     return (
-        <section className="w-full min-h-screen bg-black text-white py-20 px-6 md:px-20 font-sans relative overflow-hidden">
-            <div className="max-w-6xl mx-auto text-center relative z-10">
+        <div className="min-h-screen bg-white flex flex-col items-center p-4 md:p-8 font-satoshi overflow-hidden">
+            {/* Sticky WhatsApp Button with full text */}
+            <a
+                href="https://chat.whatsapp.com/F0fnpGxFskILGBiU2PZh05?mode=ems_copy_t"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 px-6 py-6 bg-green-600 text-white rounded-full shadow-lg flex items-center space-x-2 transition-transform duration-300 hover:scale-105 hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-500 whitespace-nowrap"
+            >
+                <FaWhatsapp className="h-6 w-6 flex-shrink-0" />
+                <span className="font-bold">Join Our WhatsApp Community</span>
+            </a>
 
-                {/* Header Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-12"
-                >
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-6 py-2">
+            <div className="w-full max-w-2xl text-center">
+                {/* Main Heading */}
+                <div className="flex items-center justify-center mb-4">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-blue-600 whitespace-nowrap leading-tight drop-shadow-md">
                         Thank You – Your Call is Booked!
                     </h1>
-                    <p className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Congratulations 🎉 — you’ve successfully applied for your exclusive 1:1 Business Strategy Call with Team Scale100Million.com.
-                    </p>
-                    <p className="mt-4 text-purple-400 font-medium">
+                </div>
+
+                {/* Subheading */}
+                <p className="text-gray-500 text-lg md:text-xl leading-relaxed mb-8 mt-6 font-medium">
+                    Congratulations 🎉 — you’ve successfully applied for your exclusive 1:1 Business Strategy Call with <span className="font-bold text-purple-700">Team Scale100Million.com</span>.
+                </p>
+
+                {/* "Please check your email" Box */}
+                <div className="bg-gray-50 p-4 rounded-md mb-8 border-l-4 border-gray-200">
+                    <p className="text-sm font-semibold text-gray-700 mb-1">
                         Please check your email & WhatsApp for confirmation and reminders about your scheduled call.
                     </p>
-                </motion.div>
+                </div>
+            </div>
 
-                {/* Video Placeholder */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="w-full max-w-4xl mx-auto aspect-video bg-gray-900 rounded-2xl border border-gray-700 shadow-[0_0_30px_rgba(168,85,247,0.3)] flex items-center justify-center mb-16 relative overflow-hidden group"
-                >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-cyan-900/20 opacity-50 group-hover:opacity-100 transition duration-500"></div>
-                    <p className="text-gray-400 text-lg font-light relative z-10">
-                        [ Watch this short video before your call ]
-                        <br />
-                        <span className="text-sm opacity-70">(Video Placeholder)</span>
-                    </p>
-                </motion.div>
+            <div className="w-full flex flex-col items-center space-y-8">
+                {/* Video Section - Full Width Mobile, Medium Desktop */}
+                <div className="w-full flex justify-center">
+                    <div className="w-full sm:w-[90%] md:w-[70%] lg:w-[60%] overflow-hidden 
+              sm:rounded-xl sm:shadow-lg sm:mx-auto">
+                        {/* Mobile: taller ratio, Desktop: 16:9 */}
+                        <div className="relative pb-[70%] sm:pb-[56.25%]">
+                            <iframe
+                                className="absolute top-0 left-0 w-full h-full"
+                                src="https://player.vimeo.com/video/1122445994"
+                                title="Welcome Video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
 
-                {/* Bonuses Heading */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="mb-12"
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-2 uppercase tracking-wide drop-shadow-[0_2px_10px_rgba(250,204,21,0.4)]">
-                        Get INSANE Bonuses
+                {/* Section with "Get INSANE Bonuses" Heading and Price Tag */}
+                <div className="max-w-6xl mx-auto px-6 pt-4 text-center">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600 drop-shadow-lg">
+                            Get INSANE Bonuses
+                        </span>
                     </h2>
-                    <p className="text-xl text-yellow-100/80">
-                        After 1:1 Business Strategy Call (Previously Sold For ₹24,997)
+                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700 mb-2">
+                        After 1:1 Business Strategy Call
                     </p>
-                </motion.div>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 px-4 py-2 bg-white text-gray-500 rounded-full inline-block whitespace-nowrap">
+                        ( Previously Sold For ₹24,997 )
+                    </p>
+                </div>
 
-                {/* Bonuses Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 text-left">
-                    {bonuses.map((bonus, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                            className="bg-[#111] border border-gray-800 p-8 rounded-xl hover:border-purple-500/50 hover:bg-[#1a1a1a] transition duration-300 group"
+                {/* Bonus Cards Section */}
+                <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
+                    {bonusesData.map((bonus, index) => (
+                        <div
+                            key={bonus.id}
+                            className={`flex justify-center w-full ${index === bonusesData.length - 1 && bonusesData.length % 2 !== 0
+                                ? 'sm:col-span-2'
+                                : ''
+                                }`}
                         >
-                            <div className="text-4xl mb-4 bg-gray-800 w-16 h-16 rounded-full flex items-center justify-center group-hover:bg-purple-900/30 transition-colors">
-                                {bonus.icon}
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                                {bonus.title}
-                            </h3>
-                            <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                                {bonus.description}
-                            </p>
-                        </motion.div>
+                            <BonusCard bonus={bonus} />
+                        </div>
                     ))}
                 </div>
 
-            </div>
+                {/* Enhanced "Next Step" Section */}
+                <div className="mt-16 mb-16 text-center max-w-2xl mx-auto p-6 bg-gray-50 rounded-xl shadow-lg border border-gray-200">
+                    <h3 className="text-2xl sm:text-3xl font-bold leading-tight mb-6">
+                        <span className="text-gray-900">
+                            🚀 Next Step: <span className="text-blue-600">Join Our VIP Community</span>
+                        </span>
+                    </h3>
 
-            {/* Floating WhatsApp CTA */}
-            <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.5, type: "spring", stiffness: 100 }}
-                className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4"
-            >
-                <a
-                    href="https://chat.whatsapp.com/F0fnpGxFskILGBiU2PZh05"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-all transform hover:scale-105"
-                >
-                    <FaWhatsapp className="text-2xl" />
-                    Join Our WhatsApp Community
-                </a>
-            </motion.div>
+                    <ul className="text-base sm:text-lg text-gray-700 space-y-4 text-left mx-auto max-w-md mb-8">
+                        <li className="flex items-start">
+                            <CheckCircle2 className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
+                            <span>
+                                <span className="font-semibold text-gray-800">Free guidance</span> to grow your business with AI.
+                            </span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircle2 className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
+                            <span>
+                                Access to <span className="font-semibold text-gray-800">insights & tools</span> we don’t share publicly.
+                            </span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircle2 className="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
+                            <span>
+                                A network of <span className="font-semibold text-gray-800">ambitious founders</span> scaling to 7–8 figures.
+                            </span>
+                        </li>
+                    </ul>
 
-            {/* Background Effect */}
-            <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/20 blur-[120px] rounded-full"></div>
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-900/10 blur-[120px] rounded-full"></div>
+                    <p className="text-lg sm:text-xl font-bold text-gray-700 mt-8 mb-6">
+                        Join the community now to unlock these benefits instantly.
+                    </p>
+
+                    <a
+                        href="https://chat.whatsapp.com/F0fnpGxFskILGBiU2PZh05?mode=ems_copy_t"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-8 mb-10 lg:mt-0 inline-flex items-center justify-center px-4 md:px-10 py-5 text-lg md:text-xl font-bold rounded-full shadow-xl text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-green-500 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 animate-pop-in whitespace-nowrap"
+                    >
+                        <FaWhatsapp className="mr-3 h-7 w-7" />
+                        Join Our WhatsApp Group
+                    </a>
+                </div>
             </div>
-        </section>
+        </div>
     );
-}
+};
+
+export default ThankYou;
