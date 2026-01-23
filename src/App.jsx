@@ -12,6 +12,7 @@ import DoneForYou from "./components/DoneForYou";
 import GrowthSection from "./components/GrowthSection";
 import ShippingPolicy from "./components/ShippingPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
+import ThankYou from "./components/ThankYou";
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
 
         {/* Terms and Conditions Page */}
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
+        {/* Thank You Page */}
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
 
       <Footer />
