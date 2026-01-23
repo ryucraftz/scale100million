@@ -9,7 +9,7 @@ const BonusCard = ({ bonus }) => {
             <div className="relative bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 shadow-md group-hover:shadow-xl transition-all duration-300">
 
                 {/* Visual Header / Image Placeholder */}
-                <div className="bg-slate-100 h-56 flex items-center justify-center relative overflow-hidden">
+                <div className="bg-slate-100 h-40 md:h-56 flex items-center justify-center relative overflow-hidden">
                     {/* Gradient Overlay for text contrast if needed */}
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/10 to-transparent z-10"></div>
 
