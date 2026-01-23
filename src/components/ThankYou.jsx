@@ -239,22 +239,17 @@ const ThankYou = () => {
                         <p className="text-slate-500 text-sm md:text-base">See the wins our community is getting daily</p>
                     </motion.div>
 
-                    <div className="relative w-screen left-1/2 -translate-x-1/2">
-                        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none"></div>
-                        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none"></div>
-
-                        <Marquee speed={50}>
-                            {paymentImages.map((src, index) => (
-                                <div key={index} className="w-40 sm:w-56 md:w-72 aspect-[3/4] flex-shrink-0 bg-white border border-slate-100 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                                    <img
-                                        src={src}
-                                        alt={`Result ${index}`}
-                                        className="w-full h-full object-contain"
-                                        loading="lazy"
-                                    />
-                                </div>
-                            ))}
-                        </Marquee>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto px-4">
+                        {paymentImages.map((src, index) => (
+                            <div key={index} className="w-full bg-white border border-slate-100 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                                <img
+                                    src={src}
+                                    alt={`Result ${index}`}
+                                    className="w-full h-auto object-contain"
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
 
