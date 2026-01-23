@@ -4,11 +4,18 @@ const BonusCard = ({ bonus }) => {
     return (
         <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
             {/* Visual Header / Image Placeholder */}
-            <div className="bg-gray-200 h-48 flex items-center justify-center relative">
-                {/* Placeholder for actual image based on bonus.cardType */}
-                <span className="text-gray-500 font-medium">Image for {bonus.tag} ({bonus.cardType})</span>
+            <div className="bg-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                {bonus.image ? (
+                    <img
+                        src={bonus.image}
+                        alt={bonus.title}
+                        className="w-full h-full object-cover"
+                    />
+                ) : (
+                    <span className="text-gray-500 font-medium">Image for {bonus.tag}</span>
+                )}
 
-                <div className="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <div className="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm z-10">
                     {bonus.tag}
                 </div>
             </div>
