@@ -16,12 +16,12 @@ import ThankYou from "./components/ThankYou";
 
 function AppContent() {
   const location = useLocation();
-  const isLightMode = location.pathname === '/thank-you';
+  const isThankYouPage = location.pathname === '/thank-you';
 
   return (
     <>
       <ScrollToTop />
-      <Navbar />
+      {!isThankYouPage && <Navbar />}
       <Routes>
         {/* Home Page */}
         <Route
@@ -56,7 +56,7 @@ function AppContent() {
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
 
-      <Footer lightMode={isLightMode} />
+      <Footer lightMode={isThankYouPage} />
     </>
   );
 }
