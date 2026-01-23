@@ -23,7 +23,20 @@ import testimonial5 from '../assets/testimonials/Video-2.mp4';
 
 // Payment Screenshots
 const paymentScreenshots = import.meta.glob('../assets/payment screenshots/Result page Data/*.{png,jpg,jpeg,svg}', { eager: true });
-const paymentImages = Object.values(paymentScreenshots).map(img => img.default || img);
+const paymentImages = Object.entries(paymentScreenshots)
+    .sort(([pathA], [pathB]) => {
+        // Extract filename from path
+        const fileA = pathA.split('/').pop();
+        const fileB = pathB.split('/').pop();
+
+        // Extract amount (number before the first hyphen)
+        const amountA = parseInt(fileA.split('-')[0]) || 0;
+        const amountB = parseInt(fileB.split('-')[0]) || 0;
+
+        // Sort descending
+        return amountB - amountA;
+    })
+    .map(([, img]) => img.default || img);
 
 const bonusesData = [
     {
