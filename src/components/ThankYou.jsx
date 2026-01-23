@@ -19,7 +19,7 @@ import testimonial2 from '../assets/testimonials/Ankit1.mp4';
 import testimonial3 from '../assets/testimonials/Pranav.mp4';
 import testimonial4 from '../assets/testimonials/Rushikesh.mp4';
 import testimonial5 from '../assets/testimonials/Video-2.mp4';
-import testimonial6 from '../assets/testimonials/sula.mp4';
+
 
 // Payment Screenshots
 const paymentScreenshots = import.meta.glob('../assets/payment screenshots/Result page Data/*.{png,jpg,jpeg,svg}', { eager: true });
