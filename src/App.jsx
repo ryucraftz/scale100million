@@ -56,7 +56,7 @@ function AppContent() {
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
 
-      <Footer lightMode={isThankYouPage} />
+      {!isThankYouPage && <Footer />}
     </>
   );
 }

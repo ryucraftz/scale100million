@@ -151,7 +151,7 @@ const ThankYou = () => {
                 >
                     <motion.div variants={itemVariants} className="flex items-center justify-center mb-4 md:mb-6">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-blue-800 to-slate-900 leading-tight">
-                            Thank You <br className="hidden sm:block" /> Your Call is Booked!
+                            Thank You <br /> Your Call is Booked!
                         </h1>
                     </motion.div>
 
