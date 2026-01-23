@@ -108,7 +108,7 @@ const itemVariants = {
 
 const ThankYou = () => {
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 font-satoshi overflow-hidden relative selection:bg-blue-100 selection:text-blue-900 pb-24 md:pb-32">
+        <div className="min-h-screen bg-slate-50 text-slate-900 font-satoshi overflow-hidden relative selection:bg-blue-100 selection:text-blue-900 pb-48 md:pb-40">
             {/* Light Theme Background Gradients */}
             <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
                 <div className="absolute top-[-10%] right-[-5%] w-[60%] h-[60%] bg-blue-100 blur-[100px] rounded-full opacity-60"></div>
@@ -120,22 +120,22 @@ const ThankYou = () => {
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1, type: "spring", stiffness: 100 }}
-                className="fixed bottom-6 w-full z-50 flex justify-center px-4"
+                className="fixed bottom-4 md:bottom-6 w-full z-50 flex justify-center px-4 pointer-events-none"
             >
                 <a
                     href="https://t.me/+SSG0wArwUcQyYTc1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative group bg-gradient-to-r from-blue-600 to-blue-500 text-white w-full max-w-sm md:w-auto px-6 py-3.5 rounded-full shadow-xl shadow-blue-200 flex items-center justify-center gap-3 overflow-hidden border border-white/20 hover:scale-[1.02] active:scale-95 transition-all duration-300"
+                    className="pointer-events-auto relative group bg-gradient-to-r from-blue-600 to-blue-500 text-white w-full max-w-[90%] sm:max-w-sm md:w-auto px-4 py-2.5 md:px-6 md:py-3.5 rounded-full shadow-xl shadow-blue-200 flex items-center justify-center gap-2 md:gap-3 overflow-hidden border border-white/20 hover:scale-[1.02] active:scale-95 transition-all duration-300"
                 >
                     <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
-                    <FaTelegram className="text-2xl drop-shadow-sm" />
+                    <FaTelegram className="text-xl md:text-2xl drop-shadow-sm" />
                     <div className="flex flex-col items-start leading-none">
-                        <span className="text-[10px] font-bold text-blue-100 uppercase tracking-widest mb-0.5">Exclusive Access</span>
-                        <span className="text-lg font-bold">Join VIP Telegram</span>
+                        <span className="hidden sm:block text-[10px] font-bold text-blue-100 uppercase tracking-widest mb-0.5">Exclusive Access</span>
+                        <span className="text-base md:text-lg font-bold">Join VIP Telegram</span>
                     </div>
                     <div className="absolute top-0 right-0 p-2">
-                        <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_#4ade80]"></div>
+                        <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_#4ade80]"></div>
                     </div>
                 </a>
             </motion.div>
