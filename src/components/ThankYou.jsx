@@ -201,10 +201,10 @@ const ThankYou = () => {
                         <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none"></div>
 
                         <Marquee speed={40}>
-                            {[testimonial3, testimonial4, testimonial5, testimonial1, testimonial2].map((video, index) => (
+                            {[testimonial5, testimonial1, testimonial2, testimonial3, testimonial4].map((video, index) => (
                                 <div
                                     key={index}
-                                    className="flex-shrink-0 w-60 sm:w-72 md:w-80 aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-xl border-4 border-white relative group"
+                                    className={`flex-shrink-0 w-60 sm:w-72 md:w-80 aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-xl border-4 border-white relative group ${index === 0 ? 'ml-12 md:ml-0' : ''}`}
                                 >
                                     <video
                                         src={video}
