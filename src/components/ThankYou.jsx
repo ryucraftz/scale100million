@@ -233,18 +233,12 @@ const ThankYou = () => {
                                 >
                                     <video
                                         src={video}
-                                        autoPlay
-                                        muted
-                                        loop
+                                        controls
                                         playsInline
-                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                                        className="w-full h-full object-cover"
                                     >
                                         Your browser does not support the video tag.
                                     </video>
-                                    {/* Unmute Indication */}
-                                    <div className="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] px-2 py-1 rounded-full backdrop-blur-md font-medium">
-                                        🔈 Muted
-                                    </div>
                                 </div>
                             ))}
                         </Marquee>
