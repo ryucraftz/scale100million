@@ -5,13 +5,13 @@ import { Play } from "lucide-react";
 
 export default function Home() {
   return (
-    <div id="mentorship" className="relative w-full h-screen overflow-hidden bg-black">
+    <div id="mentorship" className="relative w-full h-screen overflow-hidden bg-white">
       {/* Background Image/Video */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
       </div>
 
       {/* Content Container */}
@@ -23,27 +23,27 @@ export default function Home() {
           className="max-w-3xl space-y-6 md:space-y-8"
         >
           {/* Badge/Tag */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md w-fit">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-gray-200 bg-gray-100 backdrop-blur-md w-fit">
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs md:text-sm font-medium text-gray-300 tracking-wide uppercase">
+            <span className="text-xs md:text-sm font-medium text-gray-600 tracking-wide uppercase">
               Founder Club Mentorship
             </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.1] tracking-tight">
             SCALE <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500">
               TO 8 FIGURES
             </span>
           </h1>
 
           {/* Subheading */}
           <div className="space-y-4">
-            <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
               Founder Club helps you build the systems required to scale your business to 8 figures.
             </p>
-            <ul className="text-gray-300 space-y-2">
+            <ul className="text-gray-600 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 Less guesswork
@@ -57,7 +57,7 @@ export default function Home() {
                 Scalable operations
               </li>
             </ul>
-            <p className="text-white font-semibold italic">Built with you.</p>
+            <p className="text-gray-900 font-semibold italic">Built with you.</p>
           </div>
 
           {/* CTAs */}

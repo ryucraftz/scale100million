@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function JoinOurTeam() {
     return (
-        <section id="join-team" className="py-24 px-6 md:px-12 bg-[#0A0A0A] text-white relative overflow-hidden border-t border-white/5">
+        <section id="join-team" className="py-24 px-6 md:px-12 bg-gray-50 text-text-primary relative overflow-hidden border-t border-gray-200">
             <div className="max-w-4xl mx-auto text-center space-y-10 z-10 relative">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -16,10 +16,10 @@ export default function JoinOurTeam() {
                         Join Our Team
                     </h2>
 
-                    <div className="space-y-6 text-xl md:text-2xl font-light text-gray-300 leading-relaxed">
+                    <div className="space-y-6 text-xl md:text-2xl font-light text-gray-600 leading-relaxed">
                         <p>We’re building systems, not slides.</p>
                         <p>If you like strategy, execution, and AI-powered scale,</p>
-                        <p>and you want <span className="text-white font-semibold">real ownership in real work</span>,</p>
+                        <p>and you want <span className="text-gray-900 font-semibold">real ownership in real work</span>,</p>
                         <p>we’d like to hear from you.</p>
                     </div>
 
@@ -28,7 +28,7 @@ export default function JoinOurTeam() {
                             href="https://www.linkedin.com/company/scale100million/jobs/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-transparent border border-white/30 hover:bg-white hover:text-black hover:border-white font-bold py-4 px-10 rounded-none uppercase tracking-widest transition-all duration-300"
+                            className="inline-flex items-center gap-2 bg-transparent border border-gray-300 hover:bg-black hover:text-white hover:border-black font-bold py-4 px-10 rounded-none uppercase tracking-widest transition-all duration-300"
                         >
                             See Open Roles
                             <ArrowRight className="w-5 h-5" />

@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md py-4 border-b border-gray-200" : "bg-transparent py-6"
         }`}
     >
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-12">
@@ -55,34 +55,34 @@ export default function Navbar() {
             className="h-8 w-8 md:h-12 md:w-12 object-contain"
           />
           <div className="flex flex-col leading-none">
-            <span className="text-white text-base md:text-lg font-bold tracking-tight uppercase">
+            <span className="text-text-primary text-base md:text-lg font-bold tracking-tight uppercase">
               Scale100Million
             </span>
           </div>
         </Link>
 
         {/* Desktop Menu - Centered */}
-        <div className="hidden md:flex items-center gap-8 bg-white/5 px-8 py-3 rounded-full border border-white/10 backdrop-blur-sm">
+        <div className="hidden md:flex items-center gap-8 bg-gray-100 px-8 py-3 rounded-full border border-gray-200 backdrop-blur-sm">
           <button
-            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
             onClick={() => navigateAndScroll("mentorship")}
           >
             Mentorship
           </button>
           <button
-            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
             onClick={() => navigateAndScroll("partner")}
           >
             Partner With Us
           </button>
           <button
-            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
             onClick={() => navigateAndScroll("media")}
           >
             Media
           </button>
           <button
-            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
             onClick={() => navigateAndScroll("join-team")}
           >
             Join Our Team
@@ -101,7 +101,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white z-50"
+          className="md:hidden text-black z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -110,34 +110,34 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8">
+        <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8">
           <button
-            className="text-2xl font-bold text-white tracking-tight"
+            className="text-2xl font-bold text-black tracking-tight"
             onClick={() => navigateAndScroll("mentorship")}
           >
             Mentorship
           </button>
           <button
-            className="text-2xl font-bold text-white tracking-tight"
+            className="text-2xl font-bold text-black tracking-tight"
             onClick={() => navigateAndScroll("partner")}
           >
             Partner With Us
           </button>
           <button
-            className="text-2xl font-bold text-white tracking-tight"
+            className="text-2xl font-bold text-black tracking-tight"
             onClick={() => navigateAndScroll("media")}
           >
             Media
           </button>
           <button
-            className="text-2xl font-bold text-white tracking-tight"
+            className="text-2xl font-bold text-black tracking-tight"
             onClick={() => navigateAndScroll("join-team")}
           >
             Join Our Team
           </button>
           <Link
             to="/contact"
-            className="text-xl font-bold text-white/80"
+            className="text-xl font-bold text-gray-500"
             onClick={() => setIsOpen(false)}
           >
             Contact Us

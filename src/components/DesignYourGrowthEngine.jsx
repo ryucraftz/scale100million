@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function DesignYourGrowthEngine() {
     return (
-        <section className="py-24 px-6 md:px-12 bg-black text-white relative overflow-hidden border-t border-white/5 flex items-center justify-center">
+        <section className="py-24 px-6 md:px-12 bg-white text-text-primary relative overflow-hidden border-t border-gray-200 flex items-center justify-center">
             <div className="max-w-4xl mx-auto text-center z-10">
                 <motion.div
                     initial={{ scale: 0.9, opacity: 0 }}

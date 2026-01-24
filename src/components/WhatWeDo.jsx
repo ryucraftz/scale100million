@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function WhatWeDo() {
     return (
-        <section className="py-24 px-6 md:px-12 bg-[#050505] text-white overflow-hidden relative border-t border-white/5">
+        <section className="py-24 px-6 md:px-12 bg-gray-50 text-text-primary overflow-hidden relative border-t border-gray-200">
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
                 <motion.div
@@ -15,7 +15,7 @@ export default function WhatWeDo() {
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
                         Most online businesses don’t fail from lack of effort.
                     </h2>
-                    <p className="text-xl md:text-2xl text-red-500 font-medium">
+                    <p className="text-xl md:text-2xl text-red-600 font-medium">
                         They fail from unstructured growth.
                     </p>
                 </motion.div>
@@ -27,10 +27,10 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="relative"
                 >
-                    <div className="absolute -inset-4 bg-white/5 rounded-2xl blur-xl opacity-50" />
-                    <div className="relative bg-[#0A0A0A] p-8 rounded-2xl border border-white/10 shadow-2xl">
-                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                            Scale100million works with founders to <span className="text-white font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
+                    <div className="absolute -inset-4 bg-gray-200 rounded-2xl blur-xl opacity-50" />
+                    <div className="relative bg-white p-8 rounded-2xl border border-gray-200 shadow-xl">
+                        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                            Scale100million works with founders to <span className="text-gray-900 font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
                         </p>
                     </div>
                 </motion.div>

@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#000000",
-        surface: "#111111",
-        primary: "#E60000", // Vibrant Red
-        secondary: "#1A1A1A", // Dark Slate/Navyish for cards
-        "text-primary": "#F0F0F0",
-        "text-secondary": "#A0A0A0",
+        background: "#ffffff", // White
+        surface: "#f9fafb", // Very light gray (gray-50)
+        primary: "#E60000", // Vibrant Red (Unchanged)
+        secondary: "#f3f4f6", // Light gray for cards (gray-100)
+        "text-primary": "#111827", // Dark gray/black (gray-900)
+        "text-secondary": "#4b5563", // Medium gray (gray-600)
         "text-accent": "#FF4444",
       },
       fontFamily: {

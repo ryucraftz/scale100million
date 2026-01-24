@@ -19,7 +19,7 @@ export default function WhyBuilt() {
     ];
 
     return (
-        <section className="py-24 px-6 md:px-12 bg-black text-white relative border-t border-white/5">
+        <section className="py-24 px-6 md:px-12 bg-white text-text-primary relative border-t border-gray-200">
             <div className="max-w-4xl mx-auto space-y-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -32,8 +32,8 @@ export default function WhyBuilt() {
                     </h2>
                     <div className="h-1 w-20 bg-primary rounded-full mb-8" />
 
-                    <div className="space-y-6 text-lg md:text-xl text-gray-300">
-                        <p className="font-medium text-white">Founders don’t need more advice.</p>
+                    <div className="space-y-6 text-lg md:text-xl text-gray-600">
+                        <p className="font-medium text-gray-900">Founders don’t need more advice.</p>
                         <p>They need systems that:</p>
                     </div>
                 </motion.div>
@@ -46,11 +46,11 @@ export default function WhyBuilt() {
                     className="grid md:grid-cols-3 gap-6"
                 >
                     {reasons.map((item, index) => (
-                        <div key={index} className="bg-white/5 border border-white/10 p-6 rounded-xl flex flex-col items-center text-center gap-4 hover:bg-white/10 transition-colors">
-                            <div className="p-3 bg-black rounded-lg border border-white/10">
+                        <div key={index} className="bg-gray-50 border border-gray-200 p-6 rounded-xl flex flex-col items-center text-center gap-4 hover:bg-gray-100 transition-colors">
+                            <div className="p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
                                 {item.icon}
                             </div>
-                            <span className="font-semibold text-white">{item.text}</span>
+                            <span className="font-semibold text-gray-900">{item.text}</span>
                         </div>
                     ))}
                 </motion.div>
@@ -60,12 +60,12 @@ export default function WhyBuilt() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="pt-8 border-t border-white/10"
+                    className="pt-8 border-t border-gray-200"
                 >
-                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
-                        Scale100million was built to <span className="text-white font-bold">combine strategy, AI, and execution</span> into one operating model.
+                    <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                        Scale100million was built to <span className="text-gray-900 font-bold">combine strategy, AI, and execution</span> into one operating model.
                     </p>
-                    <p className="mt-6 text-2xl md:text-3xl font-black text-white tracking-tight uppercase">
+                    <p className="mt-6 text-2xl md:text-3xl font-black text-gray-900 tracking-tight uppercase">
                         Built to scale.
                     </p>
                 </motion.div>
