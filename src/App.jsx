@@ -23,6 +23,7 @@ import Media from "./components/Media";
 import JoinOurTeam from "./components/JoinOurTeam";
 import DesignYourGrowthEngine from "./components/DesignYourGrowthEngine";
 import ThankYou from "./components/ThankYou";
+import StickyCTA from "./components/StickyCTA";
 
 function AppContent() {
   const location = useLocation();
@@ -71,6 +72,7 @@ function AppContent() {
       </Routes>
 
       {!isThankYouPage && <Footer />}
+      {!isThankYouPage && <StickyCTA />}
     </>
   );
 }
