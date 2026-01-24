@@ -52,7 +52,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Scale100Million"
-            className="h-10 md:h-14 w-auto object-contain filter invert hue-rotate-180"
+            className="h-12 md:h-20 w-auto object-contain filter invert"
           />
         </Link>
 
