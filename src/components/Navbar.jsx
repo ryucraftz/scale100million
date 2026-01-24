@@ -51,14 +51,9 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-3 z-50" onClick={scrollToTopIfHome}>
           <img
             src={logo}
-            alt="Logo"
-            className="h-8 w-8 md:h-12 md:w-12 object-contain"
+            alt="Scale100Million"
+            className="h-10 md:h-14 w-auto object-contain filter invert hue-rotate-180"
           />
-          <div className="flex flex-col leading-none">
-            <span className="text-text-primary text-base md:text-lg font-bold tracking-tight uppercase">
-              Scale100Million
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Menu - Centered */}
