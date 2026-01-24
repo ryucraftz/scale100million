@@ -7,8 +7,15 @@ export default function StickyCTA() {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Show after scrolling 500px (past hero usually)
-            if (window.scrollY > 500) {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const footerThreshold = 450; // Approximated footer height + buffer
+
+            const isNearBottom = (scrollY + windowHeight) >= (documentHeight - footerThreshold);
+            const isPastHero = scrollY > 500;
+
+            if (isPastHero && !isNearBottom) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
