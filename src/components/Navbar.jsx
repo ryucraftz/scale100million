@@ -63,31 +63,30 @@ export default function Navbar() {
 
         {/* Desktop Menu - Centered */}
         <div className="hidden md:flex items-center gap-8 bg-white/5 px-8 py-3 rounded-full border border-white/10 backdrop-blur-sm">
-          <Link
-            to="/"
-            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
-            onClick={scrollToTopIfHome}
-          >
-            Home
-          </Link>
           <button
             className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
-            onClick={() => navigateAndScroll("services")}
+            onClick={() => navigateAndScroll("mentorship")}
           >
-            Services
+            Mentorship
           </button>
           <button
             className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
-            onClick={() => navigateAndScroll("features")}
+            onClick={() => navigateAndScroll("partner")}
           >
-            Features
+            Partner With Us
           </button>
-          <Link
-            to="/shipping-policy"
+          <button
             className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+            onClick={() => navigateAndScroll("media")}
           >
-            Policy
-          </Link>
+            Media
+          </button>
+          <button
+            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+            onClick={() => navigateAndScroll("join-team")}
+          >
+            Join Our Team
+          </button>
         </div>
 
         {/* CTA Button - Right */}
@@ -112,24 +111,29 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8">
-          <Link
-            to="/"
-            className="text-2xl font-bold text-white tracking-tight"
-            onClick={scrollToTopIfHome}
-          >
-            Home
-          </Link>
           <button
             className="text-2xl font-bold text-white tracking-tight"
-            onClick={() => navigateAndScroll("services")}
+            onClick={() => navigateAndScroll("mentorship")}
           >
-            Services
+            Mentorship
           </button>
           <button
             className="text-2xl font-bold text-white tracking-tight"
-            onClick={() => navigateAndScroll("features")}
+            onClick={() => navigateAndScroll("partner")}
           >
-            Features
+            Partner With Us
+          </button>
+          <button
+            className="text-2xl font-bold text-white tracking-tight"
+            onClick={() => navigateAndScroll("media")}
+          >
+            Media
+          </button>
+          <button
+            className="text-2xl font-bold text-white tracking-tight"
+            onClick={() => navigateAndScroll("join-team")}
+          >
+            Join Our Team
           </button>
           <Link
             to="/contact"

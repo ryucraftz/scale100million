@@ -14,6 +14,13 @@ import DoneForYou from "./components/DoneForYou";
 import GrowthSection from "./components/GrowthSection";
 import ShippingPolicy from "./components/ShippingPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
+import PartnerWithUs from "./components/PartnerWithUs";
+import WhatWeDo from "./components/WhatWeDo";
+import WhyBuilt from "./components/WhyBuilt";
+import OurGoal from "./components/OurGoal";
+import Media from "./components/Media";
+import JoinOurTeam from "./components/JoinOurTeam";
+import DesignYourGrowthEngine from "./components/DesignYourGrowthEngine";
 import ThankYou from "./components/ThankYou";
 
 function AppContent() {
@@ -31,12 +38,14 @@ function AppContent() {
           element={
             <>
               <HomePage />
-              <StatsSection />
-              <WhySection />
-              <ServicesHeader />
-              <Services />
-              <Features />
-              <GrowthSection />
+              <PartnerWithUs />
+              <WhatWeDo />
+              <WhyBuilt />
+              <OurGoal />
+              <Media />
+              <JoinOurTeam />
+              <DesignYourGrowthEngine />
+              <ContactUs />
             </>
           }
         />
