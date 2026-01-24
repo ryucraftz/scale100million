@@ -2,85 +2,86 @@ import { motion } from "framer-motion";
 import serviceImg1 from "../assets/ImageService1.jpg";
 import serviceImg2 from "../assets/FoundersImg.jpg";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function Services() {
+    const services = [
+        {
+            title: "Done-For-You Scaling System",
+            description: "Everything you need to grow — done for you: Marketing, Sales, Funnels, Ads & Coaching Systems. One team. One system.",
+            image: serviceImg1,
+            link: "/doneforyou",
+            cta: "Get Started"
+        },
+        {
+            title: "Founder Club Mentorship",
+            description: "A step-by-step 'Zero to Hero Success System' to grow your service business to 8 Figure income with weekly mentorship.",
+            image: serviceImg2,
+            link: "https://scale100million.com/founders-club/",
+            cta: "Join the Club",
+            external: true
+        }
+    ];
+
     return (
-        <>
-            {/* Section 1 - Text Left, Image Right */}
-            <motion.section
-                id="services"
-                className="w-full bg-black pt-6 pb-16 px-6 md:px-16"
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.3 }}
-            >
-                <div className="max-w-6xl mx-auto bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white rounded-2xl p-12 flex flex-col md:flex-row items-center gap-10 shadow-lg">
-
-                    {/* Left Text */}
-                    <div className="flex-1">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            Done-for-you services For Fat Loss Coaches to scale beyond 8 Figure/year
+        <section id="services" className="py-24 bg-black relative">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+                    <div className="max-w-2xl">
+                        <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Our Programs</span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                            Elite Programs for <br /> <span className="text-gray-500">Ambitious Coaches</span>
                         </h2>
-                        <p className="text-gray-300 leading-relaxed mb-6">
-                            Everything you need to grow — done for you: Marketing, Sales, Funnels, Ads & Coaching Systems.
-                            One team. One system. One roof.
-                        </p>
-                        <Link
-                            to="/doneforyou"
-                            className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-full shadow-md hover:bg-gray-200 transition"
-                        >
-                            Get Started →
-                        </Link>
                     </div>
 
-                    {/* Right Image */}
-                    <div className="flex-1 flex justify-center">
-                        <img
-                            src={serviceImg1}
-                            alt="Service"
-                            className="w-full max-w-md h-auto object-cover rounded-xl"
-                        />
-                    </div>
                 </div>
-            </motion.section>
 
-            {/* Section 2 - Image Left, Text Right */}
-            <motion.section
-                className="w-full bg-black py-16 px-6 md:px-16"
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.3 }}
-            >
-                <div className="max-w-6xl mx-auto bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white rounded-2xl p-12 flex flex-col md:flex-row-reverse items-center gap-10 shadow-lg">
-
-                    {/* Right Text */}
-                    <div className="flex-1">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            Mentorship program To start online service business
-                        </h2>
-                        <p className="text-gray-300 leading-relaxed mb-6">
-                            "Founder Club Mentorship is a step-by-step “Zero to Hero Success System” to grow your service business to 8 Figure income. Inside the program, you’ll get practical video training, weekly mentorship calls, and a supportive community to help you scale."
-                        </p>
-                        <a
-                            href="https://scale100million.com/founders-club/"
-                            className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-full shadow-md hover:bg-gray-200 transition"
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.2, duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="group relative bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2"
                         >
-                            Learn More →
-                        </a>
-                    </div>
+                            <div className="aspect-[16/9] overflow-hidden">
+                                <img
+                                    src={service.image}
+                                    alt={service.title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                            </div>
 
-                    {/* Left Image */}
-                    <div className="flex-1 flex justify-center">
-                        <img
-                            src={serviceImg2}
-                            alt="Service"
-                            className="w-80 max-w-md h-auto object-cover rounded-xl"
-                        />
-                    </div>
+                            <div className="p-8">
+                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                                    {service.title}
+                                </h3>
+                                <p className="text-gray-400 leading-relaxed mb-8 line-clamp-3">
+                                    {service.description}
+                                </p>
+
+                                {service.external ? (
+                                    <a
+                                        href={service.link}
+                                        className="inline-flex items-center gap-2 text-white font-bold tracking-wide group-hover:gap-4 transition-all duration-300"
+                                    >
+                                        {service.cta} <ArrowRight size={20} />
+                                    </a>
+                                ) : (
+                                    <Link
+                                        to={service.link}
+                                        className="inline-flex items-center gap-2 text-white font-bold tracking-wide group-hover:gap-4 transition-all duration-300"
+                                    >
+                                        {service.cta} <ArrowRight size={20} />
+                                    </Link>
+                                )}
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
-            </motion.section>
-        </>
+            </div>
+        </section>
     );
 }

@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import HomePage from "./components/Home";
 import Navbar from "./components/Navbar";
 import Services from "./components/Services";
+import WhySection from "./components/WhySection";
+import StatsSection from "./components/StatsSection";
 import ContactUs from "./components/ContactUs";
 import ServicesHeader from "./components/ServicesHeader";
 import ScrollToTop from "./components/ScrollToTop";
@@ -29,6 +31,8 @@ function AppContent() {
           element={
             <>
               <HomePage />
+              <StatsSection />
+              <WhySection />
               <ServicesHeader />
               <Services />
               <Features />

@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo first.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // Smooth scroll to section
-  const handleScroll = (id) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -17,67 +26,75 @@ export default function Navbar() {
   };
 
   const navigateAndScroll = (id) => {
-    if (window.location.pathname !== "/") {
+    if (location.pathname !== "/") {
       navigate("/");
-      setTimeout(() => handleScroll(id), 200);
+      setTimeout(() => handleScrollToSection(id), 200);
     } else {
-      handleScroll(id);
+      handleScrollToSection(id);
     }
   };
 
   const scrollToTopIfHome = () => {
     setIsOpen(false);
-    if (window.location.pathname === "/") {
+    if (location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
-        
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-6"
+        }`}
+    >
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-12">
         {/* Logo */}
-        <Link to="/" className="flex items-center" onClick={scrollToTopIfHome}>
+        <Link to="/" className="flex items-center gap-3 z-50" onClick={scrollToTopIfHome}>
           <img
             src={logo}
             alt="Logo"
-            className="h-12 w-12 md:h-16 md:w-16 object-contain"
+            className="h-10 w-10 md:h-12 md:w-12 object-contain"
           />
-          <div className="flex flex-col items-center leading-tight ml-2">
-            <span className="text-white text-sm md:text-base font-extrabold tracking-wide uppercase">
-              SCALE100MILLION
-            </span>
-            <span className="text-gray-300 text-[8px] md:text-[10px] tracking-[0.15em] text-center">
-              "BILLION DOLLAR विषय"
+          <div className="flex flex-col leading-none">
+            <span className="text-white text-lg font-bold tracking-tight uppercase">
+              Scale100Million
             </span>
           </div>
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-10">
+        {/* Desktop Menu - Centered */}
+        <div className="hidden md:flex items-center gap-8 bg-white/5 px-8 py-3 rounded-full border border-white/10 backdrop-blur-sm">
           <Link
             to="/"
-            className="text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1"
+            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
             onClick={scrollToTopIfHome}
           >
             Home
           </Link>
           <button
-            className="text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1"
+            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
             onClick={() => navigateAndScroll("services")}
           >
             Services
           </button>
           <button
-            className="text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1"
+            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
             onClick={() => navigateAndScroll("features")}
           >
             Features
           </button>
           <Link
+            to="/shipping-policy"
+            className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+          >
+            Policy
+          </Link>
+        </div>
+
+        {/* CTA Button - Right */}
+        <div className="hidden md:flex items-center">
+          <Link
             to="/contact"
-            className="text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1"
-            onClick={() => setIsOpen(false)}
+            className="bg-primary hover:bg-red-600 text-white text-sm font-bold py-3 px-6 rounded-pill transition-all duration-300 shadow-[0_0_20px_rgba(230,0,0,0.3)] hover:shadow-[0_0_30px_rgba(230,0,0,0.5)]"
           >
             Contact Us
           </Link>
@@ -85,38 +102,38 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="md:hidden bg-black bg-opacity-5 backdrop-blur-md px-6 py-4 space-y-4">
+        <div className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8">
           <Link
             to="/"
-            className="block text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1"
+            className="text-2xl font-bold text-white tracking-tight"
             onClick={scrollToTopIfHome}
           >
             Home
           </Link>
           <button
-            className="block text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1 w-full text-left"
+            className="text-2xl font-bold text-white tracking-tight"
             onClick={() => navigateAndScroll("services")}
           >
             Services
           </button>
           <button
-            className="block text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1 w-full text-left"
+            className="text-2xl font-bold text-white tracking-tight"
             onClick={() => navigateAndScroll("features")}
           >
             Features
           </button>
           <Link
             to="/contact"
-            className="block text-white font-medium transition-transform duration-300 ease-in-out hover:-translate-y-1"
+            className="text-xl font-bold text-white/80"
             onClick={() => setIsOpen(false)}
           >
             Contact Us
