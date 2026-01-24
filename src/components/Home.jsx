@@ -31,9 +31,10 @@ export default function Home() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-text-primary leading-[0.9] tracking-tight">
-            SCALE <br />
-            TO 8 FIGURES
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-text-primary leading-[1.1] md:leading-[0.9] tracking-tight">
+            SCALE <br className="hidden md:block" />
+            <span className="md:hidden">TO </span>
+            8 FIGURES
           </h1>
 
           {/* Subheading & List */}

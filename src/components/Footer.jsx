@@ -5,7 +5,7 @@ import logo from "../assets/logo100m.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white pt-16 pb-10 border-t border-gray-900 relative overflow-hidden">
+    <footer className="bg-black text-white pt-10 md:pt-16 pb-10 border-t border-gray-900 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
 

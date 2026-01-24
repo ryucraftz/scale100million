@@ -7,7 +7,7 @@ export default function ContactUs() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="w-full max-w-md bg-gray-900 rounded-3xl p-8 md:p-10 text-center shadow-2xl"
+                className="w-full max-w-md bg-gray-900 rounded-3xl p-6 md:p-10 text-center shadow-2xl mx-4 md:mx-0"
             >
                 <div className="space-y-6">
                     <h2 className="text-3xl md:text-4xl font-black text-white leading-tight uppercase tracking-tight">
