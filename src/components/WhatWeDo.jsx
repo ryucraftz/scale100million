@@ -28,7 +28,7 @@ export default function WhatWeDo() {
                     className="relative"
                 >
                     <div className="absolute -inset-4 bg-gray-200 rounded-2xl blur-xl opacity-50" />
-                    <div className="relative bg-white p-8 rounded-2xl border border-gray-200 shadow-xl">
+                    <div className="relative bg-white p-8 rounded-2xl border border-gray-100 shadow-2xl">
                         <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                             Scale100million works with founders to <span className="text-gray-900 font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
                         </p>

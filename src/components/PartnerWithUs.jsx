@@ -34,7 +34,7 @@ export default function PartnerWithUs() {
                     <div className="mt-12">
                         <a
                             href="#contact"
-                            className="inline-flex items-center gap-2 bg-black text-white hover:bg-gray-800 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1"
+                            className="inline-flex items-center gap-2 bg-black text-white hover:bg-gray-800 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl"
                         >
                             Apply for Partnership
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
