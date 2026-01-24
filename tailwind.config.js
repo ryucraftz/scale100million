@@ -22,7 +22,16 @@ export default {
         '3xl': '2rem',
         'pill': '50px',
       },
+      animation: {
+        bounceUpOnce: "bounceUpOnce 0.6s ease-out 1",
+        fadeInUp: "fadeInUp 0.8s ease-out forwards",
+        shimmer: "shimmer 2s infinite linear",
+      },
       keyframes: {
+        shimmer: {
+          "0%": { transform: "translateX(-150%)" },
+          "100%": { transform: "translateX(150%)" },
+        },
         bounceUpOnce: {
           "0%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
@@ -32,10 +41,6 @@ export default {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-      },
-      animation: {
-        bounceUpOnce: "bounceUpOnce 0.6s ease-out 1",
-        fadeInUp: "fadeInUp 0.8s ease-out forwards",
       },
     },
   },
