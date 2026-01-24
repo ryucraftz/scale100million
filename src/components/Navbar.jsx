@@ -100,41 +100,42 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 animate-fadeIn">
-          <button
-            className="text-2xl font-bold text-black tracking-tight"
-            onClick={() => navigateAndScroll("mentorship")}
-          >
-            Mentorship
-          </button>
-          <button
-            className="text-2xl font-bold text-black tracking-tight"
-            onClick={() => navigateAndScroll("partner")}
-          >
-            Partner With Us
-          </button>
-          <button
-            className="text-2xl font-bold text-black tracking-tight"
-            onClick={() => navigateAndScroll("media")}
-          >
-            Media
-          </button>
-          <button
-            className="text-2xl font-bold text-black tracking-tight"
-            onClick={() => navigateAndScroll("join-team")}
-          >
-            Join Our Team
-          </button>
-          <Link
-            to="/contact"
-            className="text-xl font-bold text-gray-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact Us
-          </Link>
-        </div>
-      )}
+      <div
+        className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 md:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+      >
+        <button
+          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          onClick={() => navigateAndScroll("mentorship")}
+        >
+          Mentorship
+        </button>
+        <button
+          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          onClick={() => navigateAndScroll("partner")}
+        >
+          Partner With Us
+        </button>
+        <button
+          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          onClick={() => navigateAndScroll("media")}
+        >
+          Media
+        </button>
+        <button
+          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          onClick={() => navigateAndScroll("join-team")}
+        >
+          Join Our Team
+        </button>
+        <Link
+          to="/contact"
+          className="px-8 py-3 bg-primary text-white rounded-full text-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+          onClick={() => setIsOpen(false)}
+        >
+          Contact Us
+        </Link>
+      </div>
     </nav>
   );
 }
