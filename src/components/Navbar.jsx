@@ -43,60 +43,56 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md py-4 border-b border-gray-200" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md border-b border-gray-200 py-3" : "bg-transparent py-5"
         }`}
     >
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-12">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 z-50" onClick={scrollToTopIfHome}>
+        <Link to="/" className="flex items-center z-50" onClick={scrollToTopIfHome}>
           <img
             src={logo}
             alt="Scale100Million"
-            className="h-16 md:h-24 w-auto object-contain filter invert"
+            className="h-14 md:h-16 w-auto object-contain filter invert hue-rotate-180"
           />
         </Link>
 
-        {/* Desktop Menu - Centered */}
-        <div className="hidden md:flex items-center gap-8 bg-gray-100 px-8 py-3 rounded-full border border-gray-200 backdrop-blur-sm">
+        {/* Desktop Menu - Right Aligned (Hidden on Mobile) */}
+        <div className="hidden md:flex items-center gap-8 ml-auto">
           <button
-            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
+            className="text-text-primary hover:text-primary font-medium transition-colors"
             onClick={() => navigateAndScroll("mentorship")}
           >
             Mentorship
           </button>
           <button
-            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
+            className="text-text-primary hover:text-primary font-medium transition-colors"
             onClick={() => navigateAndScroll("partner")}
           >
             Partner With Us
           </button>
           <button
-            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
+            className="text-text-primary hover:text-primary font-medium transition-colors"
             onClick={() => navigateAndScroll("media")}
           >
             Media
           </button>
           <button
-            className="text-gray-600 hover:text-black text-sm font-medium transition-colors"
+            className="text-text-primary hover:text-primary font-medium transition-colors"
             onClick={() => navigateAndScroll("join-team")}
           >
             Join Our Team
           </button>
-        </div>
-
-        {/* CTA Button - Right */}
-        <div className="hidden md:flex items-center">
-          <Link
-            to="/contact"
-            className="bg-primary hover:bg-red-600 text-white text-sm font-bold py-3 px-6 rounded-pill transition-all duration-300 shadow-[0_0_20px_rgba(230,0,0,0.3)] hover:shadow-[0_0_30px_rgba(230,0,0,0.5)]"
+          <button
+            className="text-text-primary hover:text-primary font-medium transition-colors"
+            onClick={() => navigateAndScroll("contact")}
           >
             Contact Us
-          </Link>
+          </button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Right Aligned (Visible ONLY on Mobile) */}
         <button
-          className="md:hidden text-black z-50"
+          className="md:hidden text-black z-50 p-2 ml-auto"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -105,7 +101,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8">
+        <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 animate-fadeIn">
           <button
             className="text-2xl font-bold text-black tracking-tight"
             onClick={() => navigateAndScroll("mentorship")}

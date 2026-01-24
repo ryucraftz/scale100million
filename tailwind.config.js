@@ -6,7 +6,7 @@ export default {
       colors: {
         background: "#ffffff", // White
         surface: "#f9fafb", // Very light gray (gray-50)
-        primary: "#E60000", // Vibrant Red (Unchanged)
+        primary: "#3B82F6", // Scale100M Blue (Vibrant)
         secondary: "#f3f4f6", // Light gray for cards (gray-100)
         "text-primary": "#111827", // Dark gray/black (gray-900)
         "text-secondary": "#4b5563", // Medium gray (gray-600)

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import bgImage from "../assets/background.jpg";
-import { Play } from "lucide-react";
+import bgImage from "../assets/background1.jpg";
+import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 
 export default function Home() {
   return (
@@ -20,63 +20,63 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl space-y-6 md:space-y-8"
+          className="max-w-2xl space-y-6 md:space-y-8"
         >
-          {/* Badge/Tag */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-gray-200 bg-gray-100 backdrop-blur-md w-fit">
+          {/* Badge/Tag - Exact match to screenshot pill style */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100/80 backdrop-blur-md w-fit border border-gray-200/50 shadow-sm">
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs md:text-sm font-medium text-gray-600 tracking-wide uppercase">
+            <span className="text-[10px] md:text-sm font-bold text-gray-500 tracking-wider uppercase">
               Founder Club Mentorship
             </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.1] tracking-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-text-primary leading-[0.9] tracking-tight">
             SCALE <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500">
-              TO 8 FIGURES
-            </span>
+            TO 8 FIGURES
           </h1>
 
-          {/* Subheading */}
-          <div className="space-y-4">
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
+          {/* Subheading & List */}
+          <div className="space-y-6">
+            <p className="text-lg md:text-xl text-text-secondary max-w-lg leading-relaxed font-normal">
               Founder Club helps you build the systems required to scale your business to 8 figures.
             </p>
-            <ul className="text-gray-600 space-y-2">
-              <li className="flex items-center gap-2">
+
+            <ul className="text-text-secondary space-y-3">
+              <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                Less guesswork
+                <span className="text-base md:text-lg">Less guesswork</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                Faster execution
+                <span className="text-base md:text-lg">Faster execution</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                Scalable operations
+                <span className="text-base md:text-lg">Scalable operations</span>
               </li>
             </ul>
-            <p className="text-gray-900 font-semibold italic">Built with you.</p>
+
+            <p className="text-text-primary font-bold italic text-lg pt-2">Built with you.</p>
           </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-4">
             <a
-              href="#contact"
-              className="w-full sm:w-auto text-center group px-6 py-3 md:px-8 md:py-4 bg-primary hover:bg-red-600 text-white text-sm md:text-base font-bold rounded-pill transition-all duration-300 shadow-[0_0_20px_rgba(230,0,0,0.3)] hover:shadow-[0_0_30px_rgba(230,0,0,0.5)] flex justify-center items-center gap-2"
+              href="https://nas.io/scale100million"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto text-center group px-8 py-4 bg-primary hover:bg-blue-600 text-white text-base md:text-lg font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 flex justify-center items-center gap-2"
             >
               Join Founder Club
-              <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute right-0 bottom-0 w-1/3 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none" />
+      {/* Subtle Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Settings, fastForward, Layout } from "lucide-react";
+import { Settings, Layout } from "lucide-react";
 
 export default function WhyBuilt() {
     const reasons = [
