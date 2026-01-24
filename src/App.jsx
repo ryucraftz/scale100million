@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Features from "./components/Features";
 import Footer from "./components/Footer";
 import HomePage from "./components/Home";
+import RevealOnScroll from "./components/RevealOnScroll";
 import Navbar from "./components/Navbar";
 import Services from "./components/Services";
 import WhySection from "./components/WhySection";
@@ -38,14 +39,14 @@ function AppContent() {
           element={
             <>
               <HomePage />
-              <PartnerWithUs />
-              <WhatWeDo />
-              <WhyBuilt />
-              <OurGoal />
-              <Media />
-              <JoinOurTeam />
-              <DesignYourGrowthEngine />
-              <ContactUs />
+              <RevealOnScroll delay={0.1}><PartnerWithUs /></RevealOnScroll>
+              <RevealOnScroll delay={0.1}><WhatWeDo /></RevealOnScroll>
+              <RevealOnScroll delay={0.1}><WhyBuilt /></RevealOnScroll>
+              <RevealOnScroll delay={0.1}><OurGoal /></RevealOnScroll>
+              <RevealOnScroll delay={0.1}><Media /></RevealOnScroll>
+              <RevealOnScroll delay={0.1}><JoinOurTeam /></RevealOnScroll>
+              <RevealOnScroll delay={0.1}><DesignYourGrowthEngine /></RevealOnScroll>
+              <RevealOnScroll delay={0.1}><ContactUs /></RevealOnScroll>
             </>
           }
         />
