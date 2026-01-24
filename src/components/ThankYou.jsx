@@ -5,13 +5,13 @@ import { CheckCircle2 } from "lucide-react";
 import BonusCard from './BonusCard';
 import Marquee from './Marquee';
 
-import bonus1 from '../assets/Bonuses1.png';
-import bonus2 from '../assets/Bonuses2.png';
-import bonus3 from '../assets/Bonuses3.png';
-import bonus4 from '../assets/Bonuses4.png';
-import bonus5 from '../assets/Bonuses5.png';
-import bonus6 from '../assets/Bonuses6.png';
-import bonus7 from '../assets/Bonuses7.png';
+import bonus1 from '../assets/Bonuses1.webp';
+import bonus2 from '../assets/Bonuses2.webp';
+import bonus3 from '../assets/Bonuses3.webp';
+import bonus4 from '../assets/Bonuses4.webp';
+import bonus5 from '../assets/Bonuses5.webp';
+import bonus6 from '../assets/Bonuses6.webp';
+import bonus7 from '../assets/Bonuses7.webp';
 
 // Testimonials (Videos)
 import testimonial1 from '../assets/testimonials/Aniket.mp4';

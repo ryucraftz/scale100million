@@ -52,10 +52,10 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Logo"
-            className="h-10 w-10 md:h-12 md:w-12 object-contain"
+            className="h-8 w-8 md:h-12 md:w-12 object-contain"
           />
           <div className="flex flex-col leading-none">
-            <span className="text-white text-lg font-bold tracking-tight uppercase">
+            <span className="text-white text-base md:text-lg font-bold tracking-tight uppercase">
               Scale100Million
             </span>
           </div>

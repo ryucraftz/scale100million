@@ -24,19 +24,19 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" className="py-24 bg-black relative">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        <section id="services" className="py-16 md:py-24 bg-black relative">
+            <div className="max-w-[1400px] mx-auto px-4 md:px-12">
                 <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
                     <div className="max-w-2xl">
-                        <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Our Programs</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                        <span className="text-primary font-bold tracking-wider uppercase text-xs md:text-sm mb-2 block">Our Programs</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                             Elite Programs for <br /> <span className="text-gray-500">Ambitious Coaches</span>
                         </h2>
                     </div>
 
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -44,7 +44,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.2, duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="group relative bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2"
+                            className="group relative bg-[#0a0a0a] rounded-xl md:rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2"
                         >
                             <div className="aspect-[16/9] overflow-hidden">
                                 <img
