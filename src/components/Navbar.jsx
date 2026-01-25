@@ -127,7 +127,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu - Right Aligned (Hidden on Mobile) */}
-        <div className="hidden md:flex items-center gap-8 ml-auto">
+        <div className="hidden lg:flex items-center gap-8 ml-auto">
           {/* Update text colors based on background */}
           {["mentorship", "partner", "media", "join-team", "contact"].map((item) => (
             <button
@@ -142,7 +142,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button - Right Aligned (Visible ONLY on Mobile) */}
         <button
-          className={`md:hidden ${isWhiteLogo && !isOpen ? "text-white" : "text-black"} z-50 p-2 ml-auto`}
+          className={`lg:hidden ${isWhiteLogo && !isOpen ? "text-white" : "text-black"} z-50 p-2 ml-auto`}
           onClick={toggleMenu}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -151,7 +151,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 md:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
       >
         <button

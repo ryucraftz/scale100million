@@ -55,12 +55,12 @@ export default function Home() {
               }
             }
           }}
-          className="max-w-2xl space-y-6 md:space-y-8"
+          className="max-w-2xl space-y-8 md:space-y-12"
         >
           {/* Badge/Tag */}
           <motion.div
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100/80 backdrop-blur-md w-fit border border-gray-200/50 shadow-sm hover:shadow-md transition-all hover:scale-105 cursor-default"
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100/80 backdrop-blur-md w-fit border border-gray-200/50 shadow-sm hover:shadow-md transition-all hover:scale-105 cursor-default relative z-20"
           >
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-[10px] md:text-sm font-bold text-gray-500 tracking-wider uppercase">
@@ -71,7 +71,7 @@ export default function Home() {
           {/* Main Headline */}
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-5xl sm:text-6xl md:text-8xl font-black text-text-primary leading-[1.1] md:leading-[0.9] tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-text-primary leading-[1.1] md:leading-tight lg:leading-[0.9] tracking-tight"
           >
             SCALE <br className="hidden md:block" />
             <span className="md:hidden">TO </span>
