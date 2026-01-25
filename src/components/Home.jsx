@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import bgImage from "../assets/background1.jpg";
+import bgImage from "../assets/background.png";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
