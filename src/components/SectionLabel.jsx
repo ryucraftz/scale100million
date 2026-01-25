@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 export default function SectionLabel({ number, inverted = false }) {
     return (
-        <div className="absolute left-0 top-0 h-full w-0 hidden lg:block pointer-events-none z-40">
-            <div className="sticky top-32 left-6 w-max pointer-events-auto">
+        <div className="absolute left-0 top-0 h-full w-0 pointer-events-none z-40">
+            <div className="sticky top-24 md:top-32 left-2 md:left-6 w-max pointer-events-auto scale-75 md:scale-100 origin-top-left">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
