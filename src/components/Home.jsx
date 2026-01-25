@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div
       id="mentorship"
-      className="relative w-full h-screen overflow-hidden bg-white"
+      className="relative w-full min-h-[850px] overflow-hidden bg-white"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}
@@ -41,7 +41,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-center">
+      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-center pt-32 md:pt-40 pb-12">
         <motion.div
           initial="hidden"
           animate="visible"
