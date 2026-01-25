@@ -142,25 +142,25 @@ export default function Navbar() {
           }`}
       >
         <button
-          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("mentorship")}
         >
           Mentorship
         </button>
         <button
-          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("partner")}
         >
           Partner With Us
         </button>
         <button
-          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("media")}
         >
           Media
         </button>
         <button
-          className="text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("join-team")}
         >
           Join Our Team

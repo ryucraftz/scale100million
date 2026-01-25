@@ -72,10 +72,9 @@ export default function Features() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-start bg-gradient-to-r from-gray-900 via-black to-gray-900 
-                p-6 rounded-2xl shadow-lg border border-transparent 
-                hover:border-white hover:shadow-[0_0_50px_rgba(255,255,255,0.25)] 
-                hover:ring-8 hover:ring-white hover:ring-opacity-10 
+              className="flex flex-col items-start bg-gray-900/50 backdrop-blur-sm
+                p-8 rounded-2xl border border-white/10 relative overflow-hidden group
+                hover:border-primary/50 hover:bg-gray-800/80
                 transition-all duration-300 ease-in-out"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
