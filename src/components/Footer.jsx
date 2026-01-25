@@ -1,51 +1,102 @@
 import React from "react";
-import { Instagram, Youtube, Twitter, Send } from "lucide-react";
+import { Instagram, Youtube, Send, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import logo from "../assets/logo100m.png";
 
 export default function Footer() {
+  const socialLinks = [
+    { icon: <Instagram size={24} />, href: "https://www.instagram.com/scale100million/", label: "Instagram", color: "hover:text-[#E1306C]" },
+    { icon: <Send size={24} />, href: "https://t.me/+t5a5E6TJ7JowNjg1", label: "Telegram", color: "hover:text-[#229ED9]" },
+    { icon: <Youtube size={24} />, href: "https://www.youtube.com/@scale100million-yt", label: "YouTube", color: "hover:text-[#FF0000]" },
+  ];
+
   return (
-    <footer className="bg-black text-white pt-10 md:pt-16 pb-10 border-t border-gray-900 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
+    <footer className="bg-black text-white pt-20 pb-10 border-t border-white/5 relative overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10 w-full">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
 
-        {/* Logo - Main top element */}
-        <div className="flex justify-center mb-12">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Scale100Million" className="h-16 md:h-20 w-auto object-contain filter brightness-0 invert" />
+          {/* Brand Column */}
+          <div className="lg:col-span-4 space-y-6 text-center md:text-left">
+            <Link to="/" className="inline-block">
+              <img
+                src={logo}
+                alt="Scale100Million"
+                className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </Link>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
+              Empowering founders to build scalable, systemized, and profitable 8-figure businesses.
+            </p>
+          </div>
+
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-2" />
+
+          {/* Quick Links */}
+          <div className="lg:col-span-2 space-y-6 text-center md:text-left">
+            <h4 className="text-white font-bold tracking-wide text-sm uppercase opacity-90">Company</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              {/* Using standard anchors for these if routes don't exist yet, or Links if they do. Assuming some exist based on App.jsx */}
+              <li><button onClick={() => document.getElementById('mentorship')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Mentorship</button></li>
+              <li><Link to="/join-team" className="hover:text-primary transition-colors">Join Our Team</Link></li>
+              <li><Link to="/partner" className="hover:text-primary transition-colors">Partner With Us</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div className="lg:col-span-2 space-y-6 text-center md:text-left">
+            <h4 className="text-white font-bold tracking-wide text-sm uppercase opacity-90">Legal</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Use</Link></li>
+              <li><Link to="/shipping-policy" className="hover:text-white transition-colors">Refund Policy</Link></li>
+              <li><Link to="/shipping-policy" className="hover:text-white transition-colors">Shipping Policy</Link></li>
+            </ul>
+          </div>
+
+          {/* Social Icons */}
+          <div className="lg:col-span-2 space-y-6 flex flex-col items-center md:items-start">
+            <h4 className="text-white font-bold tracking-wide text-sm uppercase opacity-90">Connect</h4>
+            <div className="flex gap-4">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -5, scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 ${social.color} hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm group`}
+                  aria-label={social.label}
+                >
+                  <span className="transition-transform duration-300 group-hover:scale-110">
+                    {social.icon}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+            <a
+              href="mailto:support@scale100million.com"
+              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors group"
+            >
+              support@scale100million.com
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
 
-        {/* Socials */}
-        <div className="mb-16">
-          <p className="text-gray-500 text-sm font-medium tracking-wide uppercase mb-6">Follow us on</p>
-          <div className="flex justify-center gap-8">
-            <a href="https://www.instagram.com/scale100million/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-              <Instagram size={32} />
-            </a>
-            <a href="https://t.me/+SSG0wArwUcQyYTc1" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-              <Send size={32} />
-            </a>
-            <a href="https://www.youtube.com/@scale100million-yt" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
-              <Youtube size={32} />
-            </a>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
+          <p>© {new Date().getFullYear()} SCALE100MILLION. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <span>Built for visionaries by visionaries.</span>
           </div>
-        </div>
-
-        {/* Bottom Links */}
-        <div className="border-t border-gray-800 pt-10 flex flex-wrap justify-center gap-6 md:gap-8 text-sm text-gray-500 font-medium">
-          <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link to="/shipping-policy" className="hover:text-white transition-colors">Refund Policy</Link>
-          <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Use</Link>
-          <Link to="/shipping-policy" className="hover:text-white transition-colors">Shipping & Delivery Policy</Link>
-          <a href="mailto:support@scale100million.com" className="hover:text-white transition-colors">Support</a>
-          <Link to="/contact" className="hover:text-white transition-colors">Contact us</Link>
-        </div>
-
-        <div className="mt-8 text-xs text-gray-600">
-          © {new Date().getFullYear()} SCALE100MILLION. All rights reserved.
         </div>
       </div>
     </footer>
