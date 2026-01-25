@@ -10,7 +10,7 @@ export default function SectionLabel({ number, inverted = false }) {
           Mobile: top-24, left-1, scale-60 (smaller).
           Desktop: top-32, left-6, scale-100.
       */}
-            <div className="sticky top-24 md:top-32 left-1 md:left-6 w-max pointer-events-auto scale-[0.6] md:scale-100 origin-top-left transition-transform duration-300">
+            <div className="sticky top-20 md:top-28 left-1 md:left-6 w-max pointer-events-auto scale-[0.6] md:scale-100 origin-top-left transition-transform duration-300">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
