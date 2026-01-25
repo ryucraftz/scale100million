@@ -23,24 +23,36 @@ export default function ShippingPolicy() {
           </h1>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 space-y-8 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/20 p-8 md:p-14 space-y-10 relative overflow-hidden">
 
-          <div className="relative z-10 space-y-6 text-gray-600 leading-relaxed text-lg">
-            <p>
-              We are a service-based company and do not sell or ship any physical products.
-            </p>
-            <p>
-              All services are delivered digitally or through online communication channels.
-            </p>
-            <p>
-              No physical shipping, handling, or delivery fees are applicable.
-            </p>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-green-50/50 to-emerald-50/20 rounded-full blur-[100px] -translate-y-1/4 translate-x-1/4 pointer-events-none" />
 
-            <div className="mt-10 p-6 bg-surface rounded-2xl border border-gray-100">
-              <h2 className="text-xl font-bold text-gray-900 mb-3">Billing Information</h2>
-              <p className="text-gray-600">
-                <span className="font-semibold text-gray-900">Billing Name:</span> Abhay Mukund Lagad
+          <div className="relative z-10 space-y-8 text-gray-600 leading-relaxed text-lg md:text-xl font-light">
+
+            <div className="flex flex-col items-center justify-center p-10 bg-gray-50 rounded-3xl border border-dashed border-gray-200 text-center space-y-4 hover:bg-gray-50/80 transition-colors">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm text-green-600 mb-2">
+                <Truck size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">100% Digital Delivery</h3>
+              <p className="max-w-md mx-auto text-gray-500">
+                We are a digital-first company. No physical shipping is required for any of our services.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-gray-900 mb-2">Instant Access</h4>
+                <p className="text-sm">Services are delivered digitally via email or online dashboard immediately upon purchase.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-gray-900 mb-2">No Hidden Fees</h4>
+                <p className="text-sm">There are absolutely zero shipping, handling, or delivery charges applicable.</p>
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-gray-100">
+              <p className="text-sm text-gray-400 text-center">
+                Billing Entity: <span className="text-gray-900 font-medium">Abhay Mukund Lagad</span>
               </p>
             </div>
           </div>

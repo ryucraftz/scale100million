@@ -26,31 +26,43 @@ export default function TermsAndConditions() {
                     </p>
                 </div>
 
-                <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 space-y-8 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/20 p-8 md:p-14 space-y-10 relative overflow-hidden">
 
-                    <div className="relative z-10 space-y-6 text-gray-600 leading-relaxed text-lg">
+                    {/* Background accent */}
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-blue-50/40 to-transparent rounded-full blur-[120px] pointer-events-none -mr-32 -mt-32" />
+
+                    <div className="relative z-10 space-y-8 text-gray-600 leading-relaxed text-lg md:text-xl font-light">
                         <p>
-                            Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern our relationship with you in relation to this website.
-                        </p>
-                        <p>
-                            The services offered on this website are provided by <strong>Abhay Mukund Lagad</strong>.
-                        </p>
-                        <p>
-                            All payments, invoices, and billing-related communications will be issued under the name <strong>Abhay Mukund Lagad</strong>.
+                            Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern our relationship with you.
                         </p>
 
-                        <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">General Terms</h2>
-                        <ul className="list-disc pl-5 space-y-3">
-                            <li>The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
-                            <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
-                        </ul>
+                        <div className="flex flex-col md:flex-row gap-6 p-6 bg-gray-50/50 rounded-2xl border border-gray-100/50">
+                            <div className="flex-1">
+                                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Service Provider</h3>
+                                <p className="text-gray-900 font-semibold text-lg">Abhay Mukund Lagad</p>
+                            </div>
+                            <div className="hidden md:block w-px bg-gray-200" />
+                            <div className="flex-1">
+                                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Billing Entity</h3>
+                                <p className="text-gray-900 font-semibold text-lg">Abhay Mukund Lagad</p>
+                            </div>
+                        </div>
 
-                        <div className="mt-10 p-6 bg-surface rounded-2xl border border-gray-100">
-                            <h2 className="text-xl font-bold text-gray-900 mb-3">Billing Information</h2>
-                            <p className="text-gray-600">
-                                <span className="font-semibold text-gray-900">Billing Name:</span> Abhay Mukund Lagad
-                            </p>
+                        <div className="space-y-6">
+                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center gap-3">
+                                <span className="w-8 h-1 bg-primary rounded-full" />
+                                General Terms
+                            </h2>
+                            <ul className="space-y-4 pl-4">
+                                <li className="flex gap-4 items-start">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
+                                    <span>The content of this website is for your general information and use only. It is subject to change without notice.</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
+                                    <span>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

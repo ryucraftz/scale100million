@@ -31,15 +31,19 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Content Card */}
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 space-y-8 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/20 p-8 md:p-14 space-y-10 relative overflow-hidden">
 
-          <div className="relative z-10 space-y-6 text-gray-600 leading-relaxed text-lg">
+          {/* Subtle geometric accent */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-50/50 to-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+          <div className="relative z-10 space-y-8 text-gray-600 leading-relaxed text-lg md:text-xl font-light">
             <p>
-              By visiting this Website you agree to be bound by the terms and
-              conditions of this Privacy Policy. If you do not agree please do not
+              By visiting this Website, you agree to be bound by the terms and
+              conditions of this <span className="text-gray-900 font-medium">Privacy Policy</span>. If you do not agree, please do not
               use or access our Website.
             </p>
+
+            <div className="w-full h-px bg-gray-100" />
 
             <p>
               By mere use of the Website, you expressly consent to our use and
@@ -50,13 +54,8 @@ export default function PrivacyPolicy() {
 
             <p>
               When you use our Website, we collect and store your personal
-              information which is provided by you from time to time. Our primary
-              goal in doing so is to provide you a safe, efficient, smooth and
-              customized experience. This allows us to provide services and
-              features that most likely meet your needs, and to customize our
-              Website to make your experience safer and easier. More importantly,
-              while doing so we collect personal information from you that we
-              consider necessary for achieving this purpose.
+              information provided by you to insure a safe, efficient, and customized experience.
+              This allows us to provide services and features that most likely meet your needs.
             </p>
           </div>
         </div>
