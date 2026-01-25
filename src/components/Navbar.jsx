@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 py-3 shadow-lg" : "bg-transparent py-5"
+      className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${isOpen ? "bg-transparent" : scrolled ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 py-3 shadow-lg" : "bg-transparent py-5"
         }`}
     >
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-8">
@@ -101,7 +101,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 md:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 md:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
       >
         <button
