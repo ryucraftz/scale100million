@@ -19,7 +19,7 @@ export default function WhyBuilt() {
     ];
 
     return (
-        <section className="py-24 px-6 md:px-12 bg-white text-text-primary relative border-t border-gray-200">
+        <section id="why-built" className="py-24 px-6 md:px-12 bg-white text-text-primary relative border-t border-gray-200">
             <div className="max-w-4xl mx-auto space-y-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

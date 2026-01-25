@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function OurGoal() {
     return (
-        <section className="py-32 px-6 md:px-12 bg-gray-50 text-text-primary flex items-center justify-center relative overflow-hidden">
+        <section id="our-goal" className="py-32 px-6 md:px-12 bg-gray-50 text-text-primary flex items-center justify-center relative overflow-hidden">
 
             {/* Background radial gradient */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-white to-white opacity-50" />

@@ -6,6 +6,7 @@ import RevealOnScroll from "./components/RevealOnScroll";
 import ScrollToTop from "./components/ScrollToTop";
 import StickyCTA from "./components/StickyCTA";
 import BackToTop from "./components/BackToTop";
+import ScrollIndicator from "./components/ScrollIndicator";
 
 // Lazy Load Components
 const Features = lazy(() => import("./components/Features"));
@@ -89,6 +90,7 @@ function AppContent() {
 
         {!isThankYouPage && <Footer />}
         {!isThankYouPage && <StickyCTA />}
+        {!isThankYouPage && <ScrollIndicator />}
         <BackToTop />
       </>
     </Suspense>
