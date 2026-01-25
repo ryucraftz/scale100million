@@ -7,6 +7,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuClosing, setIsMenuClosing] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,6 +29,32 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Footer Detection
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Toggle logo color when footer intersects significantly (near header)
+        // We use a rootMargin to detect when footer hits the top area
+        setIsFooterVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "-80px 0px 0px 0px", // Detect when overlapping top area
+        threshold: 0.1
+      }
+    );
+
+    const footer = document.getElementById("site-footer");
+    if (footer) {
+      observer.observe(footer);
+    }
+
+    return () => {
+      if (footer) observer.unobserve(footer);
+    };
+  }, [location.pathname]); // Re-run if path changes (footer might assume new pos)
+
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
@@ -73,13 +100,18 @@ export default function Navbar() {
     }
   };
 
+  // Logo Logic:
+  // Default: Original (Black+Blue)
+  // Footer Visible + Not Open Menu: White (Invert)
+  const isWhiteLogo = isFooterVisible && !isOpen;
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-[60] ${isOpen ? "transition-none delay-0 duration-0" : "transition-[background-color,padding,box-shadow,backdrop-filter] duration-300"
         } ${scrolled ? "py-3" : "py-5"} ${isOpen || isMenuClosing
           ? "bg-white"
           : scrolled
-            ? "bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm"
+            ? isFooterVisible ? "bg-black/90 backdrop-blur-md border-b border-white/10" : "bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm"
             : "bg-transparent"
         }`}
     >
@@ -89,47 +121,27 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Scale100Million"
-            className="h-14 md:h-16 w-auto object-contain transition-all duration-300"
+            className={`h-14 md:h-16 w-auto object-contain transition-all duration-300 ${isWhiteLogo ? "filter brightness-0 invert" : ""}`}
           />
         </Link>
 
         {/* Desktop Menu - Right Aligned (Hidden on Mobile) */}
         <div className="hidden md:flex items-center gap-8 ml-auto">
-          <button
-            className="text-text-primary hover:text-primary font-medium transition-colors"
-            onClick={() => navigateAndScroll("mentorship")}
-          >
-            Mentorship
-          </button>
-          <button
-            className="text-text-primary hover:text-primary font-medium transition-colors"
-            onClick={() => navigateAndScroll("partner")}
-          >
-            Partner With Us
-          </button>
-          <button
-            className="text-text-primary hover:text-primary font-medium transition-colors"
-            onClick={() => navigateAndScroll("media")}
-          >
-            Media
-          </button>
-          <button
-            className="text-text-primary hover:text-primary font-medium transition-colors"
-            onClick={() => navigateAndScroll("join-team")}
-          >
-            Join Our Team
-          </button>
-          <button
-            className="text-text-primary hover:text-primary font-medium transition-colors"
-            onClick={() => navigateAndScroll("contact")}
-          >
-            Contact Us
-          </button>
+          {/* Update text colors based on background */}
+          {["mentorship", "partner", "media", "join-team", "contact"].map((item) => (
+            <button
+              key={item}
+              className={`${isWhiteLogo ? "text-white/80 hover:text-white" : "text-text-primary hover:text-primary"} font-medium transition-colors`}
+              onClick={() => navigateAndScroll(item === "join-team" ? "join-team" : item)}
+            >
+              {item === "join-team" ? "Join Our Team" : item === "partner" ? "Partner With Us" : item.charAt(0).toUpperCase() + item.slice(1).replace("-", " ")}
+            </button>
+          ))}
         </div>
 
         {/* Mobile Menu Button - Right Aligned (Visible ONLY on Mobile) */}
         <button
-          className="md:hidden text-black z-50 p-2 ml-auto"
+          className={`md:hidden ${isWhiteLogo && !isOpen ? "text-white" : "text-black"} z-50 p-2 ml-auto`}
           onClick={toggleMenu}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
