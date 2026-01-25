@@ -3,7 +3,14 @@ import { motion } from "framer-motion";
 
 export default function SectionLabel({ number, inverted = false }) {
     return (
-        <div className="absolute left-0 top-0 h-full w-0 pointer-events-none z-40">
+        // We use an absolute container that spans the full height of the PARENT section
+        // The parent section MUST have 'relative' class.
+        // The sticky element inside will stick within this absolute container.
+        <div className="absolute left-0 top-0 h-full w-full pointer-events-none z-40 overflow-hidden">
+            {/* We add 'overflow-hidden' to the container to ensure no accidental spilling, though 'absolute' usually contains it. 
+          Currently set w-full to ensure it covers width if needed, but pointer-events-none prevents blocking. 
+      */}
+
             <div className="sticky top-24 md:top-32 left-2 md:left-6 w-max pointer-events-auto scale-75 md:scale-100 origin-top-left">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -16,7 +23,6 @@ export default function SectionLabel({ number, inverted = false }) {
                     <div
                         className={`shadow-lg ${inverted ? "bg-white" : "bg-black"}`}
                         style={{
-                            // Polygon matching the 'trapezoid/knife' look
                             clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
                             width: "40px",
                             height: "8px",

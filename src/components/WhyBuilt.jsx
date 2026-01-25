@@ -21,7 +21,7 @@ export default function WhyBuilt() {
 
     return (
         <section id="why-built" className="py-24 px-6 md:px-12 bg-white text-text-primary relative border-t border-gray-200">
-            <SectionLabel number="03" />
+            <SectionLabel number="01" />
             <div className="max-w-4xl mx-auto space-y-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

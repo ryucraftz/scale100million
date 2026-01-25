@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Youtube, Linkedin, Instagram, Send, Play } from "lucide-react";
+import SectionLabel from "./SectionLabel";
 
 export default function Media() {
     const socialLinks = [
@@ -32,6 +33,7 @@ export default function Media() {
 
     return (
         <section id="media" className="py-24 px-6 md:px-12 bg-white text-text-primary relative border-t border-gray-200">
+            <SectionLabel number="02" />
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
 
