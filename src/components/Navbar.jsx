@@ -1,7 +1,8 @@
 import { useState, useEffect, useLayoutEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logo from "../assets/logo100m.png";
+import logoOriginal from "../assets/logooriginal.png";
+import logoWhite from "../assets/logowhite.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -119,9 +120,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center z-50" onClick={scrollToTopIfHome}>
           <img
-            src={logo}
+            src={isWhiteLogo ? logoWhite : logoOriginal}
             alt="Scale100Million"
-            className={`h-14 md:h-16 w-auto object-contain transition-all duration-300 ${isWhiteLogo ? "filter brightness-0 invert" : ""}`}
+            className="h-14 md:h-16 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
