@@ -5,9 +5,20 @@ import logo from "../assets/logo100m.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const toggleMenu = () => {
+    if (isOpen) {
+      setIsMenuClosing(true);
+      setIsOpen(false);
+      setTimeout(() => setIsMenuClosing(false), 300); // Match duration-300
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   useLayoutEffect(() => {
     const handleScroll = () => {
@@ -35,7 +46,11 @@ export default function Navbar() {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false);
+    if (isOpen) {
+      setIsMenuClosing(true);
+      setIsOpen(false);
+      setTimeout(() => setIsMenuClosing(false), 300);
+    }
   };
 
   const navigateAndScroll = (id) => {
@@ -48,7 +63,11 @@ export default function Navbar() {
   };
 
   const scrollToTopIfHome = () => {
-    setIsOpen(false);
+    if (isOpen) {
+      setIsMenuClosing(true);
+      setIsOpen(false);
+      setTimeout(() => setIsMenuClosing(false), 300);
+    }
     if (location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -57,8 +76,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-[60] ${isOpen ? "transition-none delay-0 duration-0" : "transition-[background-color,padding,box-shadow,backdrop-filter] duration-300"
-        } ${scrolled ? "py-3" : "py-5"
-        } ${isOpen
+        } ${scrolled ? "py-3" : "py-5"} ${isOpen || isMenuClosing
           ? "bg-white"
           : scrolled
             ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 shadow-lg"
@@ -112,7 +130,7 @@ export default function Navbar() {
         {/* Mobile Menu Button - Right Aligned (Visible ONLY on Mobile) */}
         <button
           className="md:hidden text-black z-50 p-2 ml-auto"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleMenu}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -150,7 +168,11 @@ export default function Navbar() {
         <Link
           to="/contact"
           className="px-8 py-3 bg-primary text-white rounded-full text-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-          onClick={() => setIsOpen(false)}
+          onClick={() => {
+            setIsMenuClosing(true);
+            setIsOpen(false);
+            setTimeout(() => setIsMenuClosing(false), 300);
+          }}
         >
           Contact Us
         </Link>
