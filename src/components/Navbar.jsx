@@ -56,7 +56,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[60] transition-[background-color,padding,box-shadow,backdrop-filter] duration-300 ${scrolled ? "py-3" : "py-5"
+      className={`fixed top-0 left-0 w-full z-[60] ${isOpen ? "transition-none delay-0 duration-0" : "transition-[background-color,padding,box-shadow,backdrop-filter] duration-300"
+        } ${scrolled ? "py-3" : "py-5"
         } ${isOpen
           ? "bg-white"
           : scrolled
