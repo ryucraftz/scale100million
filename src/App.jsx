@@ -24,6 +24,8 @@ import JoinOurTeam from "./components/JoinOurTeam";
 import DesignYourGrowthEngine from "./components/DesignYourGrowthEngine";
 import ThankYou from "./components/ThankYou";
 import StickyCTA from "./components/StickyCTA";
+import NotFound from "./components/NotFound";
+import BackToTop from "./components/BackToTop";
 
 function AppContent() {
   const location = useLocation();
@@ -69,10 +71,14 @@ function AppContent() {
 
         {/* Thank You Page */}
         <Route path="/thank-you" element={<ThankYou />} />
+
+        {/* 404 Page (Must be last) */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       {!isThankYouPage && <Footer />}
       {!isThankYouPage && <StickyCTA />}
+      <BackToTop />
     </>
   );
 }
