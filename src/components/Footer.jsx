@@ -2,7 +2,7 @@ import React from "react";
 import { Instagram, Youtube, Send, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import logo from "../assets/logo100m.png";
+import logoWhite from "../assets/logowhite.png";
 
 export default function Footer() {
   const socialLinks = [
@@ -24,9 +24,9 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6 text-center md:text-left">
             <Link to="/" className="inline-block">
               <img
-                src={logo}
+                src={logoWhite}
                 alt="Scale100Million"
-                className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+                className="h-12 md:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
