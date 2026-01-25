@@ -13,6 +13,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+    handleScroll(); // Check immediately on mount
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -43,7 +44,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${isOpen ? "bg-transparent" : scrolled ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 py-3 shadow-lg" : "bg-transparent py-5"
+      className={`fixed top-0 left-0 w-full z-[60] transition-[background-color,padding,box-shadow,backdrop-filter] duration-300 ${isOpen ? "bg-white" : scrolled ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 py-3 shadow-lg" : "bg-transparent py-5"
         }`}
     >
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-8">
