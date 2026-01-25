@@ -44,7 +44,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[60] transition-[background-color,padding,box-shadow,backdrop-filter] duration-300 ${isOpen ? "bg-white" : scrolled ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 py-3 shadow-lg" : "bg-transparent py-5"
+      className={`fixed top-0 left-0 w-full z-[60] transition-[background-color,padding,box-shadow,backdrop-filter] duration-300 ${scrolled ? "py-3" : "py-5"
+        } ${isOpen
+          ? "bg-white"
+          : scrolled
+            ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 shadow-lg"
+            : "bg-transparent"
         }`}
     >
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-8">
