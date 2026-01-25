@@ -89,7 +89,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Scale100Million"
-            className={`h-14 md:h-16 w-auto object-contain transition-all duration-300 ${scrolled && !isOpen ? "" : "filter brightness-0 invert"}`}
+            className={`h-14 md:h-16 w-auto object-contain transition-all duration-300 ${scrolled || isOpen ? "" : "filter brightness-0 invert"}`}
           />
         </Link>
 
