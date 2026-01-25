@@ -79,7 +79,7 @@ export default function Navbar() {
         } ${scrolled ? "py-3" : "py-5"} ${isOpen || isMenuClosing
           ? "bg-white"
           : scrolled
-            ? "bg-white/10 backdrop-blur-2xl border-b border-white/20 shadow-lg"
+            ? "bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm"
             : "bg-transparent"
         }`}
     >
