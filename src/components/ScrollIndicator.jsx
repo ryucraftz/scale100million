@@ -19,8 +19,6 @@ export default function ScrollIndicator() {
 
         const observer = new IntersectionObserver(
             (entries) => {
-                // Check if any tracked section is currently engaging
-                // We use find because typically only one is 'intersecting' enough at a time with logic
                 const intersectingEntry = entries.find(entry => entry.isIntersecting);
 
                 if (intersectingEntry) {
@@ -32,23 +30,9 @@ export default function ScrollIndicator() {
                         setIsVisible(true);
                     }
                 } else {
-                    // If NONE of our tracked sections are intersecting, we might be elsewhere (like Contact or Footer)
-                    // We check if ANY tracked element is roughly on screen. 
-                    // IntersectionObserver entries are only for *changed* intersections. 
-                    // So we need a robust check.
-                    // If 'intersectingEntry' is undefined, it means all *updates* in this batch are 'not intersecting'.
-                    // However, one might STAY intersecting from before. 
-                    // But usually IO fires for all changes. 
-
-                    // A safer fallback to handle "scrolling away":
-                    // If we receive an entry saying "isIntersecting: false", we check if any others are active.
-                    // If activeSection is currently one of them, and it became non-intersecting, and no new one became intersecting...
-
-                    // Let's rely on checking purely if any of the target elements are currently visible
                     const isAnyVisible = sectionElements.some(el => {
                         if (!el) return false;
                         const rect = el.getBoundingClientRect();
-                        // Check if it overlaps with the "middle" of the viewport roughly
                         const triggerZone = window.innerHeight * 0.5;
                         return rect.top < triggerZone && rect.bottom > triggerZone;
                     });
@@ -59,7 +43,7 @@ export default function ScrollIndicator() {
                 }
             },
             {
-                threshold: 0.2, // Trigger when 20% of section is visible
+                threshold: 0.2,
                 rootMargin: "-20% 0px -20% 0px",
             }
         );
@@ -69,7 +53,7 @@ export default function ScrollIndicator() {
         });
 
         return () => observer.disconnect();
-    }, [sections]); // Added sections dependency though constant
+    }, [sections]);
 
     return (
         <motion.div
@@ -80,22 +64,24 @@ export default function ScrollIndicator() {
                 pointerEvents: isVisible ? "auto" : "none"
             }}
             transition={{ duration: 0.5 }}
-            // Removed 'hidden' and added mobile scaling
-            className="fixed left-0 top-1/2 -translate-y-1/2 z-[55] flex items-center gap-4 pl-0 scale-75 md:scale-100 origin-left"
+            // Fixed position, scaled for mobile
+            className="fixed left-6 top-1/2 -translate-y-1/2 z-[55] flex items-center gap-0 scale-75 md:scale-100 origin-left"
         >
-            {/* Geometric Shape Container */}
+            {/* Geometric Shape Container - The "Button" */}
             <div className="relative flex items-center">
-                {/* The Black Geometric Block */}
+                {/* The Black Geometric Block with specific corner cut */}
                 <motion.div
-                    className="h-12 bg-black flex items-center pl-6 pr-8 shadow-2xl relative"
+                    className="bg-black flex items-center justify-center shadow-2xl relative"
                     style={{
-                        clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)", // Angled cut on right side
-                        width: "140px" // Fixed width
+                        // Exact clip-path from reference
+                        clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)",
+                        width: "70px",
+                        height: "70px",
+                        aspectRatio: "1/1"
                     }}
                 >
-                    <span className="text-white/50 text-xs font-bold tracking-[0.2em] uppercase">
-                        Project
-                    </span>
+                    {/* Optional: Icon or Text inside if needed, but reference shows mostly solid or minimal */}
+                    <div className="w-2 h-2 bg-white rounded-full opacity-0" />
                 </motion.div>
 
                 {/* The Connecting Line */}
@@ -104,7 +90,8 @@ export default function ScrollIndicator() {
                     initial={{ width: 0 }}
                     animate={{ width: isVisible ? "60px" : 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    style={{ marginLeft: "-15px", zIndex: -1 }} // Tuck slightly behind
+                    // Negative margin to connect to the shape
+                    style={{ marginLeft: "0px" }}
                 />
 
                 {/* The Number */}
