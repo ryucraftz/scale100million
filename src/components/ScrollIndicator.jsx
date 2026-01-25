@@ -5,11 +5,13 @@ export default function ScrollIndicator() {
     const [activeSection, setActiveSection] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
 
-    // Only track these 3 specific sections as requested
+    // Track from 'Partner' (below Hero) to 'Media'
     const sections = [
-        { id: "mentorship", number: "01" },
-        { id: "partner", number: "02" },
-        { id: "what-we-do", number: "03" },
+        { id: "partner", number: "01" },
+        { id: "what-we-do", number: "02" },
+        { id: "why-built", number: "03" },
+        { id: "our-goal", number: "04" },
+        { id: "media", number: "05" },
     ];
 
     useEffect(() => {
@@ -30,11 +32,14 @@ export default function ScrollIndicator() {
                         setIsVisible(true);
                     }
                 } else {
+                    // Logic to hide if out of range (e.g. Hero or Footer)
+                    // We check if we are in the "active zone" roughly
                     const isAnyVisible = sectionElements.some(el => {
                         if (!el) return false;
                         const rect = el.getBoundingClientRect();
                         const triggerZone = window.innerHeight * 0.5;
-                        return rect.top < triggerZone && rect.bottom > triggerZone;
+                        // Allow some buffer
+                        return rect.top < window.innerHeight && rect.bottom > 0;
                     });
 
                     if (!isAnyVisible) {
@@ -43,8 +48,8 @@ export default function ScrollIndicator() {
                 }
             },
             {
-                threshold: 0.2,
-                rootMargin: "-20% 0px -20% 0px",
+                threshold: 0.1, // Increased sensitivity
+                rootMargin: "-10% 0px -10% 0px",
             }
         );
 
@@ -57,53 +62,49 @@ export default function ScrollIndicator() {
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{
                 opacity: isVisible ? 1 : 0,
-                x: isVisible ? 0 : -50,
+                x: isVisible ? 0 : -20,
                 pointerEvents: isVisible ? "auto" : "none"
             }}
-            transition={{ duration: 0.5 }}
-            // Fixed position, scaled for mobile
-            className="fixed left-6 top-1/2 -translate-y-1/2 z-[55] flex items-center gap-0 scale-75 md:scale-100 origin-left"
+            transition={{ duration: 0.4 }}
+            // Fixed position, scaled small
+            className="fixed left-6 top-32 z-[55] flex items-center gap-3 origin-left"
         >
-            {/* Geometric Shape Container - The "Button" */}
-            <div className="relative flex items-center">
-                {/* The Black Geometric Block with specific corner cut */}
-                <motion.div
-                    className="bg-black flex items-center justify-center shadow-2xl relative"
-                    style={{
-                        // Exact clip-path from reference
-                        clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)",
-                        width: "70px",
-                        height: "70px",
-                        aspectRatio: "1/1"
-                    }}
-                >
-                    {/* Optional: Icon or Text inside if needed, but reference shows mostly solid or minimal */}
-                    <div className="w-2 h-2 bg-white rounded-full opacity-0" />
-                </motion.div>
+            {/* Container for Shape + Line + Number */}
+            <div className="flex items-center">
 
-                {/* The Connecting Line */}
+                {/* The Geometric Shape - Small & Sleek */}
                 <motion.div
-                    className="h-[2px] bg-black origin-left"
-                    initial={{ width: 0 }}
-                    animate={{ width: isVisible ? "60px" : 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    // Negative margin to connect to the shape
-                    style={{ marginLeft: "0px" }}
+                    className="bg-black shadow-lg"
+                    style={{
+                        // Polygon matching the 'trapezoid/knife' look: flat top, angled right side, flat bottom
+                        clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
+                        width: "40px",
+                        height: "8px", // Very sleek/thin height
+                    }}
                 />
 
-                {/* The Number */}
-                <div className="ml-4 flex flex-col items-start overflow-hidden h-12 justify-center">
+                {/* The Connecting Line - Thin */}
+                <motion.div
+                    className="h-[1px] bg-black origin-left"
+                    initial={{ width: 0 }}
+                    animate={{ width: isVisible ? "40px" : 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    style={{ marginLeft: "-5px" }} // Connect
+                />
+
+                {/* The Number - Small */}
+                <div className="ml-3 flex flex-col items-start overflow-hidden h-6 justify-center">
                     <AnimatePresence mode="wait">
                         <motion.span
                             key={activeSection}
-                            initial={{ y: 20, opacity: 0 }}
+                            initial={{ y: 10, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -20, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: "easeOut" }}
-                            className="text-4xl font-black text-black tracking-tighter"
+                            exit={{ y: -10, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="text-lg font-bold text-black tracking-widest font-mono"
                         >
                             {sections[activeSection].number}
                         </motion.span>
