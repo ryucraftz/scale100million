@@ -10,7 +10,7 @@ const FounderClubMentorship = () => {
     ];
 
     return (
-        <section className="relative w-full py-24 bg-background overflow-hidden">
+        <section id="mentorship" className="relative w-full py-24 bg-background overflow-hidden">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
@@ -61,18 +61,20 @@ const FounderClubMentorship = () => {
                             className="pt-4"
                         >
                             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                                <a
+                                <motion.a
                                     href="https://nas.io/scale100million"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative px-8 py-4 bg-primary text-white font-bold rounded-full overflow-hidden shadow-lg hover:shadow-primary/25 transition-all hover:scale-105"
+                                    whileHover={{ scale: 1.05, backgroundColor: "#2563EB" }} // Blue-600
+                                    whileTap={{ scale: 0.95 }}
+                                    className="group relative px-8 py-4 bg-primary text-white font-bold rounded-full overflow-hidden shadow-lg hover:shadow-primary/50 transition-all duration-300"
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
                                     <span className="relative flex items-center gap-2">
                                         Join Founder Club
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </span>
-                                </a>
+                                </motion.a>
                                 <span className="text-text-secondary font-medium tracking-wide">
                                     BUILT WITH YOU.
                                 </span>
