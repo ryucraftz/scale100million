@@ -1,10 +1,51 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown, Instagram, Twitter, Youtube } from "lucide-react";
 import bgImage from "../assets/background.png";
-import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+
+  // Typing State
+  const [displayText, setDisplayText] = React.useState("");
+  const [phase, setPhase] = React.useState("typing1"); // typing1, pause1, deleting, typing2, done
+
+  const text1 = "online businesses";
+  const text2 = "BUILD AND SCALE";
+
+  React.useEffect(() => {
+    let timeout;
+
+    if (phase === "typing1") {
+      if (displayText.length < text1.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(text1.slice(0, displayText.length + 1));
+        }, 100);
+      } else {
+        timeout = setTimeout(() => setPhase("pause1"), 1500); // Wait before deleting
+      }
+    } else if (phase === "pause1") {
+      timeout = setTimeout(() => setPhase("deleting"), 500);
+    } else if (phase === "deleting") {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(text1.slice(0, displayText.length - 1));
+        }, 50); // Faster delete
+      } else {
+        setPhase("typing2");
+      }
+    } else if (phase === "typing2") {
+      if (displayText.length < text2.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(text2.slice(0, displayText.length + 1));
+        }, 100);
+      } else {
+        setPhase("done");
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, phase]);
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -16,7 +57,7 @@ export default function Home() {
   return (
     <div
       id="mentorship"
-      className="relative w-full min-h-[850px] overflow-hidden bg-white"
+      className="relative w-full h-screen overflow-hidden bg-white font-['Satoshi',sans-serif]"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}
@@ -41,7 +82,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-center pt-32 md:pt-40 pb-12">
+      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-center items-center pt-12">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -55,92 +96,115 @@ export default function Home() {
               }
             }
           }}
-          className="max-w-2xl space-y-8 md:space-y-12"
+          className="max-w-5xl space-y-8 md:space-y-12 text-center"
         >
-          {/* Badge/Tag */}
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100/80 backdrop-blur-md w-fit border border-gray-200/50 shadow-sm hover:shadow-md transition-all hover:scale-105 cursor-default relative z-20"
-          >
-            <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] md:text-sm font-bold text-gray-500 tracking-wider uppercase">
-              Founder Club Mentorship
-            </span>
-          </motion.div>
-
           {/* Main Headline */}
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-text-primary leading-[1.1] md:leading-tight lg:leading-[0.9] tracking-tight"
+            className="text-4xl sm:text-6xl md:text-7xl font-bold text-text-primary leading-snug md:leading-normal tracking-tight font-['Inter',sans-serif]"
           >
-            SCALE <br className="hidden md:block" />
-            <span className="md:hidden">TO </span>
-            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 animate-shine bg-[length:200%_auto]">
-              8 FIGURES
-              {/* Underline decoration */}
-              <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
-              </svg>
+            We Help{" "}
+            <span className="text-text-primary inline-block min-h-[1.1em]">
+              {/* Logic: If phase is typing1/pause1/deleting -> Show text (which is 'online businesses' part)
+                          If phase is typing2 -> Show text (which is 'BUILD AND SCALE' part)
+                  Wait. The user said:
+                  "We Help" static.
+                  Then "online businesses" types.
+                  Then cancels.
+                  Then "BUILD AND SCALE" types.
+                  
+                  Current logic:
+                  "We Help " is static in h1.
+                  The span contains {displayText}.
+                  Phase 1: displayText becomes "online businesses".
+                  Phase 2: displayText becomes "".
+                  Phase 3: displayText becomes "BUILD AND SCALE".
+                  
+                  Color: "online businesses" and "We Help" are usually same color (Dark). 
+                  "BUILD AND SCALE" might be Blue (Primary)?
+                  User didn't specify color change, but previous design had Blue typing.
+                  "online businesses" in the middle of a sentence is usually black.
+                  "BUILD AND SCALE" is the emphasized part.
+                  
+                  I'll make "online businesses" Text Color.
+                  And "BUILD AND SCALE" Primary Color?
+                  User said: "after it cancels build and scale should be typed".
+                  
+                  Let's check phase.
+               */}
+              <span className={`${phase === 'typing2' || phase === 'done' ? 'text-primary' : 'text-text-primary'}`}>
+                {displayText}
+              </span>
+              <span className="animate-pulse ml-1 text-black font-thin">|</span>
             </span>
           </motion.h1>
 
-          {/* Subheading & List */}
-          <div className="space-y-6">
+          {/* Subheading */}
+          <div className="space-y-6 flex flex-col items-center">
             <motion.p
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-lg md:text-xl text-text-secondary max-w-lg leading-relaxed font-normal"
+              className="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed font-light text-center"
             >
-              Founder Club helps you build the systems required to scale your business to 8 figures.
+              The engine behind growing businesses.
             </motion.p>
 
-            <ul className="text-text-secondary space-y-3">
-              {[
-                "Less guesswork",
-                "Faster execution",
-                "Scalable operations"
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-                  className="flex items-center gap-3"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
-                  <span className="text-base md:text-lg group-hover:text-primary transition-colors">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-
-            <motion.p
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="text-text-primary font-bold italic text-lg pt-2"
+            {/* CTAs */}
+            <motion.div
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4"
             >
-              Built with you.
-            </motion.p>
+              <a
+                href="https://nas.io/scale100million"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto text-center group px-8 py-4 bg-primary hover:bg-blue-600 text-white text-base md:text-lg font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 flex justify-center items-center gap-2 overflow-hidden relative"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Join Founder Club
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
+              </a>
+            </motion.div>
           </div>
+        </motion.div>
+      </div>
 
-          {/* CTAs */}
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-4"
-          >
-            <a
-              href="https://nas.io/scale100million"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto text-center group px-8 py-4 bg-primary hover:bg-blue-600 text-white text-base md:text-lg font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 flex justify-center items-center gap-2 overflow-hidden relative"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Join Founder Club
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
-            </a>
-          </motion.div>
+      {/* Bottom Area: Scroll Indicator & Socials */}
+      <div className="absolute bottom-8 left-0 w-full z-20 flex justify-center pointer-events-none">
+        {/* Center Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="relative flex flex-col items-center gap-2 cursor-pointer pointer-events-auto"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <span className="text-base font-medium text-text-primary tracking-wide">Uncover What's Next</span>
+          <ChevronDown className="w-5 h-5 text-gray-400 animate-bounce" />
+        </motion.div>
+
+        {/* Right Social Icons */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute right-8 md:right-12 top-0 hidden md:flex items-center gap-6 text-text-secondary pointer-events-auto"
+        >
+          <a href="#" className="hover:text-primary transition-colors transform hover:scale-110 duration-200">
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a href="#" className="hover:text-primary transition-colors transform hover:scale-110 duration-200">
+            <Twitter className="w-5 h-5" />
+          </a>
+          <a href="#" className="hover:text-primary transition-colors transform hover:scale-110 duration-200">
+            <Youtube className="w-6 h-6" />
+          </a>
         </motion.div>
       </div>
 
       {/* Subtle Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none opacity-50" />
     </div>
   );
 }
