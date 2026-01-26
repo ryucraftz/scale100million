@@ -7,8 +7,8 @@ export default function Home() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
 
   // Typing State
-  const [displayText, setDisplayText] = React.useState("");
-  const [phase, setPhase] = React.useState("typing1"); // typing1, pause1, deleting1, typing2, pause2, deleting2
+  const [displayText, setDisplayText] = React.useState("online businesses");
+  const [phase, setPhase] = React.useState("pause1"); // typing1, pause1, deleting1, typing2, pause2, deleting2
 
   const text1 = "online businesses";
   const text2 = "BUILD AND SCALE";
@@ -111,7 +111,7 @@ export default function Home() {
           {/* Main Headline */}
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-4xl sm:text-6xl md:text-7xl font-bold text-text-primary leading-snug md:leading-normal tracking-tight font-['Inter',sans-serif]"
+            className="text-4xl sm:text-6xl md:text-7xl font-bold text-text-primary leading-snug md:leading-normal tracking-tight font-['Inter',sans-serif] min-h-[3.5em] md:min-h-[2.5em]"
           >
             We Help{" "}
             <span className="text-text-primary inline-block min-h-[1.1em]">
