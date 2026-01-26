@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Instagram, Send, Youtube } from "lucide-react";
-import bgImage from "../assets/background.png";
+import bgImage from "../assets/background.jpg";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <div
       id="mentorship"
-      className="relative w-full h-[75vh] md:h-screen overflow-hidden bg-white font-['Satoshi',sans-serif]"
+      className="relative w-full h-[75vh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}
@@ -78,17 +78,20 @@ export default function Home() {
           transform: `scale(1.05) translate(${mousePosition.x * -0.01}px, ${mousePosition.y * -0.01}px)`
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent" />
+
       </div>
+
+      {/* Navbar Gradient - Strong Top Scrim */}
+      <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black via-black/60 to-transparent z-0 pointer-events-none" />
 
       {/* Decorative Gradient Blobs with Parallax */}
       <motion.div
         animate={{ x: mousePosition.x * 0.02, y: mousePosition.y * 0.02 }}
-        className="absolute top-20 right-0 w-72 h-72 bg-blue-400/20 rounded-full blur-[100px] pointer-events-none"
+        className="absolute top-20 right-0 w-72 h-72 bg-blue-400/10 rounded-full blur-[100px] pointer-events-none"
       />
       <motion.div
         animate={{ x: mousePosition.x * -0.02, y: mousePosition.y * -0.02 }}
-        className="absolute bottom-20 left-0 w-96 h-96 bg-red-400/10 rounded-full blur-[120px] pointer-events-none"
+        className="absolute bottom-20 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
       />
 
       {/* Content Container */}
@@ -145,7 +148,7 @@ export default function Home() {
               <span className={`${['typing2', 'pause2', 'deleting2', 'done'].includes(phase) ? 'text-primary' : 'text-text-primary'}`}>
                 {displayText}
               </span>
-              <span className="animate-pulse ml-1 text-black font-thin">|</span>
+              <span className="animate-pulse ml-1 text-text-primary font-thin">|</span>
             </span>
           </motion.h1>
 
@@ -173,7 +176,7 @@ export default function Home() {
                   Join Founder Club
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer" />
               </a>
             </motion.div>
           </div>
@@ -213,8 +216,8 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* Subtle Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white via-white/60 to-transparent backdrop-blur-[2px] pointer-events-none" />
+      {/* Subtle Bottom Gradient - Stronger on Mobile to hide cut */}
+      <div className="absolute bottom-0 left-0 w-full h-64 md:h-40 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
     </div>
   );
 }

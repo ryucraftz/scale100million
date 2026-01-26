@@ -108,11 +108,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[60] ${isOpen ? "transition-none delay-0 duration-0" : "transition-[background-color,padding,box-shadow,backdrop-filter] duration-300"
+      className={`absolute top-0 left-0 w-full z-[60] ${isOpen ? "transition-none delay-0 duration-0" : "transition-[background-color,padding,box-shadow,backdrop-filter] duration-300"
         } ${scrolled ? "py-3" : "py-5"} ${isOpen || isMenuClosing
-          ? "bg-white"
+          ? "bg-black"
           : scrolled
-            ? isFooterVisible ? "bg-black/90 backdrop-blur-md border-b border-white/10" : "bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm"
+            ? isFooterVisible ? "bg-black/90 backdrop-blur-md border-b border-white/10" : "bg-black/90 backdrop-blur-md border-b border-white/10 shadow-sm"
             : "bg-transparent"
         }`}
     >
@@ -120,9 +120,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center z-50" onClick={scrollToTopIfHome}>
           <img
-            src={isWhiteLogo ? logoWhite : logoOriginal}
+            src={logoWhite}
             alt="Scale100Million"
-            className="h-14 md:h-16 w-auto object-contain transition-all duration-300"
+            className="h-10 w-auto object-contain cursor-pointer"
+            onClick={() => window.scrollTo(0, 0)}
           />
         </Link>
 
@@ -132,7 +133,7 @@ export default function Navbar() {
           {["mentorship", "partner", "media", "join-team", "contact"].map((item) => (
             <button
               key={item}
-              className={`${isWhiteLogo ? "text-white/80 hover:text-white" : "text-text-primary hover:text-primary"} font-medium transition-colors`}
+              className="text-white/80 hover:text-white font-medium transition-colors"
               onClick={() => navigateAndScroll(item === "join-team" ? "join-team" : item)}
             >
               {item === "join-team" ? "Join Our Team" : item === "partner" ? "Partner With Us" : item.charAt(0).toUpperCase() + item.slice(1).replace("-", " ")}
@@ -142,7 +143,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button - Right Aligned (Visible ONLY on Mobile) */}
         <button
-          className={`lg:hidden ${isWhiteLogo && !isOpen ? "text-white" : "text-black"} z-50 p-2 ml-auto`}
+          className="lg:hidden text-white z-50 p-2 ml-auto"
           onClick={toggleMenu}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -151,29 +152,29 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
       >
         <button
-          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("mentorship")}
         >
           Mentorship
         </button>
         <button
-          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("partner")}
         >
           Partner With Us
         </button>
         <button
-          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("media")}
         >
           Media
         </button>
         <button
-          className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("join-team")}
         >
           Join Our Team

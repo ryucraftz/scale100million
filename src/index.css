@@ -4,6 +4,17 @@
 
 
 @layer base {
+  :root {
+    --background: 0 0 0;
+    --surface: 20 20 20;
+    --surface-hover: 30 30 30;
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
+    --text-primary: 240 240 240;
+    --text-secondary: 160 160 160;
+    --border: 40 40 40;
+  }
+
   body {
     @apply font-sans bg-background text-text-primary antialiased selection:bg-primary/30 selection:text-primary;
   }
@@ -55,6 +66,20 @@ html {
   transform: skewX(-20deg);
   /* keeps it angled */
   animation: slide-line 2s linear infinite;
+}
+
+:root {
+  --background: 0 0 0;
+  --surface: 18 18 18;
+  --surface-hover: 28 28 28;
+
+  --primary: 59 130 246;
+  --primary-foreground: 255 255 255;
+
+  --text-primary: 240 240 240;
+  --text-secondary: 156 156 156;
+
+  --border: 40 40 40;
 }
 
 @keyframes slide-line {

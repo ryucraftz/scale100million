@@ -32,7 +32,7 @@ export default function Media() {
     ];
 
     return (
-        <section id="media" className="py-24 px-6 md:px-12 bg-white text-text-primary relative border-t border-gray-200">
+        <section id="media" className="py-24 px-6 md:px-12 bg-background text-text-primary relative border-t border-gray-800">
             <SectionLabel number="02" />
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -48,7 +48,7 @@ export default function Media() {
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                             Media
                         </h2>
-                        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                             We share our thinking, frameworks, and behind-the-scenes work publicly. <br /><br />
                             If you want to see how we think and work, this is the best place to start.
                         </p>
@@ -78,13 +78,13 @@ export default function Media() {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-2xl hover:bg-gray-100 transition-all duration-300 group hover:-translate-y-1"
+                                className="flex flex-col items-center justify-center p-8 bg-surface border border-gray-800 rounded-2xl hover:bg-gray-800 transition-all duration-300 group hover:-translate-y-1"
                             >
                                 <div className="mb-4 p-3 bg-white rounded-full border border-gray-200 shadow-sm">
                                     {link.icon}
                                 </div>
-                                <span className="text-lg font-bold text-gray-900 mb-1">{link.name}</span>
-                                <span className="text-sm text-gray-600 font-medium">{link.text}</span>
+                                <span className="text-lg font-bold text-white mb-1">{link.name}</span>
+                                <span className="text-sm text-gray-400 font-medium">{link.text}</span>
                             </a>
                         ))}
                     </motion.div>

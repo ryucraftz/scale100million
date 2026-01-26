@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function ContactUs() {
     return (
-        <section id="contact" className="py-20 px-6 bg-white flex justify-center items-center">
+        <section id="contact" className="py-20 px-6 bg-background flex justify-center items-center">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -24,18 +24,18 @@ export default function ContactUs() {
                             <input
                                 type="text"
                                 placeholder="Name"
-                                className="w-full md:w-1/2 bg-white rounded-full px-6 py-4 text-gray-900 placeholder-gray-500 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
+                                className="w-full md:w-1/2 bg-gray-800 border border-gray-700 rounded-full px-6 py-4 text-white placeholder-gray-400 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
                             />
                             <input
                                 type="email"
                                 placeholder="Email"
-                                className="w-full md:w-1/2 bg-white rounded-full px-6 py-4 text-gray-900 placeholder-gray-500 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
+                                className="w-full md:w-1/2 bg-gray-800 border border-gray-700 rounded-full px-6 py-4 text-white placeholder-gray-400 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
                             />
                         </div>
                         <input
                             type="tel"
                             placeholder="Phone"
-                            className="w-full bg-white rounded-full px-6 py-4 text-gray-900 placeholder-gray-500 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
+                            className="w-full bg-gray-800 border border-gray-700 rounded-full px-6 py-4 text-white placeholder-gray-400 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
                         />
 
                         <button

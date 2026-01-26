@@ -23,7 +23,7 @@ export default function ShippingPolicy() {
           </h1>
         </div>
 
-        <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/20 p-8 md:p-14 space-y-10 relative overflow-hidden">
+        <div className="bg-surface/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-800 p-8 md:p-14 space-y-10 relative overflow-hidden">
 
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-green-50/50 to-emerald-50/20 rounded-full blur-[100px] -translate-y-1/4 translate-x-1/4 pointer-events-none" />
 

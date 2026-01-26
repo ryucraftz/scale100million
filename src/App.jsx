@@ -6,6 +6,9 @@ import RevealOnScroll from "./components/RevealOnScroll";
 import ScrollToTop from "./components/ScrollToTop";
 import StickyCTA from "./components/StickyCTA";
 import BackToTop from "./components/BackToTop";
+import SmoothScroll from "./components/SmoothScroll";
+import FilmGrain from "./components/FilmGrain";
+import MouseSpotlight from "./components/MouseSpotlight";
 
 // Lazy Load Components
 const Features = lazy(() => import("./components/Features"));
@@ -43,7 +46,9 @@ function AppContent() {
 
   return (
     <Suspense fallback={<PageLoader />}>
-      <>
+      <SmoothScroll>
+        <FilmGrain />
+        <MouseSpotlight />
         <ScrollToTop />
         {!isThankYouPage && <Navbar />}
         <Routes>
@@ -90,7 +95,7 @@ function AppContent() {
         {!isThankYouPage && <Footer />}
         {!isThankYouPage && <StickyCTA />}
         <BackToTop />
-      </>
+      </SmoothScroll>
     </Suspense>
   );
 }

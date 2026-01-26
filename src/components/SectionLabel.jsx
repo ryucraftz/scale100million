@@ -20,7 +20,7 @@ export default function SectionLabel({ number, inverted = false }) {
                 >
                     {/* The Geometric Shape - Small & Sleek */}
                     <div
-                        className={`shadow-lg ${inverted ? "bg-white" : "bg-black"}`}
+                        className="shadow-lg bg-white text-black"
                         style={{
                             clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
                             width: "40px",
@@ -30,7 +30,7 @@ export default function SectionLabel({ number, inverted = false }) {
 
                     {/* The Connecting Line - HIDDEN on Mobile (< md) to save space */}
                     <motion.div
-                        className={`h-[1px] origin-left hidden md:block ${inverted ? "bg-white" : "bg-black"}`}
+                        className="h-[1px] origin-left hidden md:block bg-white"
                         initial={{ width: 0 }}
                         whileInView={{ width: "40px" }}
                         viewport={{ once: false }}
@@ -40,7 +40,7 @@ export default function SectionLabel({ number, inverted = false }) {
 
                     {/* The Number */}
                     <div className="ml-2 md:ml-3 flex flex-col items-start overflow-hidden h-6 justify-center">
-                        <span className={`text-lg font-bold tracking-widest font-mono ${inverted ? "text-white" : "text-black"}`}>
+                        <span className="text-lg font-bold tracking-widest font-mono text-white">
                             {number}
                         </span>
                     </div>
