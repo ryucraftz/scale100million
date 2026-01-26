@@ -5,33 +5,33 @@ export default function TermsAndConditions() {
     return (
         <section
             id="terms-and-conditions"
-            className="w-full min-h-screen bg-background text-text-primary py-32 px-6 md:px-20 flex justify-center"
+            className="w-full min-h-screen bg-background text-text-primary py-12 md:py-24 px-6 md:px-20 flex justify-center"
         >
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="max-w-4xl w-full"
+                className="max-w-3xl w-full"
             >
                 {/* Header Section */}
-                <div className="text-center mb-16 space-y-4">
-                    <div className="inline-block p-4 rounded-full bg-primary/10 mb-4 text-primary">
-                        <FileText size={48} />
+                <div className="text-center mb-10 space-y-4">
+                    <div className="inline-block p-3 rounded-full bg-primary/10 mb-4 text-primary">
+                        <FileText size={40} />
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">
+                    <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white">
                         Terms & <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Conditions</span>
                     </h1>
-                    <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
                         Please read these terms carefully before using our services.
                     </p>
                 </div>
 
-                <div className="bg-surface/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-800 p-8 md:p-14 space-y-10 relative overflow-hidden">
+                <div className="bg-surface/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-800 p-6 md:p-10 space-y-8 relative overflow-hidden">
 
                     {/* Background accent */}
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-primary/10 to-transparent rounded-full blur-[120px] pointer-events-none -mr-32 -mt-32" />
 
-                    <div className="relative z-10 space-y-8 text-gray-300 leading-relaxed text-lg md:text-xl font-light">
+                    <div className="relative z-10 space-y-6 text-gray-300 leading-relaxed text-base md:text-lg font-light">
                         <p>
                             Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern our relationship with you.
                         </p>
@@ -49,7 +49,7 @@ export default function TermsAndConditions() {
                         </div>
 
                         <div className="space-y-6">
-                            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                            <h2 className="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
                                 <span className="w-8 h-1 bg-primary rounded-full" />
                                 General Terms
                             </h2>

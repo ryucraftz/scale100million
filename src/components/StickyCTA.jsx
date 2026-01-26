@@ -34,13 +34,13 @@ export default function StickyCTA() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 100, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="fixed bottom-6 left-4 right-4 z-50 md:hidden"
+                    className="fixed bottom-6 left-4 right-4 z-[100] md:hidden"
                 >
                     <a
                         href="https://nas.io/scale100million"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full p-1.5 pl-5 bg-black/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl"
+                        className="flex items-center justify-between w-full p-1.5 pl-5 bg-zinc-800 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/50"
                     >
                         <span className="text-white font-bold text-sm">
                             Scale to 8 Figures

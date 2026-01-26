@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 export default function WhatWeDo() {
     return (
-        <section id="what-we-do" className="py-24 px-6 md:px-12 bg-background text-white overflow-hidden relative border-t border-gray-800">
-            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <section id="what-we-do" className="py-16 md:py-24 px-6 md:px-12 bg-background text-white overflow-hidden relative border-t border-gray-800">
+            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
 
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
