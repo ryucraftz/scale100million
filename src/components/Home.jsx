@@ -86,7 +86,8 @@ export default function Home() {
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             className="text-3xl sm:text-5xl md:text-7xl font-bold text-text-primary leading-tight md:leading-normal tracking-tight font-['Inter',sans-serif]"
           >
-            WE HELP ONLINE BUSINESSES <span className="text-primary block mt-1 md:inline md:mt-0">BUILD AND SCALE</span>
+            WE HELP ONLINE <br className="hidden md:block" />
+            BUSINESSES <span className="text-primary block mt-1 md:mt-0">BUILD AND SCALE</span>
           </motion.h1>
 
           {/* Subheading */}

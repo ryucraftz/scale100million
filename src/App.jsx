@@ -22,6 +22,7 @@ const PrivacyPolicy = lazy(() => import("./components/PrivacyPolicy"));
 const DoneForYou = lazy(() => import("./components/DoneForYou"));
 const GrowthSection = lazy(() => import("./components/GrowthSection"));
 const ShippingPolicy = lazy(() => import("./components/ShippingPolicy"));
+const RefundPolicy = lazy(() => import("./components/RefundPolicy"));
 const TermsAndConditions = lazy(() => import("./components/TermsAndConditions"));
 const PartnerWithUs = lazy(() => import("./components/PartnerWithUs"));
 const WhatWeDo = lazy(() => import("./components/WhatWeDo"));
@@ -83,6 +84,9 @@ function AppContent() {
 
           {/* Shipping Policy Page */}
           <Route path="/shipping-policy" element={<ShippingPolicy />} />
+
+          {/* Refund Policy Page */}
+          <Route path="/refund-policy" element={<RefundPolicy />} />
 
           {/* Terms and Conditions Page */}
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
