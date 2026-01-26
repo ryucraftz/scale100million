@@ -45,6 +45,10 @@ export default function PartnerWithUs() {
                 </motion.div>
             </div>
 
+            <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+            </form>
+
             {/* Background Accents */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] opacity-30" />
@@ -53,3 +57,4 @@ export default function PartnerWithUs() {
         </section>
     );
 }
+```
