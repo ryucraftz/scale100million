@@ -20,16 +20,16 @@ export default function ContactUs() {
                     </p>
 
                     <form className="space-y-4 pt-4">
-                        <div className="flex gap-4">
+                        <div className="flex flex-col md:flex-row gap-4">
                             <input
                                 type="text"
                                 placeholder="Name"
-                                className="w-1/2 bg-white rounded-full px-6 py-4 text-gray-900 placeholder-gray-500 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
+                                className="w-full md:w-1/2 bg-white rounded-full px-6 py-4 text-gray-900 placeholder-gray-500 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
                             />
                             <input
                                 type="email"
                                 placeholder="Email"
-                                className="w-1/2 bg-white rounded-full px-6 py-4 text-gray-900 placeholder-gray-500 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
+                                className="w-full md:w-1/2 bg-white rounded-full px-6 py-4 text-gray-900 placeholder-gray-500 font-medium focus:outline-none focus:ring-2 focus:ring-primary"
                             />
                         </div>
                         <input
