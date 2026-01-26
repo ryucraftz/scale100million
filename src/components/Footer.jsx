@@ -1,5 +1,5 @@
 import React from "react";
-import { Instagram, Youtube, Send, ArrowRight, MapPin, Phone } from "lucide-react";
+import { Instagram, Youtube, Send, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logoWhite from "../assets/logowhite.png";
@@ -89,32 +89,7 @@ export default function Footer() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            <div className="hidden md:block pt-4 space-y-4">
-              <div className="flex items-start gap-3 group">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
-                  <MapPin className="w-4 h-4 text-primary" />
-                </div>
-                <p className="text-sm text-gray-400 leading-relaxed max-w-[280px]">
-                  NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041
-                </p>
-              </div>
 
-              <div className="flex flex-col gap-2">
-                <a href="tel:+919325847844" className="flex items-center gap-3 group w-fit">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
-                    <Phone className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">+91 9325847844</span>
-                </a>
-
-                <a href="tel:+918806400205" className="flex items-center gap-3 group w-fit">
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
-                    <Phone className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">+91 8806400205</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 
