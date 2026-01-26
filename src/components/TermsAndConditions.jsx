@@ -40,6 +40,7 @@ export default function TermsAndConditions() {
                             <div className="flex-1">
                                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Service Provider</h3>
                                 <p className="text-white font-semibold text-lg">Abhay Mukund Lagad</p>
+                                <p className="text-gray-400 text-sm mt-1">NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041</p>
                             </div>
                             <div className="hidden md:block w-px bg-gray-700" />
                             <div className="flex-1">

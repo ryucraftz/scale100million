@@ -88,6 +88,11 @@ export default function Footer() {
               support@scale100million.com
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
+            <div className="text-gray-400 text-sm space-y-1">
+              <p>NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041</p>
+              <p>+91 9325847844</p>
+              <p>+91 8806400205</p>
+            </div>
           </div>
         </div>
 

@@ -20,6 +20,11 @@ export default function ContactUs() {
                     <p className="text-lg text-gray-400">
                         Ready to scale your business? Let's start the conversation.
                     </p>
+                    <div className="text-gray-400 space-y-1 pt-4">
+                        <p>NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041</p>
+                        <p>+91 9325847844</p>
+                        <p>+91 8806400205</p>
+                    </div>
                 </motion.div>
 
                 <motion.div
