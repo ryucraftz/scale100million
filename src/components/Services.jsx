@@ -44,7 +44,7 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.2, duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="group relative bg-[#0a0a0a]/80 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+                            className="group relative bg-zinc-900/40 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_-5px_rgba(59,130,246,0.3)]"
                         >
                             <div className="aspect-[16/9] overflow-hidden">
                                 <img

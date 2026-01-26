@@ -45,8 +45,11 @@ export default function StickyCTA() {
                         <span className="text-white font-bold text-sm">
                             Scale to 8 Figures
                         </span>
-                        <span className="flex items-center gap-2 bg-primary text-white text-sm font-bold px-4 py-2.5 rounded-full">
-                            Join Now <ArrowRight size={16} />
+                        <span className="relative flex items-center gap-2 bg-primary text-white text-sm font-bold px-4 py-2.5 rounded-full overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
+                            <span className="relative flex items-center gap-2">
+                                Join Now <ArrowRight size={16} />
+                            </span>
                         </span>
                     </a>
                 </motion.div>

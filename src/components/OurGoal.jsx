@@ -17,8 +17,8 @@ export default function OurGoal() {
             >
                 <span className="block text-primary font-bold tracking-widest uppercase text-sm mb-4">Our Mission</span>
                 <h2 className="text-3xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                    Our goal is simple: <brWrapper />
-                    <span className="text-gray-300">help 100 businesses scale to</span> <span className="text-white underline decoration-primary underline-offset-8 decoration-4">$100 million.</span>
+                    OUR GOAL IS SIMPLE: <brWrapper />
+                    <span className="text-gray-300">HELP 100 BUSINESSES SCALE TO</span> <span className="text-white underline decoration-primary underline-offset-8 decoration-4">$100 MILLION.</span>
                 </h2>
             </motion.div>
         </section>

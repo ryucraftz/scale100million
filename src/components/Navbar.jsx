@@ -133,7 +133,7 @@ export default function Navbar() {
           {["mentorship", "partner", "media", "join-team", "contact"].map((item) => (
             <button
               key={item}
-              className="text-white/80 hover:text-white font-medium transition-colors"
+              className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
               onClick={() => navigateAndScroll(item === "join-team" ? "join-team" : item)}
             >
               {item === "join-team" ? "Join Our Team" : item === "partner" ? "Partner With Us" : item.charAt(0).toUpperCase() + item.slice(1).replace("-", " ")}

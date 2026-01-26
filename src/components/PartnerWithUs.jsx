@@ -19,7 +19,7 @@ export default function PartnerWithUs() {
                     </div>
 
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-                        Have a business idea worth building?
+                        HAVE A BUSINESS IDEA WORTH BUILDING?
                     </h2>
 
                     <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">

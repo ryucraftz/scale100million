@@ -13,10 +13,10 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
-                        Most online businesses don’t fail from lack of effort.
+                        MOST ONLINE BUSINESSES DON’T FAIL FROM LACK OF EFFORT.
                     </h2>
                     <p className="text-xl md:text-2xl text-gray-300 font-medium">
-                        They fail from unstructured growth.
+                        THEY FAIL FROM UNSTRUCTURED GROWTH.
                     </p>
                 </motion.div>
 

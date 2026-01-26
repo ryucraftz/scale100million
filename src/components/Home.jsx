@@ -1,61 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Instagram, Send, Youtube } from "lucide-react";
-import bgImage from "../assets/background.jpg";
+
 
 export default function Home() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
 
-  // Typing State
-  const [displayText, setDisplayText] = React.useState("online businesses");
-  const [phase, setPhase] = React.useState("pause1"); // typing1, pause1, deleting1, typing2, pause2, deleting2
 
-  const text1 = "online businesses";
-  const text2 = "BUILD AND SCALE";
-
-  React.useEffect(() => {
-    let timeout;
-
-    if (phase === "typing1") {
-      if (displayText.length < text1.length) {
-        timeout = setTimeout(() => {
-          setDisplayText(text1.slice(0, displayText.length + 1));
-        }, 100);
-      } else {
-        timeout = setTimeout(() => setPhase("pause1"), 1500); // Wait before deleting
-      }
-    } else if (phase === "pause1") {
-      timeout = setTimeout(() => setPhase("deleting1"), 1000);
-    } else if (phase === "deleting1") {
-      if (displayText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayText(displayText.slice(0, -1));
-        }, 50); // Faster delete
-      } else {
-        setPhase("typing2");
-      }
-    } else if (phase === "typing2") {
-      if (displayText.length < text2.length) {
-        timeout = setTimeout(() => {
-          setDisplayText(text2.slice(0, displayText.length + 1));
-        }, 100);
-      } else {
-        timeout = setTimeout(() => setPhase("pause2"), 3000); // Wait longer on main text
-      }
-    } else if (phase === "pause2") {
-      timeout = setTimeout(() => setPhase("deleting2"), 1000);
-    } else if (phase === "deleting2") {
-      if (displayText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayText(displayText.slice(0, -1));
-        }, 50);
-      } else {
-        setPhase("typing1");
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, phase]);
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -71,14 +22,33 @@ export default function Home() {
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-100 ease-out"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          transform: `scale(1.05) translate(${mousePosition.x * -0.01}px, ${mousePosition.y * -0.01}px)`
-        }}
-      >
+      {/* Background - Professional Grid & Spotlight */}
+      <div className="absolute inset-0 bg-black overflow-hidden">
+        {/* Base Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-black to-black" />
 
+        {/* Subtle Grid Pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: `linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+            maskImage: 'linear-gradient(to bottom, black 40%, transparent 100%)'
+          }}
+        />
+
+        {/* Moving Spotlight (Follows Mouse) */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-screen"
+          animate={{
+            x: mousePosition.x,
+            y: mousePosition.y
+          }}
+          transition={{ type: "tween", ease: "linear", duration: 0.2 }}
+        />
+
+        {/* Top Ambient Light */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent shadow-[0_0_80px_rgba(59,130,246,0.5)]" />
       </div>
 
       {/* Navbar Gradient - Strong Top Scrim */}
@@ -95,7 +65,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-center items-center pt-12">
+      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-center items-center pt-20 md:pt-12">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -109,47 +79,14 @@ export default function Home() {
               }
             }
           }}
-          className="max-w-5xl space-y-8 md:space-y-12 text-center"
+          className="max-w-5xl space-y-6 md:space-y-12 text-center"
         >
           {/* Main Headline */}
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-4xl sm:text-6xl md:text-7xl font-bold text-text-primary leading-snug md:leading-normal tracking-tight font-['Inter',sans-serif] min-h-[3.5em] md:min-h-[2.5em]"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold text-text-primary leading-tight md:leading-normal tracking-tight font-['Inter',sans-serif]"
           >
-            We Help{" "}
-            <span className="text-text-primary inline-block min-h-[1.1em]">
-              {/* Logic: If phase is typing1/pause1/deleting -> Show text (which is 'online businesses' part)
-                          If phase is typing2 -> Show text (which is 'BUILD AND SCALE' part)
-                  Wait. The user said:
-                  "We Help" static.
-                  Then "online businesses" types.
-                  Then cancels.
-                  Then "BUILD AND SCALE" types.
-                  
-                  Current logic:
-                  "We Help " is static in h1.
-                  The span contains {displayText}.
-                  Phase 1: displayText becomes "online businesses".
-                  Phase 2: displayText becomes "".
-                  Phase 3: displayText becomes "BUILD AND SCALE".
-                  
-                  Color: "online businesses" and "We Help" are usually same color (Dark). 
-                  "BUILD AND SCALE" might be Blue (Primary)?
-                  User didn't specify color change, but previous design had Blue typing.
-                  "online businesses" in the middle of a sentence is usually black.
-                  "BUILD AND SCALE" is the emphasized part.
-                  
-                  I'll make "online businesses" Text Color.
-                  And "BUILD AND SCALE" Primary Color?
-                  User said: "after it cancels build and scale should be typed".
-                  
-                  Let's check phase.
-               */}
-              <span className={`${['typing2', 'pause2', 'deleting2', 'done'].includes(phase) ? 'text-primary' : 'text-text-primary'}`}>
-                {displayText}
-              </span>
-              <span className="animate-pulse ml-1 text-text-primary font-thin">|</span>
-            </span>
+            WE HELP ONLINE BUSINESSES <span className="text-primary block mt-1 md:inline md:mt-0">BUILD AND SCALE</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -158,7 +95,7 @@ export default function Home() {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               className="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed font-light text-center"
             >
-              The engine behind growing businesses.
+              THE ENGINE BEHIND GROWING BUSINESSES.
             </motion.p>
 
             {/* CTAs */}
@@ -170,10 +107,10 @@ export default function Home() {
                 href="https://nas.io/scale100million"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center group px-8 py-4 bg-primary hover:bg-blue-600 text-white text-base md:text-lg font-bold rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 flex justify-center items-center gap-2 overflow-hidden relative"
+                className="w-full sm:w-auto text-center group px-8 py-4 bg-primary hover:bg-blue-600 text-white text-sm md:text-base font-black uppercase tracking-wider rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 flex justify-center items-center gap-2 overflow-hidden relative"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Join Founder Club
+                  EXPLORE SERVICES
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer" />
@@ -193,7 +130,7 @@ export default function Home() {
           className="relative flex flex-col items-center gap-2 cursor-pointer pointer-events-auto"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
-          <span className="text-base font-medium text-text-primary tracking-wide">Uncover What's Next</span>
+          <span className="text-xs font-bold text-text-primary uppercase tracking-[0.2em]">Uncover What's Next</span>
           <ChevronDown className="w-5 h-5 text-gray-400 animate-bounce" />
         </motion.div>
 

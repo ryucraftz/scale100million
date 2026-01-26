@@ -30,6 +30,7 @@ const OurGoal = lazy(() => import("./components/OurGoal"));
 const Media = lazy(() => import("./components/Media"));
 const JoinOurTeam = lazy(() => import("./components/JoinOurTeam"));
 const DesignYourGrowthEngine = lazy(() => import("./components/DesignYourGrowthEngine"));
+const FounderClubMentorship = lazy(() => import("./components/FounderClubMentorship"));
 const ThankYou = lazy(() => import("./components/ThankYou"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
@@ -58,6 +59,7 @@ function AppContent() {
             element={
               <>
                 <HomePage />
+                <RevealOnScroll delay={0.1}><FounderClubMentorship /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><PartnerWithUs /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><WhatWeDo /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><WhyBuilt /></RevealOnScroll>
@@ -65,7 +67,7 @@ function AppContent() {
                 <RevealOnScroll delay={0.1}><Media /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><JoinOurTeam /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><DesignYourGrowthEngine /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><ContactUs /></RevealOnScroll>
+
               </>
             }
           />

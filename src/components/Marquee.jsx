@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Marquee = ({ children, direction = "left", speed = 20 }) => {
     return (
-        <div className="w-full overflow-hidden flex relative z-10">
+        <div className="w-full overflow-hidden flex relative z-10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div className="flex gap-4 min-w-full">
                 <motion.div
                     className="flex gap-4 flex-shrink-0"

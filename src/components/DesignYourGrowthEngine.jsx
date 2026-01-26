@@ -16,7 +16,7 @@ export default function DesignYourGrowthEngine() {
                         href="#contact"
                         className="group inline-flex items-center gap-3 text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter hover:text-primary transition-colors duration-300"
                     >
-                        Design Your Growth Engine
+                        DESIGN YOUR GROWTH ENGINE
                         <ArrowRight className="w-8 h-8 md:w-12 md:h-12 group-hover:translate-x-2 transition-transform duration-300" />
                     </a>
                 </motion.div>
