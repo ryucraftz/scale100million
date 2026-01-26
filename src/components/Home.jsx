@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Instagram, Twitter, Youtube } from "lucide-react";
+import { ArrowRight, ChevronDown, Instagram, Send, Youtube } from "lucide-react";
 import bgImage from "../assets/background.png";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
 
   // Typing State
   const [displayText, setDisplayText] = React.useState("");
-  const [phase, setPhase] = React.useState("typing1"); // typing1, pause1, deleting, typing2, done
+  const [phase, setPhase] = React.useState("typing1"); // typing1, pause1, deleting1, typing2, pause2, deleting2
 
   const text1 = "online businesses";
   const text2 = "BUILD AND SCALE";
@@ -25,11 +25,11 @@ export default function Home() {
         timeout = setTimeout(() => setPhase("pause1"), 1500); // Wait before deleting
       }
     } else if (phase === "pause1") {
-      timeout = setTimeout(() => setPhase("deleting"), 500);
-    } else if (phase === "deleting") {
+      timeout = setTimeout(() => setPhase("deleting1"), 1000);
+    } else if (phase === "deleting1") {
       if (displayText.length > 0) {
         timeout = setTimeout(() => {
-          setDisplayText(text1.slice(0, displayText.length - 1));
+          setDisplayText(displayText.slice(0, -1));
         }, 50); // Faster delete
       } else {
         setPhase("typing2");
@@ -40,7 +40,17 @@ export default function Home() {
           setDisplayText(text2.slice(0, displayText.length + 1));
         }, 100);
       } else {
-        setPhase("done");
+        timeout = setTimeout(() => setPhase("pause2"), 3000); // Wait longer on main text
+      }
+    } else if (phase === "pause2") {
+      timeout = setTimeout(() => setPhase("deleting2"), 1000);
+    } else if (phase === "deleting2") {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1));
+        }, 50);
+      } else {
+        setPhase("typing1");
       }
     }
 
@@ -132,7 +142,7 @@ export default function Home() {
                   
                   Let's check phase.
                */}
-              <span className={`${phase === 'typing2' || phase === 'done' ? 'text-primary' : 'text-text-primary'}`}>
+              <span className={`${['typing2', 'pause2', 'deleting2', 'done'].includes(phase) ? 'text-primary' : 'text-text-primary'}`}>
                 {displayText}
               </span>
               <span className="animate-pulse ml-1 text-black font-thin">|</span>
@@ -195,7 +205,7 @@ export default function Home() {
             <Instagram className="w-5 h-5" />
           </a>
           <a href="#" className="hover:text-primary transition-colors transform hover:scale-110 duration-200">
-            <Twitter className="w-5 h-5" />
+            <Send className="w-5 h-5" />
           </a>
           <a href="#" className="hover:text-primary transition-colors transform hover:scale-110 duration-200">
             <Youtube className="w-6 h-6" />
