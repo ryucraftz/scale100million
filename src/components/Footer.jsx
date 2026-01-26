@@ -89,7 +89,7 @@ export default function Footer() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            <div className="pt-4 space-y-4">
+            <div className="hidden md:block pt-4 space-y-4">
               <div className="flex items-start gap-3 group">
                 <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
                   <MapPin className="w-4 h-4 text-primary" />
