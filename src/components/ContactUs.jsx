@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MapPin, Phone } from "lucide-react";
 
 export default function ContactUs() {
     return (
@@ -20,10 +21,40 @@ export default function ContactUs() {
                     <p className="text-lg text-gray-400">
                         Ready to scale your business? Let's start the conversation.
                     </p>
-                    <div className="text-gray-400 space-y-1 pt-4">
-                        <p>NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041</p>
-                        <p>+91 9325847844</p>
-                        <p>+91 8806400205</p>
+                    <div className="mt-8 grid gap-4 text-left">
+                        <div className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors group">
+                            <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+                                <MapPin size={24} />
+                            </div>
+                            <div>
+                                <h4 className="text-white font-semibold mb-1">Visit Us</h4>
+                                <p className="text-gray-400 text-sm leading-relaxed">
+                                    NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col md:flex-row gap-4">
+                            <a href="tel:+919325847844" className="flex-1 flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors group cursor-pointer">
+                                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+                                    <Phone size={24} />
+                                </div>
+                                <div>
+                                    <h4 className="text-white font-semibold mb-1">Call Us</h4>
+                                    <p className="text-gray-400 text-sm">+91 9325847844</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+918806400205" className="flex-1 flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors group cursor-pointer">
+                                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+                                    <Phone size={24} />
+                                </div>
+                                <div>
+                                    <h4 className="text-white font-semibold mb-1">Call Us</h4>
+                                    <p className="text-gray-400 text-sm">+91 8806400205</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
 

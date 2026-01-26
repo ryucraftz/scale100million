@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileText } from "lucide-react";
+import { FileText, MapPin } from "lucide-react";
 
 export default function TermsAndConditions() {
     return (
@@ -40,7 +40,12 @@ export default function TermsAndConditions() {
                             <div className="flex-1">
                                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Service Provider</h3>
                                 <p className="text-white font-semibold text-lg">Abhay Mukund Lagad</p>
-                                <p className="text-gray-400 text-sm mt-1">NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041</p>
+                                <div className="mt-3 flex items-start gap-3">
+                                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                                    <p className="text-gray-400 text-sm leading-relaxed">
+                                        NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, Vadgaon Budruk, MH, 411041
+                                    </p>
+                                </div>
                             </div>
                             <div className="hidden md:block w-px bg-gray-700" />
                             <div className="flex-1">
