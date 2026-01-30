@@ -27,7 +27,7 @@ export default function JoinOurTeam() {
                         <iframe
                             aria-label='Join Our Team'
                             frameBorder="0"
-                            style={{ height: '950px', width: '99%', border: 'none', filter: 'invert(1) hue-rotate(180deg)' }}
+                            style={{ height: '950px', width: '99%', border: 'none', filter: 'invert(1) hue-rotate(270deg)' }}
                             src='https://forms.zohopublic.in/scale100millioncom1/form/JoinOurTeam/formperma/eLQHiGjuMoRV3CL9geAed6haQqs8J1fW--dnsSM-Lw4'
                         />
                     </div>
