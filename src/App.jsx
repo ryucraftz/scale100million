@@ -63,12 +63,10 @@ function AppContent() {
               <>
                 <HomePage />
                 <RevealOnScroll delay={0.1}><FounderClubMentorship /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><PartnerWithUs /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><WhatWeDo /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><WhyBuilt /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><OurGoal /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><Media /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><JoinOurTeam /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><DesignYourGrowthEngine /></RevealOnScroll>
 
               </>
@@ -77,6 +75,12 @@ function AppContent() {
 
           {/* Contact Page */}
           <Route path="/contact" element={<ContactUs />} />
+
+          {/* Partner With Us Page */}
+          <Route path="/partner" element={<PartnerWithUs />} />
+
+          {/* Join Our Team Page */}
+          <Route path="/join-team" element={<JoinOurTeam />} />
 
           {/* Privacy Policy Page */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -4,12 +4,11 @@ import { ArrowRight } from "lucide-react";
 
 export default function JoinOurTeam() {
     return (
-        <section id="join-team" className="py-16 md:py-24 px-6 md:px-12 bg-background text-text-primary relative overflow-hidden border-t border-gray-800">
-            <div className="max-w-4xl mx-auto text-center space-y-10 z-10 relative">
+        <section id="join-team" className="min-h-screen pt-32 pb-24 px-6 md:px-12 bg-background text-text-primary relative overflow-hidden border-t border-gray-800 flex flex-col justify-center">
+            <div className="max-w-4xl mx-auto text-center space-y-10 z-10 relative w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">

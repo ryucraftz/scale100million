@@ -130,15 +130,33 @@ export default function Navbar() {
         {/* Desktop Menu - Right Aligned (Hidden on Mobile) */}
         <div className="hidden lg:flex items-center gap-8 ml-auto">
           {/* Update text colors based on background */}
-          {["mentorship", "partner", "media", "join-team", "contact"].map((item) => (
+          {["mentorship", "media"].map((item) => (
             <button
               key={item}
               className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
-              onClick={() => navigateAndScroll(item === "join-team" ? "join-team" : item)}
+              onClick={() => navigateAndScroll(item)}
             >
-              {item === "join-team" ? "Join Our Team" : item === "partner" ? "Partner With Us" : item.charAt(0).toUpperCase() + item.slice(1).replace("-", " ")}
+              {item.charAt(0).toUpperCase() + item.slice(1)}
             </button>
           ))}
+          <Link
+            to="/partner"
+            className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
+          >
+            Partner With Us
+          </Link>
+          <Link
+            to="/join-team"
+            className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
+          >
+            Join Our Team
+          </Link>
+          <button
+            className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
+            onClick={() => navigateAndScroll("contact")}
+          >
+            Contact
+          </button>
         </div>
 
         {/* Mobile Menu Button - Right Aligned (Visible ONLY on Mobile) */}
@@ -161,24 +179,26 @@ export default function Navbar() {
         >
           Mentorship
         </button>
-        <button
+        <Link
+          to="/partner"
           className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
-          onClick={() => navigateAndScroll("partner")}
+          onClick={() => setIsOpen(false)}
         >
           Partner With Us
-        </button>
+        </Link>
         <button
           className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
           onClick={() => navigateAndScroll("media")}
         >
           Media
         </button>
-        <button
+        <Link
+          to="/join-team"
           className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
-          onClick={() => navigateAndScroll("join-team")}
+          onClick={() => setIsOpen(false)}
         >
           Join Our Team
-        </button>
+        </Link>
         <Link
           to="/contact"
           className="px-8 py-3 bg-primary text-white rounded-full text-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
