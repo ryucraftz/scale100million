@@ -58,7 +58,7 @@ export default function ShippingPolicy() {
   return (
     <LegalLayout title="Shipping Policy" icon={Truck}>
       <div className="mb-12 text-center md:text-left">
-        <p className="text-gray-400 text-lg leading-relaxed">
+        <p className="text-gray-400 text-base md:text-lg leading-relaxed">
           Scale100Million is a digital service–based education and implementation company. We do not ship any physical products.
         </p>
       </div>
@@ -66,10 +66,10 @@ export default function ShippingPolicy() {
       <div className="space-y-10">
         {sections.map((section, idx) => (
           <div key={idx} className="border-b border-white/5 pb-8 last:border-0 last:pb-0">
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="text-lg md:text-xl font-semibold text-white mb-4">
               {idx + 1}. {section.title}
             </h2>
-            <div className="text-base text-gray-300 leading-relaxed">
+            <div className="text-sm md:text-base text-gray-300 leading-relaxed">
               {section.content}
             </div>
           </div>

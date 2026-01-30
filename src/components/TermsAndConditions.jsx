@@ -147,18 +147,18 @@ export default function TermsAndConditions() {
     return (
         <LegalLayout title="Terms & Conditions" icon={FileText}>
             <div className="mb-12 text-center md:text-left">
-                <p className="text-gray-400 text-lg leading-relaxed">
-                    Please read these terms carefully before using our services. By using our website, programs, or content, you agree to these legal obligations.
+                <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+                    Welcome to Scale100Million.com. By accessing our website and services, you agree to these terms.
                 </p>
             </div>
 
             <div className="space-y-10">
                 {sections.map((section, idx) => (
                     <div key={idx} className="border-b border-white/5 pb-8 last:border-0 last:pb-0">
-                        <h2 className="text-xl font-semibold text-white mb-4">
+                        <h2 className="text-lg md:text-xl font-semibold text-white mb-4">
                             {idx + 1}. {section.title}
                         </h2>
-                        <div className="text-base text-gray-300 leading-relaxed">
+                        <div className="text-sm md:text-base text-gray-300 leading-relaxed">
                             {section.content}
                         </div>
                     </div>

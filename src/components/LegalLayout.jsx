@@ -16,7 +16,7 @@ export default function LegalLayout({ title, icon: Icon, children }) {
                             <Icon size={48} className="text-gray-200" strokeWidth={1.5} />
                         </div>
                     )}
-                    <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">{title}</h1>
+                    <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">{title}</h1>
                 </div>
 
                 <div className="space-y-8 text-gray-300 leading-relaxed font-light">
