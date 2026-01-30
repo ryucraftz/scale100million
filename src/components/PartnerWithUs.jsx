@@ -31,16 +31,13 @@ export default function PartnerWithUs() {
                         <p className="text-white font-bold text-xl">Built together.</p>
                     </div>
 
-                    <div className="mt-12">
-                        <a
-                            href="#contact"
-                            className="inline-flex items-center gap-2 bg-white text-black hover:bg-gray-200 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl"
-                        >
-                            Apply for Partnership
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </a>
+                    <div className="mt-12 w-full flex justify-center">
+                        <iframe
+                            aria-label='Partner With Us'
+                            frameBorder="0"
+                            style={{ height: '500px', width: '99%', border: 'none' }}
+                            src='https://forms.zohopublic.in/scale100millioncom1/form/PartnerWithUs/formperma/8Qt5_o_Yk6KnSstpUzQOq0pFyA1kvEaL45hhQqSpB7A'
+                        />
                     </div>
                 </motion.div>
             </div>

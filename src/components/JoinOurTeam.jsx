@@ -23,16 +23,13 @@ export default function JoinOurTeam() {
                         <p>WE’D LIKE TO HEAR FROM YOU.</p>
                     </div>
 
-                    <div className="mt-12">
-                        <a
-                            href="https://www.linkedin.com/company/scale100million/jobs/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-transparent border border-white hover:bg-white hover:text-black hover:border-white font-bold py-3 px-8 md:py-4 md:px-10 rounded-none uppercase tracking-widest transition-all duration-300"
-                        >
-                            See Open Roles
-                            <ArrowRight className="w-5 h-5" />
-                        </a>
+                    <div className="mt-12 w-full flex justify-center">
+                        <iframe
+                            aria-label='Join Our Team'
+                            frameBorder="0"
+                            style={{ height: '500px', width: '99%', border: 'none' }}
+                            src='https://forms.zohopublic.in/scale100millioncom1/form/JoinOurTeam/formperma/eLQHiGjuMoRV3CL9geAed6haQqs8J1fW--dnsSM-Lw4'
+                        />
                     </div>
                 </motion.div>
             </div>
