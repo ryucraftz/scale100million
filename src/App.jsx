@@ -24,6 +24,8 @@ const GrowthSection = lazy(() => import("./components/GrowthSection"));
 const ShippingPolicy = lazy(() => import("./components/ShippingPolicy"));
 const RefundPolicy = lazy(() => import("./components/RefundPolicy"));
 const TermsAndConditions = lazy(() => import("./components/TermsAndConditions"));
+const CancellationPolicy = lazy(() => import("./components/CancellationPolicy"));
+const AboutUs = lazy(() => import("./components/AboutUs"));
 const PartnerWithUs = lazy(() => import("./components/PartnerWithUs"));
 const WhatWeDo = lazy(() => import("./components/WhatWeDo"));
 const WhyBuilt = lazy(() => import("./components/WhyBuilt"));
@@ -90,6 +92,12 @@ function AppContent() {
 
           {/* Terms and Conditions Page */}
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
+          {/* Cancellation Policy Page */}
+          <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+
+          {/* About Us Page */}
+          <Route path="/about-us" element={<AboutUs />} />
 
           {/* Thank You Page */}
           <Route path="/thank-you" element={<ThankYou />} />

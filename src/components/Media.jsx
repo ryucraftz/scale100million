@@ -21,7 +21,7 @@ export default function Media() {
             color: "text-[#0077b5]",
             borderColor: "group-hover:border-[#0077b5]/50",
             bgColor: "group-hover:bg-[#0077b5]/10",
-            text: "BEHIND THE SCENES"
+            text: "Decisions. Execution. Lessons."
         },
         {
             name: "INSTAGRAM",

@@ -41,6 +41,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-6 text-center md:text-left">
             <h4 className="text-white font-bold tracking-wide text-sm uppercase opacity-90">Company</h4>
             <ul className="space-y-3 text-sm text-gray-400">
+              <li><Link to="/about-us" className="hover:text-primary transition-colors">About Us</Link></li>
               {/* Using standard anchors for these if routes don't exist yet, or Links if they do. Assuming some exist based on App.jsx */}
               <li><button onClick={() => document.getElementById('mentorship')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Mentorship</button></li>
               <li><Link to="/join-team" className="hover:text-primary transition-colors">Join Our Team</Link></li>
@@ -57,6 +58,7 @@ export default function Footer() {
               <li><Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Use</Link></li>
               <li><Link to="/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link></li>
               <li><Link to="/shipping-policy" className="hover:text-white transition-colors">Shipping Policy</Link></li>
+              <li><Link to="/cancellation-policy" className="hover:text-white transition-colors">Cancellation Policy</Link></li>
             </ul>
           </div>
 
