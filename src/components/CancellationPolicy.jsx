@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Ban, AlertTriangle, FileText, CheckCircle2, RotateCcw, XCircle } from "lucide-react";
+import { Ban, AlertTriangle, FileText, CheckCircle2, RotateCcw, XCircle, Mail } from "lucide-react";
 
 export default function CancellationPolicy() {
     const sections = [
