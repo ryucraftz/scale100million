@@ -35,7 +35,7 @@ export default function PartnerWithUs() {
                         <iframe
                             aria-label='Partner With Us'
                             frameBorder="0"
-                            style={{ height: '500px', width: '99%', border: 'none' }}
+                            style={{ height: '700px', width: '99%', border: 'none', filter: 'invert(1) hue-rotate(180deg)' }}
                             src='https://forms.zohopublic.in/scale100millioncom1/form/PartnerWithUs/formperma/8Qt5_o_Yk6KnSstpUzQOq0pFyA1kvEaL45hhQqSpB7A'
                         />
                     </div>
