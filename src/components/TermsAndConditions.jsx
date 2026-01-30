@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileText, MapPin, Clock, AlertTriangle, CreditCard, Award, ShieldCheck, HelpCircle } from "lucide-react";
+import { FileText, MapPin, Clock, AlertTriangle, CreditCard, Award, ShieldCheck, HelpCircle, AlertCircle, Ban, Gavel } from "lucide-react";
 
 export default function TermsAndConditions() {
     return (
@@ -23,6 +23,8 @@ export default function TermsAndConditions() {
                     </h1>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
                         Welcome to Scale100Million.com (“Company”, “we”, “our”, “us”). By accessing or using our website, programs, services, or content, you agree to be bound by these <span className="text-white font-medium">Terms & Conditions</span>.
+                        <br />
+                        If you do not agree, please do not use our services.
                     </p>
                 </div>
 
@@ -106,6 +108,7 @@ export default function TermsAndConditions() {
                                     <li>False, incomplete, or misleading information is provided</li>
                                     <li>Execution is inconsistent or cannot be verified</li>
                                 </ul>
+                                <p className="mt-3 text-sm text-gray-500 italic">The burden of proof for meeting guarantee conditions rests solely with the participant.</p>
                             </div>
                         </div>
                     </div>
@@ -144,24 +147,70 @@ export default function TermsAndConditions() {
                         </div>
                     </div>
 
-                    {/* 7. Other Legal Provisions */}
+                    {/* 7. Disclaimer */}
                     <div className="space-y-4 relative z-10">
                         <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">7</span>
-                            Other Legal Provisions
+                            Disclaimer
                         </h2>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            {[
-                                { title: "Disclaimer", content: "All content is for educational guidance only. Outcomes assume action and vary by individual." },
-                                { title: "Limitation of Liability", content: "We are not liable for indirect damages or technical failures. Total liability is limited to the amount paid." },
-                                { title: "Termination", content: "We reserve the right to terminate access for violations without refund." },
-                                { title: "Force Majeure", content: "We are not liable for delays due to events beyond our control." },
-                            ].map((item, idx) => (
-                                <div key={idx} className="bg-zinc-900/30 border border-gray-800 p-4 rounded-xl">
-                                    <h4 className="font-bold text-white mb-1">{item.title}</h4>
-                                    <p className="text-sm text-gray-400">{item.content}</p>
-                                </div>
-                            ))}
+                        <div className="bg-zinc-900/30 border border-gray-800 rounded-xl p-6 text-gray-300 leading-relaxed flex items-start gap-4">
+                            <div className="mt-1 text-yellow-400"><AlertCircle size={24} /></div>
+                            <div className="space-y-2">
+                                <p>All content is provided for educational and implementation guidance purposes only.</p>
+                                <p>While certain programs may include conditional guarantees, outcomes may vary due to market conditions, execution quality, external dependencies, and individual circumstances.</p>
+                                <p className="text-sm text-gray-400 italic">Participants are solely responsible for decisions and actions taken based on the content provided.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 8. Limitation of Liability */}
+                    <div className="space-y-4 relative z-10">
+                        <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">8</span>
+                            Limitation of Liability
+                        </h2>
+                        <div className="bg-zinc-900/30 border border-gray-800 rounded-xl p-6 text-gray-300 leading-relaxed">
+                            <p className="mb-2 font-medium text-white">Scale100Million shall not be liable for:</p>
+                            <ul className="space-y-2 list-disc list-inside text-gray-400 ml-2 mb-4">
+                                <li>Indirect, incidental, or consequential damages</li>
+                                <li>Loss of revenue, profit, or business opportunities</li>
+                                <li>Technical disruptions or failures caused by third-party platforms</li>
+                            </ul>
+                            <p className="text-sm text-gray-400 italic">The Company’s total liability, if any, shall not exceed the amount paid by the participant for the specific service.</p>
+                        </div>
+                    </div>
+
+                    {/* 9. Termination */}
+                    <div className="space-y-4 relative z-10">
+                        <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">9</span>
+                            Termination
+                        </h2>
+                        <div className="bg-red-900/10 border border-red-900/30 rounded-xl p-6 text-gray-300 leading-relaxed flex items-start gap-4">
+                            <div className="mt-1 text-red-500"><Ban size={24} /></div>
+                            <div className="space-y-2">
+                                <p className="font-medium text-white">The Company reserves the right to suspend or terminate access without prior notice if:</p>
+                                <ul className="space-y-1 list-disc list-inside text-gray-400 ml-2">
+                                    <li>These Terms are violated</li>
+                                    <li>There is misuse, abuse, or fraudulent behavior</li>
+                                    <li>Guarantee conditions are misrepresented or manipulated</li>
+                                </ul>
+                                <p className="text-sm text-red-400 italic font-medium">Termination does not entitle the participant to a refund.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 10. Force Majeure */}
+                    <div className="space-y-4 relative z-10">
+                        <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold">10</span>
+                            Force Majeure
+                        </h2>
+                        <div className="bg-zinc-900/30 border border-gray-800 rounded-xl p-6 text-gray-300 leading-relaxed flex items-start gap-4">
+                            <div className="mt-1 text-blue-400"><HelpCircle size={24} /></div>
+                            <p>
+                                The Company shall not be liable for any failure or delay in performance due to events beyond reasonable control, including natural disasters, government actions, technical failures, or third-party service disruptions.
+                            </p>
                         </div>
                     </div>
 
@@ -173,10 +222,10 @@ export default function TermsAndConditions() {
                         </h2>
                         <div className="bg-zinc-900/30 border border-gray-800 rounded-xl p-6 text-gray-300 leading-relaxed flex items-center gap-4">
                             <div className="bg-primary/10 p-3 rounded-full text-primary">
-                                <MapPin size={24} />
+                                <Gavel size={24} />
                             </div>
                             <p>
-                                These Terms shall be governed by the laws of <span className="text-white font-medium">India</span>, and courts at <span className="text-white font-medium">Pune, Maharashtra</span> shall have exclusive jurisdiction over any disputes.
+                                These Terms shall be governed by and construed in accordance with the laws of <span className="text-white font-medium">India</span>, and courts at <span className="text-white font-medium">Pune, Maharashtra</span> shall have exclusive jurisdiction over any disputes arising out of or in connection with these Terms.
                             </p>
                         </div>
                     </div>
