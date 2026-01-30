@@ -27,6 +27,8 @@ const TermsAndConditions = lazy(() => import("./components/TermsAndConditions"))
 const CancellationPolicy = lazy(() => import("./components/CancellationPolicy"));
 const AboutUs = lazy(() => import("./components/AboutUs"));
 const PartnerWithUs = lazy(() => import("./components/PartnerWithUs"));
+const PartnerSection = lazy(() => import("./components/PartnerSection"));
+const JoinTeamSection = lazy(() => import("./components/JoinTeamSection"));
 const WhatWeDo = lazy(() => import("./components/WhatWeDo"));
 const WhyBuilt = lazy(() => import("./components/WhyBuilt"));
 const OurGoal = lazy(() => import("./components/OurGoal"));
@@ -63,10 +65,12 @@ function AppContent() {
               <>
                 <HomePage />
                 <RevealOnScroll delay={0.1}><FounderClubMentorship /></RevealOnScroll>
+                <RevealOnScroll delay={0.1}><PartnerSection /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><WhatWeDo /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><WhyBuilt /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><OurGoal /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><Media /></RevealOnScroll>
+                <RevealOnScroll delay={0.1}><JoinTeamSection /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><DesignYourGrowthEngine /></RevealOnScroll>
 
               </>
