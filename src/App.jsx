@@ -4,7 +4,7 @@ import HomePage from "./components/Home";
 import Navbar from "./components/Navbar";
 import RevealOnScroll from "./components/RevealOnScroll";
 import ScrollToTop from "./components/ScrollToTop";
-import StickyCTA from "./components/StickyCTA";
+
 import BackToTop from "./components/BackToTop";
 import SmoothScroll from "./components/SmoothScroll";
 import FilmGrain from "./components/FilmGrain";
@@ -107,7 +107,7 @@ function AppContent() {
         </Routes>
 
         {!isThankYouPage && <Footer />}
-        {!isThankYouPage && <StickyCTA />}
+
         <BackToTop />
       </SmoothScroll>
     </Suspense>
