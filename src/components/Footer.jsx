@@ -84,10 +84,10 @@ export default function Footer() {
               ))}
             </div>
             <a
-              href="mailto:support@scale100million.com"
+              href="mailto:scale100million@zohomail.in"
               className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors group"
             >
-              support@scale100million.com
+              scale100million@zohomail.in
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
