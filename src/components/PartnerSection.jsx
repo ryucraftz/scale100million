@@ -21,7 +21,7 @@ export default function PartnerSection() {
                     </div>
 
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-                        HAVE A BUSINESS IDEA WORTH BUILDING?
+                        WE PARTNER OR INVEST WITH FOUNDERS
                     </h2>
 
                     <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">

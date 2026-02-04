@@ -55,7 +55,7 @@ export default function Footer() {
             <h4 className="text-white font-bold tracking-wide text-sm uppercase opacity-90">Legal</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Use</Link></li>
+              <li><Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms and Conditions</Link></li>
               <li><Link to="/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link></li>
               <li><Link to="/shipping-policy" className="hover:text-white transition-colors">Shipping Policy</Link></li>
               <li><Link to="/cancellation-policy" className="hover:text-white transition-colors">Cancellation Policy</Link></li>

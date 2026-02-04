@@ -3,9 +3,9 @@ import { MapPin, Phone, Mail, Instagram, Youtube, Send, FileText, ArrowRight, Me
 
 export default function ContactUs() {
     const socialLinks = [
-        { icon: <Instagram size={20} />, href: "https://www.instagram.com/scale100million/", label: "Instagram", color: "text-[#E1306C]", borderColor: "group-hover:border-[#E1306C]/50", bgColor: "group-hover:bg-[#E1306C]/10" },
-        { icon: <Youtube size={20} />, href: "https://www.youtube.com/@scale100million-yt", label: "YouTube", color: "text-[#FF0000]", borderColor: "group-hover:border-[#FF0000]/50", bgColor: "group-hover:bg-[#FF0000]/10" },
-        { icon: <Send size={20} />, href: "https://t.me/+SSG0wArwUcQyYTc1", label: "Telegram", color: "text-[#229ED9]", borderColor: "group-hover:border-[#229ED9]/50", bgColor: "group-hover:bg-[#229ED9]/10" },
+        { icon: <Instagram size={32} />, href: "https://www.instagram.com/scale100million/", label: "Instagram", color: "text-[#E1306C]", borderColor: "group-hover:border-[#E1306C]/50", bgColor: "group-hover:bg-[#E1306C]/10" },
+        { icon: <Youtube size={32} />, href: "https://www.youtube.com/@scale100million-yt", label: "YouTube", color: "text-[#FF0000]", borderColor: "group-hover:border-[#FF0000]/50", bgColor: "group-hover:bg-[#FF0000]/10" },
+        { icon: <Send size={32} />, href: "https://t.me/+SSG0wArwUcQyYTc1", label: "Telegram", color: "text-[#229ED9]", borderColor: "group-hover:border-[#229ED9]/50", bgColor: "group-hover:bg-[#229ED9]/10" },
     ];
 
     return (
@@ -90,7 +90,7 @@ export default function ContactUs() {
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`group relative w-14 h-14 flex items-center justify-center rounded-2xl bg-zinc-900/50 border border-white/10 hover:-translate-y-1 transition-all duration-300 ${social.borderColor}`}
+                                    className={`group relative w-24 h-24 flex items-center justify-center rounded-2xl bg-zinc-900/50 border border-white/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ${social.borderColor}`}
                                 >
                                     <span className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${social.bgColor}`} />
                                     <div className={`relative z-10 transition-colors ${social.color} group-hover:text-white`}>
