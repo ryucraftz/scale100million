@@ -28,7 +28,7 @@ const FounderClubMentorship = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 font-['Inter',sans-serif]">
+                            <h2 className="text-3xl md:text-5xl font-bold text-text-primary mb-6 font-['Inter',sans-serif]">
                                 Founder Club <span className="text-primary block mt-2">Mentorship</span>
                             </h2>
                             <p className="text-lg text-text-secondary leading-relaxed max-w-xl">

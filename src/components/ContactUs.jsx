@@ -30,7 +30,7 @@ export default function ContactUs() {
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest">
                             <MessageSquare size={14} /> Get in Touch
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+                        <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-tight">
                             Let’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Talk Scale.</span>
                         </h1>
                         <p className="text-xl text-gray-400 max-w-lg leading-relaxed">

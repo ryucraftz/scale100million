@@ -17,7 +17,7 @@ export default function PartnerWithUs() {
                         </span>
                     </div>
 
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
                         WE PARTNER OR INVEST WITH FOUNDERS
                     </h2>
 

@@ -38,7 +38,7 @@ export default function WhySection() {
 
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
                 <div className="mb-16 max-w-2xl">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
                         Why Scale100Million?
                     </h2>
                     <p className="text-xl text-gray-400">

@@ -26,11 +26,11 @@ export default function AboutUs() {
                         <span>About Our Mission</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-tight">
                         Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-purple-500 animate-gradient-x">100 Million</span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
+                    <p className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
                         We exist to bridge the gap between <span className="text-white font-medium">ambition</span> and <span className="text-white font-medium">execution</span>. No fluff. No shortcuts. Just scalable systems for serious founders.
                     </p>
                 </motion.div>
