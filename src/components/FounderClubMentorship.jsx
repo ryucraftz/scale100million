@@ -85,14 +85,14 @@ const FounderClubMentorship = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative max-w-[350px] mx-auto w-full"
+                        className="relative w-full flex justify-center lg:justify-end"
                     >
-                        <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface/50 backdrop-blur-sm p-2">
+                        <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface/50 backdrop-blur-sm p-4 w-full max-w-[500px]">
                             <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-surface to-background relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
                                 {/* Founder Club Badge Image */}
-                                <div className="absolute inset-0 flex items-center justify-center p-2 md:p-3">
+                                <div className="absolute inset-0 flex items-center justify-center p-2 md:p-4">
                                     {/* Backlight / Glow effect */}
                                     <div className="absolute inset-0 flex items-center justify-center">
                                         <div className="w-48 h-48 bg-primary/20 rounded-full blur-[80px] animate-pulse" />
