@@ -29,7 +29,7 @@ const FounderClubMentorship = () => {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-text-primary mb-5 md:mb-8 leading-[1.1] tracking-tight font-['Inter',sans-serif]">
-                                Founder Club <span className="text-primary block mt-2">Mentorship</span>
+                                FOUNDER CLUB <span className="text-primary block mt-2">MENTORSHIP</span>
                             </h2>
                             <p className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl tracking-wide md:tracking-normal font-light">
                                 Founder Club helps you build the systems required to scale your business to 8 figures.
@@ -71,7 +71,7 @@ const FounderClubMentorship = () => {
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
                                     <span className="relative flex items-center gap-2">
-                                        Join Founder Club
+                                        JOIN FOUNDER CLUB
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </span>
                                 </motion.a>
