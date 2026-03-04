@@ -97,22 +97,12 @@ const FounderClubMentorship = () => {
                                     <div className="absolute inset-0 flex items-center justify-center">
                                         <div className="w-48 h-48 bg-primary/20 rounded-full blur-[80px] animate-pulse" />
                                     </div>
-                                    <div className="relative w-full h-full" style={{ isolation: 'isolate' }}>
-                                        <img
-                                            src="/HLwYB0HJr9juasTFx9l9plHQ3g.avif"
-                                            alt="Founder Club Mentorship Badge"
-                                            className="w-full h-full object-contain transform hover:scale-[1.02] transition-transform duration-500"
-                                        />
-                                        {/* color blend: keeps original luminance (dark bg stays dark), shifts hue to blue */}
-                                        <div
-                                            className="absolute inset-0 pointer-events-none"
-                                            style={{
-                                                backgroundColor: '#3B82F6',
-                                                mixBlendMode: 'color',
-                                                zIndex: 20,
-                                            }}
-                                        />
-                                    </div>
+                                    <img
+                                        src="/HLwYB0HJr9juasTFx9l9plHQ3g.avif"
+                                        alt="Founder Club Mentorship Badge"
+                                        className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:scale-[1.02] transition-transform duration-500"
+                                        style={{ filter: 'hue-rotate(157deg) drop-shadow(0 0 30px rgba(59,130,246,0.5))' }}
+                                    />
                                 </div>
                             </div>
                         </div>

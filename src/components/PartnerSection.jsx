@@ -21,7 +21,7 @@ export default function PartnerSection() {
                     </div>
 
                     <h2 className="text-3xl md:text-5xl lg:text-7xl font-black tracking-tight mb-6 md:mb-8 leading-[1.1] md:leading-tight">
-                        WE PARTNER OR INVEST WITH FOUNDERS
+                        WE PARTNER AND INVEST WITH FOUNDERS
                     </h2>
 
                     <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto tracking-wide md:tracking-normal">
