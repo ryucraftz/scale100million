@@ -13,7 +13,7 @@ export default function NeuralBackground() {
         let pulses = [];
 
         const isMobile = window.innerWidth < 768;
-        const NODE_COUNT = isMobile ? 30 : 40;
+        const NODE_COUNT = isMobile ? 10 : 40;
         const MAX_DIST = 180;
         const PULSE_SPEED = isMobile ? 0.45 : 0.9;
         const PULSE_SPAWN_RATE = isMobile ? 0.003 : 0.008;
