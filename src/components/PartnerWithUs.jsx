@@ -3,34 +3,34 @@ import { motion } from "framer-motion";
 
 export default function PartnerWithUs() {
     return (
-        <section id="partner" className="min-h-screen pt-32 pb-24 px-6 md:px-12 bg-background text-white overflow-hidden relative flex flex-col justify-center">
-            <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 w-full">
+        <section id="partner" className="min-h-screen pt-20 md:pt-32 pb-16 md:pb-24 px-6 md:px-12 bg-background text-white overflow-hidden relative flex flex-col justify-center">
+            <div className="max-w-4xl mx-auto text-center space-y-8 md:space-y-12 relative z-10 w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-800 bg-surface backdrop-blur-md mb-8">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-800 bg-surface backdrop-blur-md mb-6 md:mb-8">
                         <span className="w-2 h-2 rounded-full bg-primary" />
-                        <span className="text-sm font-medium text-gray-300 uppercase tracking-wide">
+                        <span className="text-xs md:text-sm font-medium text-gray-300 uppercase tracking-wide">
                             Built Together
                         </span>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
+                    <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8">
                         WE PARTNER AND INVEST WITH FOUNDERS
                     </h2>
 
-                    <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-base md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
                         We partner with founders to build, systemize, and grow their businesses.
                     </p>
 
-                    <div className="mt-8 flex flex-col items-center gap-2">
-                        <p className="text-gray-500 font-medium tracking-wide uppercase text-sm">Not advisory.</p>
-                        <p className="text-white font-bold text-xl">Built together.</p>
+                    <div className="mt-6 md:mt-8 flex flex-col items-center gap-1 md:gap-2">
+                        <p className="text-gray-500 font-medium tracking-wide uppercase text-xs md:text-sm">Not advisory.</p>
+                        <p className="text-white font-bold text-lg md:text-xl">Built together.</p>
                     </div>
 
-                    <div className="mt-12 w-full flex justify-center">
+                    <div className="mt-8 md:mt-12 w-full flex justify-center">
                         <iframe
                             aria-label='Partner With Us'
                             frameBorder="0"
