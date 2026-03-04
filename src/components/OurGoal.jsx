@@ -21,7 +21,7 @@ const Counter = ({ from = 0, to, duration = 2, prefix = "", suffix = "" }) => {
                 {to}
                 {suffix}
             </span>
-            <motion.span ref={ref} className="col-start-1 row-start-1">
+            <motion.span ref={ref} className="col-start-1 row-start-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-primary to-blue-600">
                 {rounded}
             </motion.span>
         </span>
@@ -70,7 +70,7 @@ export default function OurGoal() {
                 <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black leading-[1.1] tracking-tight uppercase">
                     OUR GOAL IS SIMPLE: <br className="hidden md:block" />
                     <span className="text-gray-400 inline-block mt-3 md:mt-5">HELP</span>{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-primary to-blue-600 inline-block drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] pr-1">
+                    <span className="inline-block drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] pr-1 min-w-[3em]">
                         <Counter to={100} duration={2.5} />
                     </span>{" "}
                     <span className="text-gray-400 inline-block pl-2">BUSINESSES</span> <br className="hidden lg:block" />
