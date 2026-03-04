@@ -85,7 +85,7 @@ const FounderClubMentorship = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative max-w-sm lg:max-w-md mx-auto w-full"
+                        className="relative max-w-[400px] mx-auto w-full"
                     >
                         <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface/50 backdrop-blur-sm p-2">
                             <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-surface to-background relative overflow-hidden group">
