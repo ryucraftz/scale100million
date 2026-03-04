@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div
       id="mentorship"
-      className="relative w-full h-[75vh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
+      className="relative w-full h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}
@@ -59,7 +59,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-60 md:pt-40">
+      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-20 md:pt-12">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -121,7 +121,7 @@ export default function Home() {
       </div>
 
       {/* Bottom Area: Scroll Indicator & Socials */}
-      <div className="absolute bottom-2 md:bottom-8 left-0 w-full z-20 flex justify-center pointer-events-none">
+      <div className="absolute bottom-10 left-0 w-full z-20 flex justify-center pointer-events-none">
         {/* Center Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
