@@ -75,9 +75,6 @@ const FounderClubMentorship = () => {
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </span>
                                 </motion.a>
-                                <span className="text-text-secondary font-medium tracking-wide">
-                                    BUILT WITH YOU.
-                                </span>
                             </div>
                         </motion.div>
                     </div>
