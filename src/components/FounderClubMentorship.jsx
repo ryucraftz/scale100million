@@ -41,10 +41,10 @@ const FounderClubMentorship = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="space-y-4 flex flex-col items-start w-full"
+                            className="space-y-4 flex flex-col w-fit mx-auto md:mx-0"
                         >
                             {benefits.map((benefit, index) => (
-                                <div key={index} className="flex items-center gap-4 group w-full">
+                                <div key={index} className="flex items-center gap-4 group">
                                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                                         <Check className="w-5 h-5 text-primary" />
                                     </div>
