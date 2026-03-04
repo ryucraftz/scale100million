@@ -59,7 +59,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-24 md:pt-12">
+      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-36 md:pt-24">
         <motion.div
           initial="hidden"
           animate="visible"
