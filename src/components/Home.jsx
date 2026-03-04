@@ -121,7 +121,7 @@ export default function Home() {
       </div>
 
       {/* Bottom Area: Scroll Indicator & Socials */}
-      <div className="absolute bottom-5 md:bottom-8 left-0 w-full z-20 flex justify-center pointer-events-none">
+      <div className="absolute bottom-2 md:bottom-8 left-0 w-full z-20 flex justify-center pointer-events-none">
         {/* Center Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
