@@ -12,10 +12,10 @@ export default function NeuralBackground() {
         let nodes = [];
         let pulses = [];
 
-        const NODE_COUNT = 60;
-        const MAX_DIST = 160;
-        const PULSE_SPEED = 1.8;
-        const PULSE_SPAWN_RATE = 0.03; // chance per frame per edge
+        const NODE_COUNT = 40;
+        const MAX_DIST = 180;
+        const PULSE_SPEED = 0.9;
+        const PULSE_SPAWN_RATE = 0.008; // much lower — soothing flow
 
         function resize() {
             canvas.width = canvas.offsetWidth;
@@ -27,8 +27,8 @@ export default function NeuralBackground() {
             nodes = Array.from({ length: NODE_COUNT }, () => ({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.3,
-                vy: (Math.random() - 0.5) * 0.3,
+                vx: (Math.random() - 0.5) * 0.15,
+                vy: (Math.random() - 0.5) * 0.15,
                 r: Math.random() * 1.5 + 1,
                 pulse: 0,
             }));
@@ -54,8 +54,8 @@ export default function NeuralBackground() {
                     pulses.push({ i, j, t: 0, dir: Math.random() < 0.5 ? 1 : -1 });
                 }
             });
-            // Limit total pulses
-            if (pulses.length > 120) pulses.splice(0, pulses.length - 120);
+            // Limit total pulses to keep it calm
+            if (pulses.length > 25) pulses.splice(0, pulses.length - 25);
         }
 
         function draw() {
@@ -64,14 +64,14 @@ export default function NeuralBackground() {
             const edges = getEdges();
             spawnPulses(edges);
 
-            // Draw connections
+            // Draw connections — more visible, highlighted
             edges.forEach(({ i, j, dist }) => {
-                const alpha = (1 - dist / MAX_DIST) * 0.25;
+                const alpha = (1 - dist / MAX_DIST) * 0.55;
                 ctx.beginPath();
                 ctx.moveTo(nodes[i].x, nodes[i].y);
                 ctx.lineTo(nodes[j].x, nodes[j].y);
                 ctx.strokeStyle = `rgba(59,130,246,${alpha})`;
-                ctx.lineWidth = 0.8;
+                ctx.lineWidth = 1.2;
                 ctx.stroke();
             });
 
@@ -114,19 +114,19 @@ export default function NeuralBackground() {
             nodes.forEach((n) => {
                 const glow = n.pulse > 0 ? n.pulse : 0;
                 if (glow > 0) {
-                    const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, 12);
-                    g.addColorStop(0, `rgba(59,130,246,${glow * 0.8})`);
+                    const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, 10);
+                    g.addColorStop(0, `rgba(59,130,246,${glow * 0.4})`);
                     g.addColorStop(1, "rgba(59,130,246,0)");
                     ctx.beginPath();
-                    ctx.arc(n.x, n.y, 12, 0, Math.PI * 2);
+                    ctx.arc(n.x, n.y, 10, 0, Math.PI * 2);
                     ctx.fillStyle = g;
                     ctx.fill();
-                    n.pulse -= 0.03;
+                    n.pulse -= 0.015;
                 }
 
                 ctx.beginPath();
                 ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(100,170,255,${0.4 + glow * 0.5})`;
+                ctx.fillStyle = `rgba(80,140,220,${0.18 + glow * 0.25})`;
                 ctx.fill();
 
                 // Move
