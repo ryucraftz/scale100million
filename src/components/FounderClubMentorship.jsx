@@ -101,7 +101,7 @@ const FounderClubMentorship = () => {
                                         src="/HLwYB0HJr9juasTFx9l9plHQ3g.avif"
                                         alt="Founder Club Mentorship Badge"
                                         className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:scale-[1.02] transition-transform duration-500"
-                                        style={{ filter: 'hue-rotate(157deg) drop-shadow(0 0 30px rgba(59,130,246,0.5))' }}
+                                        style={{ filter: 'hue-rotate(120deg) saturate(1.4) drop-shadow(0 0 30px rgba(59,130,246,0.5))' }}
                                     />
                                 </div>
                             </div>
