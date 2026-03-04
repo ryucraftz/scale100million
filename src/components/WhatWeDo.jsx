@@ -26,13 +26,27 @@ export default function WhatWeDo() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative"
+                    className="relative group h-full"
                 >
-                    <div className="absolute -inset-1 bg-primary/20 rounded-2xl blur-2xl" />
-                    <div className="relative bg-surface p-8 md:p-10 rounded-2xl border border-gray-800 shadow-2xl text-center md:text-left">
-                        <p className="text-base md:text-xl text-gray-300 leading-relaxed font-light tracking-wide md:tracking-normal">
-                            Scale100million works with founders to <span className="text-white font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
-                        </p>
+                    {/* Glowing Backlight */}
+                    <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                    {/* Image Container */}
+                    <div className="relative aspect-square md:aspect-auto md:h-[450px] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img
+                            src="/growth-engine.png"
+                            alt="Structured Growth Engine"
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                        />
+                        {/* Overlay Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                        {/* Glassmorphic Text Box */}
+                        <div className="absolute bottom-6 left-6 right-6 p-6 md:p-8 bg-black/40 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl">
+                            <p className="text-base md:text-lg text-gray-200 leading-relaxed font-light tracking-wide">
+                                Scale100million works with founders to <span className="text-white font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
+                            </p>
+                        </div>
                     </div>
                 </motion.div>
 
