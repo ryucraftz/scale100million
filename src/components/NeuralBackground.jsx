@@ -127,7 +127,7 @@ export default function NeuralBackground() {
 
                 ctx.beginPath();
                 ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(80,140,220,${0.18 + glow * 0.25})`;
+                ctx.fillStyle = `rgba(80,140,220,${(isMobile ? 0.08 : 0.18) + (glow * 0.25)})`;
                 ctx.fill();
 
                 // Move
