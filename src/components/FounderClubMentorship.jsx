@@ -87,8 +87,8 @@ const FounderClubMentorship = () => {
                         transition={{ duration: 0.8 }}
                         className="relative w-full flex justify-center lg:justify-end"
                     >
-                        <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface/50 backdrop-blur-sm p-4 w-full max-w-[400px]">
-                            <div className="h-[300px] md:h-[350px] w-full rounded-xl bg-gradient-to-br from-surface to-background relative overflow-hidden group">
+                        <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface/50 backdrop-blur-sm p-4 w-full max-w-[600px]">
+                            <div className="h-56 md:h-[350px] w-full rounded-xl bg-gradient-to-br from-surface to-background relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
                                 {/* Founder Club Badge Image */}
