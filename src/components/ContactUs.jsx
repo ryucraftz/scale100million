@@ -10,9 +10,9 @@ const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 export default function ContactUs() {
     const socialLinks = [
-        { icon: <Instagram size={32} />, href: "https://www.instagram.com/scale100million/", label: "Instagram", color: "text-[#E1306C]", borderColor: "group-hover:border-[#E1306C]/50", bgColor: "group-hover:bg-[#E1306C]/10" },
-        { icon: <Youtube size={32} />, href: "https://www.youtube.com/@scale100million-yt", label: "YouTube", color: "text-[#FF0000]", borderColor: "group-hover:border-[#FF0000]/50", bgColor: "group-hover:bg-[#FF0000]/10" },
-        { icon: <Send size={32} />, href: "https://t.me/+SSG0wArwUcQyYTc1", label: "Telegram", color: "text-[#229ED9]", borderColor: "group-hover:border-[#229ED9]/50", bgColor: "group-hover:bg-[#229ED9]/10" },
+        { icon: <Instagram size={24} />, href: "https://www.instagram.com/scale100million/", label: "Instagram", color: "text-[#E1306C]", borderColor: "group-hover:border-[#E1306C]/50", bgColor: "group-hover:bg-[#E1306C]/10" },
+        { icon: <Youtube size={24} />, href: "https://www.youtube.com/@scale100million-yt", label: "YouTube", color: "text-[#FF0000]", borderColor: "group-hover:border-[#FF0000]/50", bgColor: "group-hover:bg-[#FF0000]/10" },
+        { icon: <Send size={24} />, href: "https://t.me/+SSG0wArwUcQyYTc1", label: "Telegram", color: "text-[#229ED9]", borderColor: "group-hover:border-[#229ED9]/50", bgColor: "group-hover:bg-[#229ED9]/10" },
     ];
 
     const [formState, setFormState] = useState({
@@ -60,7 +60,7 @@ export default function ContactUs() {
     };
 
     return (
-        <section id="contact" className="w-full min-h-screen bg-black text-white py-24 md:py-36 px-6 relative overflow-hidden flex justify-center items-center">
+        <section id="contact" className="w-full min-h-screen bg-black text-white py-16 md:py-36 px-6 relative overflow-hidden flex justify-center items-center">
 
             {/* Background Ambience */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -68,23 +68,23 @@ export default function ContactUs() {
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] -translate-x-1/4 translate-y-1/4" />
             </div>
 
-            <div className="max-w-7xl w-full relative z-10 grid lg:grid-cols-2 gap-16 items-start">
+            <div className="max-w-7xl w-full relative z-10 grid lg:grid-cols-2 gap-10 md:gap-16 items-start">
 
                 {/* Left Side: Info */}
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="space-y-12"
+                    className="space-y-8 md:space-y-12"
                 >
-                    <div className="space-y-6">
+                    <div className="space-y-4 md:space-y-6">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest">
                             <MessageSquare size={14} /> Get in Touch
                         </div>
                         <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-tight">
                             Let’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Talk Scale.</span>
                         </h1>
-                        <p className="text-xl text-gray-400 max-w-lg leading-relaxed">
+                        <p className="text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed">
                             Have questions about our programs? Ready to implement a system that actually works? We’re here.
                         </p>
                     </div>
@@ -116,9 +116,9 @@ export default function ContactUs() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: item.delay, duration: 0.5 }}
-                                className="flex items-start gap-6 p-6 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-white/20 hover:bg-zinc-900/60 transition-all duration-300 group"
+                                className="flex items-start gap-4 md:gap-6 p-5 md:p-6 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-white/20 hover:bg-zinc-900/60 transition-all duration-300 group"
                             >
-                                <div className="p-4 bg-white/5 rounded-xl text-primary border border-white/5 group-hover:scale-110 group-hover:bg-primary group-hover:text-black transition-all duration-300">
+                                <div className="p-3 md:p-4 bg-white/5 rounded-xl text-primary border border-white/5 group-hover:scale-110 group-hover:bg-primary group-hover:text-black transition-all duration-300">
                                     {item.icon}
                                 </div>
                                 <div>
@@ -141,7 +141,7 @@ export default function ContactUs() {
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`group relative w-24 h-24 flex items-center justify-center rounded-2xl bg-zinc-900/50 border border-white/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ${social.borderColor}`}
+                                    className={`group relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center rounded-2xl bg-zinc-900/50 border border-white/10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ${social.borderColor}`}
                                 >
                                     <span className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${social.bgColor}`} />
                                     <div className={`relative z-10 transition-colors ${social.color} group-hover:text-white`}>
@@ -159,7 +159,7 @@ export default function ContactUs() {
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="bg-zinc-900/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden"
+                        className="bg-zinc-900/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
 
@@ -199,7 +199,7 @@ export default function ContactUs() {
                                     value={formState.message}
                                     onChange={handleChange}
                                     placeholder="How can we help you?"
-                                    className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all resize-none font-medium"
+                                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 md:px-5 py-3 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all resize-none font-medium"
                                 />
                             </div>
 
