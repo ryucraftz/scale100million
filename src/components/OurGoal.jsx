@@ -15,13 +15,13 @@ const Counter = ({ from = 0, to, duration = 2, prefix = "", suffix = "" }) => {
     }, [isInView, count, to, duration]);
 
     return (
-        <span className="relative inline-flex items-center tabular-nums">
-            <span className="opacity-0 pointer-events-none select-none">
+        <span className="relative inline-grid items-center justify-items-center tabular-nums">
+            <span className="opacity-0 pointer-events-none select-none col-start-1 row-start-1">
                 {prefix}
                 {to}
                 {suffix}
             </span>
-            <motion.span ref={ref} className="absolute left-0 right-0 text-center">
+            <motion.span ref={ref} className="col-start-1 row-start-1">
                 {rounded}
             </motion.span>
         </span>
