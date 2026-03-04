@@ -177,7 +177,7 @@ export default function WhyBuilt() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="mt-12 text-5xl md:text-7xl lg:text-9xl font-black text-white/5 tracking-[0.05em] uppercase select-none pointer-events-none"
+                        className="mt-12 text-5xl md:text-7xl lg:text-9xl font-black text-white/5 tracking-[0.05em] uppercase select-none pointer-events-none hidden md:block"
                     >
                         Built to scale
                     </motion.div>
