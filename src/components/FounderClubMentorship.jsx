@@ -91,15 +91,17 @@ const FounderClubMentorship = () => {
                             <div className="aspect-square md:aspect-video w-full rounded-xl bg-gradient-to-br from-surface to-background relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-                                {/* Abstract Visualization */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="relative w-48 h-48">
-                                        <div className="absolute inset-0 border-2 border-primary/30 rounded-full animate-[spin_10s_linear_infinite]" />
-                                        <div className="absolute inset-4 border-2 border-blue-400/30 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-pulse" />
-                                        </div>
+                                {/* Founder Club Badge Image */}
+                                <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
+                                    {/* Backlight / Glow effect */}
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="w-48 h-48 bg-primary/20 rounded-full blur-[80px] animate-pulse" />
                                     </div>
+                                    <img
+                                        src="/HLwYB0HJr9juasTFx9l9plHQ3g.avif"
+                                        alt="Founder Club Mentorship Badge"
+                                        className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
                             </div>
                         </div>
