@@ -177,9 +177,24 @@ export default function WhyBuilt() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="mt-12 text-5xl md:text-7xl lg:text-9xl font-black text-white/5 tracking-[0.05em] uppercase select-none pointer-events-none hidden md:block"
+                        className="mt-12 relative text-5xl md:text-7xl lg:text-9xl font-black tracking-[0.05em] uppercase select-none hidden md:block group cursor-crosshair w-full text-center"
                     >
-                        Built to scale
+                        <span className="text-white/5 transition-opacity duration-700 group-hover:opacity-0 relative z-0">
+                            Built to scale
+                        </span>
+                        <span
+                            className="absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-700 bg-clip-text text-transparent pointer-events-none z-10"
+                            style={{
+                                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E"), linear-gradient(110deg, #71717a 0%, #ffffff 50%, #71717a 100%)`,
+                                backgroundSize: "120px 120px, 200% auto",
+                                backgroundBlendMode: "multiply",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                filter: "drop-shadow(0 0 25px rgba(255,255,255,0.3))"
+                            }}
+                        >
+                            Built to scale
+                        </span>
                     </motion.div>
                 </motion.div>
             </motion.div>
