@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 export default function DesignYourGrowthEngine() {
     return (
@@ -17,7 +16,7 @@ export default function DesignYourGrowthEngine() {
                         className="group inline-flex flex-col md:flex-row items-center gap-4 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.1] md:leading-tight hover:text-primary transition-colors duration-300 text-center"
                     >
                         DESIGN YOUR GROWTH ENGINE
-                        <ArrowRight className="w-10 h-10 md:w-12 md:h-12 group-hover:translate-x-2 transition-transform duration-300" />
+
                     </a>
                 </motion.div>
             </div>
