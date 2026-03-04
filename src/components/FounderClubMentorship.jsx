@@ -21,7 +21,7 @@ const FounderClubMentorship = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Content Side */}
-                    <div className="space-y-8">
+                    <div className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const FounderClubMentorship = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="space-y-4"
+                            className="space-y-4 flex flex-col items-center md:items-start"
                         >
                             {benefits.map((benefit, index) => (
                                 <div key={index} className="flex items-center gap-4 group">
@@ -58,9 +58,9 @@ const FounderClubMentorship = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.4 }}
-                            className="pt-4"
+                            className="pt-4 flex flex-col items-center md:items-start"
                         >
-                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6">
                                 <motion.a
                                     href="https://nas.io/scale100million"
                                     target="_blank"

@@ -11,6 +11,7 @@ export default function WhatWeDo() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
+                    className="text-center md:text-left"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
                         MOST ONLINE BUSINESSES DON’T FAIL FROM LACK OF EFFORT.
@@ -28,7 +29,7 @@ export default function WhatWeDo() {
                     className="relative"
                 >
                     <div className="absolute -inset-1 bg-primary/20 rounded-2xl blur-2xl" />
-                    <div className="relative bg-surface p-8 rounded-2xl border border-gray-800 shadow-2xl">
+                    <div className="relative bg-surface p-8 rounded-2xl border border-gray-800 shadow-2xl text-center md:text-left">
                         <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
                             Scale100million works with founders to <span className="text-white font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
                         </p>

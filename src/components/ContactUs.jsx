@@ -1,5 +1,12 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Instagram, Youtube, Send, FileText, ArrowRight, MessageSquare } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Youtube, Send, FileText, ArrowRight, MessageSquare, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+// REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 export default function ContactUs() {
     const socialLinks = [
@@ -7,6 +14,50 @@ export default function ContactUs() {
         { icon: <Youtube size={32} />, href: "https://www.youtube.com/@scale100million-yt", label: "YouTube", color: "text-[#FF0000]", borderColor: "group-hover:border-[#FF0000]/50", bgColor: "group-hover:bg-[#FF0000]/10" },
         { icon: <Send size={32} />, href: "https://t.me/+SSG0wArwUcQyYTc1", label: "Telegram", color: "text-[#229ED9]", borderColor: "group-hover:border-[#229ED9]/50", bgColor: "group-hover:bg-[#229ED9]/10" },
     ];
+
+    const [formState, setFormState] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState("idle"); // idle, success, error
+
+    const handleChange = (e) => {
+        setFormState({
+            ...formState,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus("idle");
+
+        try {
+            // Note: This will fail until you replace the placeholder keys above
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: formState.name,
+                    from_email: formState.email,
+                    message: formState.message,
+                    to_name: "Scale100Million Team"
+                },
+                EMAILJS_PUBLIC_KEY
+            );
+
+            setSubmitStatus("success");
+            setFormState({ name: "", email: "", message: "" });
+        } catch (error) {
+            console.error("FAILED...", error);
+            setSubmitStatus("error");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <section id="contact" className="w-full min-h-screen bg-black text-white py-24 md:py-36 px-6 relative overflow-hidden flex justify-center items-center">
@@ -114,11 +165,15 @@ export default function ContactUs() {
 
                         <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Send a Message</h3>
 
-                        <form className="space-y-5 relative z-10">
+                        <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-gray-500 uppercase tracking-wide ml-1">Name</label>
                                 <input
                                     type="text"
+                                    name="name"
+                                    required
+                                    value={formState.name}
+                                    onChange={handleChange}
                                     placeholder="Your Name"
                                     className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all font-medium"
                                 />
@@ -127,6 +182,10 @@ export default function ContactUs() {
                                 <label className="text-xs font-bold text-gray-500 uppercase tracking-wide ml-1">Email</label>
                                 <input
                                     type="email"
+                                    name="email"
+                                    required
+                                    value={formState.email}
+                                    onChange={handleChange}
                                     placeholder="you@example.com"
                                     className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all font-medium"
                                 />
@@ -135,6 +194,10 @@ export default function ContactUs() {
                                 <label className="text-xs font-bold text-gray-500 uppercase tracking-wide ml-1">Message</label>
                                 <textarea
                                     rows={4}
+                                    name="message"
+                                    required
+                                    value={formState.message}
+                                    onChange={handleChange}
                                     placeholder="How can we help you?"
                                     className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all resize-none font-medium"
                                 />
@@ -142,10 +205,38 @@ export default function ContactUs() {
 
                             <button
                                 type="submit"
-                                className="w-full group bg-gradient-to-r from-primary to-blue-600 text-white font-bold text-lg py-4 rounded-xl transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 flex items-center justify-center gap-2"
+                                disabled={isSubmitting}
+                                className="w-full group bg-gradient-to-r from-primary to-blue-600 text-white font-bold text-lg py-4 rounded-xl transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
-                                Send Message <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader2 className="animate-spin" size={20} /> Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        Send Message <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                                    </>
+                                )}
                             </button>
+
+                            {submitStatus === "success" && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="p-4 bg-green-500/10 border border-green-500/20 text-green-400 rounded-xl text-sm font-medium text-center"
+                                >
+                                    Message sent successfully! We'll get back to you shortly.
+                                </motion.div>
+                            )}
+                            {submitStatus === "error" && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-xl text-sm font-medium text-center"
+                                >
+                                    Failed to send message. Please checking your API keys or try again later.
+                                </motion.div>
+                            )}
                         </form>
                     </motion.div>
 

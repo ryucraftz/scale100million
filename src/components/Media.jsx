@@ -55,7 +55,7 @@ export default function Media() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="space-y-8"
+                        className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start"
                     >
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                             MEDIA

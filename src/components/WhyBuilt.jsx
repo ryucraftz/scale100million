@@ -28,11 +28,12 @@ export default function WhyBuilt() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
+                    className="text-center md:text-left flex flex-col items-center md:items-start"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
                         WHY WE BUILT SCALE100MILLION
                     </h2>
-                    <div className="h-1 w-20 bg-primary rounded-full mb-8" />
+                    <div className="h-1 w-20 bg-primary rounded-full mb-8 mx-auto md:mx-0" />
 
                     <div className="space-y-6 text-lg md:text-xl text-gray-300">
                         <p className="font-medium text-white">FOUNDERS DON’T NEED MORE ADVICE.</p>
@@ -72,7 +73,7 @@ export default function WhyBuilt() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="pt-8 border-t border-gray-200"
+                    className="pt-8 border-t border-gray-200 text-center md:text-left flex flex-col items-center md:items-start"
                 >
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
                         Scale100million was built to <span className="text-primary font-bold">combine strategy, AI, and execution</span> into one operating model.
