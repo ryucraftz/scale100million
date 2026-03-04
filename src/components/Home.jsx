@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Instagram, Send, Youtube } from "lucide-react";
+import NeuralBackground from "./NeuralBackground";
 
 
 export default function Home() {
@@ -27,15 +28,8 @@ export default function Home() {
         {/* Base Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-black to-black" />
 
-        {/* Subtle Grid Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.15]"
-          style={{
-            backgroundImage: `linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-            maskImage: 'linear-gradient(to bottom, black 40%, transparent 100%)'
-          }}
-        />
+        {/* Neural Network Animation */}
+        <NeuralBackground />
 
         {/* Moving Spotlight (Follows Mouse) */}
         <motion.div
