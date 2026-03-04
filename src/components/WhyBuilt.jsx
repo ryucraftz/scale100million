@@ -166,7 +166,7 @@ export default function WhyBuilt() {
                 {/* Footer Message */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-20 md:mt-32 pt-16 border-t border-white/5 flex flex-col items-center text-center"
+                    className="mt-12 md:mt-32 pt-10 md:pt-16 border-t border-white/5 flex flex-col items-center text-center"
                 >
                     <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-lg">
                         <Zap size={14} className="animate-pulse" /> The Operation Model
