@@ -101,16 +101,15 @@ const FounderClubMentorship = () => {
                                         <img
                                             src="/HLwYB0HJr9juasTFx9l9plHQ3g.avif"
                                             alt="Founder Club Mentorship Badge"
-                                            className="w-full h-full object-contain relative z-10 transform hover:scale-[1.02] transition-transform duration-500"
-                                            style={{ filter: 'grayscale(1) brightness(1.1)' }}
+                                            className="w-full h-full object-contain transform hover:scale-[1.02] transition-transform duration-500"
                                         />
-                                        {/* Blue overlay — screen blend makes bright chart areas turn blue, dark bg stays dark */}
+                                        {/* color blend: keeps original luminance (dark bg stays dark), shifts hue to blue */}
                                         <div
-                                            className="absolute inset-0 z-20 pointer-events-none rounded"
+                                            className="absolute inset-0 pointer-events-none"
                                             style={{
                                                 backgroundColor: '#3B82F6',
-                                                mixBlendMode: 'screen',
-                                                opacity: 0.75,
+                                                mixBlendMode: 'color',
+                                                zIndex: 20,
                                             }}
                                         />
                                     </div>
