@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { TrendingUp } from "lucide-react";
 
 export default function DesignYourGrowthEngine() {
     return (
@@ -16,6 +17,7 @@ export default function DesignYourGrowthEngine() {
                         className="group inline-flex flex-col md:flex-row items-center gap-4 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.1] md:leading-tight hover:text-primary transition-colors duration-300 text-center"
                     >
                         DESIGN YOUR GROWTH ENGINE
+                        <TrendingUp className="w-8 h-8 md:w-12 md:h-12 group-hover:translate-y-[-8px] group-hover:translate-x-[4px] transition-transform duration-300" />
 
                     </a>
                 </motion.div>
