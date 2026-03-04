@@ -104,18 +104,23 @@ export default function Home() {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4"
             >
-              <a
-                href="https://nas.io/scale100million"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center group px-8 py-4 bg-primary hover:bg-blue-600 text-white text-sm md:text-base font-black uppercase tracking-wider rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 flex justify-center items-center gap-2 overflow-hidden relative"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  EXPLORE SERVICES
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer" />
-              </a>
+              {/* Glow ring wrapper */}
+              <div className="relative group/btn">
+                {/* Pulsing glow behind button */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 rounded-full blur-md opacity-60 group-hover/btn:opacity-100 transition-opacity duration-500 animate-pulse" />
+                <a
+                  href="https://nas.io/scale100million"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative w-full sm:w-auto text-center group px-10 py-4 bg-gradient-to-r from-blue-700 via-primary to-blue-500 hover:from-blue-600 hover:via-blue-500 hover:to-blue-400 text-white text-sm md:text-base font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_rgba(59,130,246,0.8)] hover:-translate-y-1 hover:scale-105 flex justify-center items-center gap-3 overflow-hidden border border-blue-400/30"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    EXPLORE SERVICES
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
+                </a>
+              </div>
             </motion.div>
           </div>
         </motion.div>
