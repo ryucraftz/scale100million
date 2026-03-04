@@ -44,7 +44,7 @@ export default function Media() {
     ];
 
     return (
-        <section id="media" className="py-24 px-6 md:px-12 bg-background text-text-primary relative border-t border-gray-800">
+        <section id="media" className="py-20 md:py-32 px-5 md:px-12 bg-background text-text-primary relative border-t border-gray-800">
             <SectionLabel number="02" />
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -57,10 +57,10 @@ export default function Media() {
                         transition={{ duration: 0.8 }}
                         className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start"
                     >
-                        <h2 className="text-2xl md:text-5xl font-bold tracking-tighter leading-tight">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] md:leading-tight mb-2">
                             MEDIA
                         </h2>
-                        <p className="text-base md:text-xl text-gray-300 leading-snug md:leading-relaxed tracking-tight">
+                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light tracking-wide md:tracking-normal">
                             We share our thinking, frameworks, and behind-the-scenes work publicly. <br /><br />
                             If you want to see how we think and work, this is the best place to start.
                         </p>

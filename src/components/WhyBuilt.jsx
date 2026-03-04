@@ -20,9 +20,9 @@ export default function WhyBuilt() {
     ];
 
     return (
-        <section id="why-built" className="py-24 px-6 md:px-12 bg-background text-text-primary relative border-t border-gray-800">
+        <section id="why-built" className="py-20 md:py-32 px-5 md:px-12 bg-background text-text-primary relative border-t border-gray-800">
             <SectionLabel number="01" />
-            <div className="max-w-4xl mx-auto space-y-12">
+            <div className="max-w-4xl mx-auto space-y-16 md:space-y-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -30,12 +30,12 @@ export default function WhyBuilt() {
                     transition={{ duration: 0.6 }}
                     className="text-center md:text-left flex flex-col items-center md:items-start"
                 >
-                    <h2 className="text-2xl md:text-5xl font-bold tracking-tighter mb-4 md:mb-6 leading-[1.15] md:leading-tight">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 md:mb-6 leading-[1.1] md:leading-tight">
                         WHY WE BUILT SCALE100MILLION
                     </h2>
                     <div className="h-1 w-20 bg-primary rounded-full mb-8 mx-auto md:mx-0" />
 
-                    <div className="space-y-4 md:space-y-6 text-base md:text-xl text-gray-300 tracking-tight leading-snug">
+                    <div className="space-y-4 md:space-y-6 text-base md:text-xl text-gray-300 font-light tracking-wide leading-relaxed">
                         <p className="font-medium text-white">FOUNDERS DON’T NEED MORE ADVICE.</p>
                         <p>THEY NEED SYSTEMS THAT:</p>
                     </div>
@@ -60,7 +60,7 @@ export default function WhyBuilt() {
                                 <div className="w-16 h-16 mb-6 rounded-2xl bg-black/50 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-xl">
                                     <item.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-500" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-200 group-hover:text-white transition-colors duration-300">
+                                <h3 className="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white transition-colors duration-300 tracking-wide">
                                     {item.text}
                                 </h3>
                             </div>
@@ -75,10 +75,10 @@ export default function WhyBuilt() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="pt-8 border-t border-gray-200 text-center md:text-left flex flex-col items-center md:items-start"
                 >
-                    <p className="text-base md:text-xl text-gray-300 leading-snug md:leading-relaxed max-w-2xl tracking-tight">
+                    <p className="text-base md:text-xl text-gray-300 leading-relaxed max-w-2xl font-light tracking-wide">
                         Scale100million was built to <span className="text-primary font-bold">combine strategy, AI, and execution</span> into one operating model.
                     </p>
-                    <p className="mt-4 md:mt-6 text-xl md:text-3xl font-black text-white tracking-tighter uppercase">
+                    <p className="mt-6 md:mt-8 text-2xl md:text-3xl font-black text-white tracking-tight uppercase">
                         Built to scale.
                     </p>
                 </motion.div>

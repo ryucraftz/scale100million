@@ -65,7 +65,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-center items-center pt-20 md:pt-12">
+      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-24 md:pt-12">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -84,17 +84,17 @@ export default function Home() {
           {/* Main Headline */}
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-2xl sm:text-5xl md:text-7xl font-bold text-text-primary leading-[1.1] md:leading-normal tracking-tighter font-['Inter',sans-serif]"
+            className="text-4xl sm:text-5xl md:text-7xl font-black text-text-primary leading-[1.15] md:leading-[1.1] tracking-tight md:tracking-tighter font-['Inter',sans-serif]"
           >
             WE HELP ONLINE <br className="hidden md:block" />
-            BUSINESSES <span className="text-primary block mt-1 md:mt-0">BUILD AND SCALE</span>
+            BUSINESSES <span className="text-primary block mt-2 md:mt-0">BUILD AND SCALE</span>
           </motion.h1>
 
           {/* Subheading */}
           <div className="space-y-6 flex flex-col items-center">
             <motion.p
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-base md:text-xl text-text-secondary max-w-2xl leading-snug md:leading-relaxed font-light text-center tracking-tight"
+              className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed font-light text-center tracking-wide md:tracking-normal uppercase"
             >
               THE ENGINE BEHIND GROWING BUSINESSES.
             </motion.p>

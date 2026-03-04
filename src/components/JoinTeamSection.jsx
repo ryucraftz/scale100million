@@ -5,19 +5,19 @@ import { ArrowRight } from "lucide-react";
 
 export default function JoinTeamSection() {
     return (
-        <section id="join-team" className="py-24 px-6 md:px-12 bg-background text-text-primary relative overflow-hidden border-t border-gray-800">
-            <div className="max-w-4xl mx-auto text-center space-y-10 z-10 relative">
+        <section id="join-team" className="py-20 md:py-32 px-5 md:px-12 bg-background text-text-primary relative overflow-hidden border-t border-gray-800">
+            <div className="max-w-4xl mx-auto text-center space-y-12 md:space-y-16 z-10 relative">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-2xl md:text-5xl font-bold tracking-tighter mb-6 md:mb-8 leading-tight">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-8 md:mb-12 leading-[1.1] md:leading-tight">
                         JOIN OUR TEAM
                     </h2>
 
-                    <div className="space-y-3 md:space-y-6 text-base md:text-2xl font-light text-gray-300 leading-snug md:leading-relaxed mb-10 md:mb-12 tracking-tight">
+                    <div className="space-y-4 md:space-y-6 text-lg md:text-2xl font-light text-gray-300 leading-relaxed mb-10 md:mb-12 tracking-wide md:tracking-normal">
                         <p>WE’RE BUILDING SYSTEMS, NOT SLIDES.</p>
                         <p>IF YOU LIKE STRATEGY, EXECUTION, AND AI-POWERED SCALE,</p>
                         <p>AND YOU WANT <span className="text-white font-semibold">REAL OWNERSHIP IN REAL WORK</span>,</p>

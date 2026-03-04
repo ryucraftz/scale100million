@@ -5,8 +5,8 @@ import { ArrowRight } from "lucide-react";
 
 export default function PartnerSection() {
     return (
-        <section id="partner" className="py-24 px-6 md:px-12 bg-background text-white overflow-hidden relative">
-            <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+        <section id="partner" className="py-20 md:py-32 px-5 md:px-12 bg-background text-white overflow-hidden relative">
+            <div className="max-w-4xl mx-auto text-center space-y-12 md:space-y-16 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -20,11 +20,11 @@ export default function PartnerSection() {
                         </span>
                     </div>
 
-                    <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 md:mb-8 leading-tight">
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black tracking-tight mb-6 md:mb-8 leading-[1.1] md:leading-tight">
                         WE PARTNER OR INVEST WITH FOUNDERS
                     </h2>
 
-                    <p className="text-base md:text-2xl text-gray-400 font-light leading-snug md:leading-relaxed max-w-3xl mx-auto tracking-tight">
+                    <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto tracking-wide md:tracking-normal">
                         We partner with founders to build, systemize, and grow their businesses.
                     </p>
 

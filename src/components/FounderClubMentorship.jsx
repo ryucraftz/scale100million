@@ -10,15 +10,15 @@ const FounderClubMentorship = () => {
     ];
 
     return (
-        <section id="mentorship" className="relative w-full py-24 bg-background overflow-hidden">
+        <section id="mentorship" className="relative w-full py-20 md:py-32 bg-background overflow-hidden">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
                 <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="relative max-w-7xl mx-auto px-5 md:px-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
                     {/* Content Side */}
                     <div className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start">
@@ -28,10 +28,10 @@ const FounderClubMentorship = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-2xl md:text-5xl font-bold text-text-primary mb-4 md:mb-6 leading-tight tracking-tighter font-['Inter',sans-serif]">
-                                Founder Club <span className="text-primary block mt-1 md:mt-2">Mentorship</span>
+                            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-text-primary mb-5 md:mb-8 leading-[1.1] tracking-tight font-['Inter',sans-serif]">
+                                Founder Club <span className="text-primary block mt-2">Mentorship</span>
                             </h2>
-                            <p className="text-base md:text-lg text-text-secondary leading-snug md:leading-relaxed max-w-xl tracking-tight">
+                            <p className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl tracking-wide md:tracking-normal font-light">
                                 Founder Club helps you build the systems required to scale your business to 8 figures.
                             </p>
                         </motion.div>
