@@ -97,12 +97,23 @@ const FounderClubMentorship = () => {
                                     <div className="absolute inset-0 flex items-center justify-center">
                                         <div className="w-48 h-48 bg-primary/20 rounded-full blur-[80px] animate-pulse" />
                                     </div>
-                                    <img
-                                        src="/HLwYB0HJr9juasTFx9l9plHQ3g.avif"
-                                        alt="Founder Club Mentorship Badge"
-                                        className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:scale-[1.02] transition-transform duration-500"
-                                        style={{ filter: 'hue-rotate(120deg) saturate(1.4) drop-shadow(0 0 30px rgba(59,130,246,0.5))' }}
-                                    />
+                                    <div className="relative w-full h-full" style={{ isolation: 'isolate' }}>
+                                        <img
+                                            src="/HLwYB0HJr9juasTFx9l9plHQ3g.avif"
+                                            alt="Founder Club Mentorship Badge"
+                                            className="w-full h-full object-contain relative z-10 transform hover:scale-[1.02] transition-transform duration-500"
+                                            style={{ filter: 'grayscale(1) brightness(1.1)' }}
+                                        />
+                                        {/* Blue overlay — screen blend makes bright chart areas turn blue, dark bg stays dark */}
+                                        <div
+                                            className="absolute inset-0 z-20 pointer-events-none rounded"
+                                            style={{
+                                                backgroundColor: '#3B82F6',
+                                                mixBlendMode: 'screen',
+                                                opacity: 0.75,
+                                            }}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
