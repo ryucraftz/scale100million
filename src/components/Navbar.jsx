@@ -151,12 +151,12 @@ export default function Navbar() {
           >
             Join Our Team
           </Link>
-          <button
+          <Link
+            to="/contact"
             className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
-            onClick={() => navigateAndScroll("contact")}
           >
             Contact
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button - Right Aligned (Visible ONLY on Mobile) */}
@@ -203,9 +203,7 @@ export default function Navbar() {
           to="/contact"
           className="px-8 py-3 bg-primary text-white rounded-full text-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           onClick={() => {
-            setIsMenuClosing(true);
             setIsOpen(false);
-            setTimeout(() => setIsMenuClosing(false), 300);
           }}
         >
           Contact Us
