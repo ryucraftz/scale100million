@@ -12,10 +12,11 @@ export default function NeuralBackground() {
         let nodes = [];
         let pulses = [];
 
-        const NODE_COUNT = 40;
+        const isMobile = window.innerWidth < 768;
+        const NODE_COUNT = isMobile ? 30 : 40;
         const MAX_DIST = 180;
-        const PULSE_SPEED = 0.9;
-        const PULSE_SPAWN_RATE = 0.008; // much lower — soothing flow
+        const PULSE_SPEED = isMobile ? 0.45 : 0.9;
+        const PULSE_SPAWN_RATE = isMobile ? 0.003 : 0.008;
 
         function resize() {
             canvas.width = canvas.offsetWidth;
@@ -27,8 +28,8 @@ export default function NeuralBackground() {
             nodes = Array.from({ length: NODE_COUNT }, () => ({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.15,
-                vy: (Math.random() - 0.5) * 0.15,
+                vx: (Math.random() - 0.5) * (isMobile ? 0.07 : 0.15),
+                vy: (Math.random() - 0.5) * (isMobile ? 0.07 : 0.15),
                 r: Math.random() * 1.5 + 1,
                 pulse: 0,
             }));
