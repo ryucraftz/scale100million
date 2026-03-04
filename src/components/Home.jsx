@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div
       id="mentorship"
-      className="relative w-full h-[60vh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
+      className="relative w-full h-[75vh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}
@@ -155,7 +155,7 @@ export default function Home() {
       </div>
 
       {/* Subtle Bottom Gradient - Stronger on Mobile to hide cut */}
-      <div className="absolute bottom-0 left-0 w-full h-40 md:h-40 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-64 md:h-40 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
     </div>
   );
 }
