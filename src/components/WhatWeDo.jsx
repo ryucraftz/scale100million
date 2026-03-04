@@ -13,10 +13,10 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.8 }}
                     className="text-center md:text-left"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+                    <h2 className="text-2xl md:text-5xl font-bold tracking-tighter mb-4 md:mb-6 leading-[1.15] md:leading-tight">
                         MOST ONLINE BUSINESSES DON’T FAIL FROM LACK OF EFFORT.
                     </h2>
-                    <p className="text-xl md:text-2xl text-gray-300 font-medium">
+                    <p className="text-base md:text-2xl text-gray-300 font-medium tracking-tight leading-snug">
                         THEY FAIL FROM UNSTRUCTURED GROWTH.
                     </p>
                 </motion.div>
@@ -29,8 +29,8 @@ export default function WhatWeDo() {
                     className="relative"
                 >
                     <div className="absolute -inset-1 bg-primary/20 rounded-2xl blur-2xl" />
-                    <div className="relative bg-surface p-8 rounded-2xl border border-gray-800 shadow-2xl text-center md:text-left">
-                        <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+                    <div className="relative bg-surface p-6 md:p-8 rounded-2xl border border-gray-800 shadow-2xl text-center md:text-left">
+                        <p className="text-base md:text-xl text-gray-400 leading-snug md:leading-relaxed tracking-tight">
                             Scale100million works with founders to <span className="text-white font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
                         </p>
                     </div>

@@ -20,11 +20,11 @@ export default function PartnerSection() {
                         </span>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
+                    <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 md:mb-8 leading-tight">
                         WE PARTNER OR INVEST WITH FOUNDERS
                     </h2>
 
-                    <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-base md:text-2xl text-gray-400 font-light leading-snug md:leading-relaxed max-w-3xl mx-auto tracking-tight">
                         We partner with founders to build, systemize, and grow their businesses.
                     </p>
 

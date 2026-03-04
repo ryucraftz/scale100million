@@ -16,7 +16,7 @@ export default function OurGoal() {
                 className="relative z-10 max-w-5xl mx-auto text-center"
             >
                 <span className="block text-primary font-bold tracking-widest uppercase text-sm mb-4">Our Mission</span>
-                <h2 className="text-3xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                <h2 className="text-2xl md:text-6xl lg:text-7xl font-bold leading-[1.1] md:leading-tight tracking-tighter">
                     OUR GOAL IS SIMPLE: <brWrapper />
                     <span className="text-gray-300">HELP 100 BUSINESSES SCALE TO</span> <span className="text-white underline decoration-primary underline-offset-8 decoration-4">$100 MILLION.</span>
                 </h2>

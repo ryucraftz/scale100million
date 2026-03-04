@@ -84,7 +84,7 @@ export default function Home() {
           {/* Main Headline */}
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-3xl sm:text-5xl md:text-7xl font-bold text-text-primary leading-tight md:leading-normal tracking-tight font-['Inter',sans-serif]"
+            className="text-2xl sm:text-5xl md:text-7xl font-bold text-text-primary leading-[1.1] md:leading-normal tracking-tighter font-['Inter',sans-serif]"
           >
             WE HELP ONLINE <br className="hidden md:block" />
             BUSINESSES <span className="text-primary block mt-1 md:mt-0">BUILD AND SCALE</span>
@@ -94,7 +94,7 @@ export default function Home() {
           <div className="space-y-6 flex flex-col items-center">
             <motion.p
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed font-light text-center"
+              className="text-base md:text-xl text-text-secondary max-w-2xl leading-snug md:leading-relaxed font-light text-center tracking-tight"
             >
               THE ENGINE BEHIND GROWING BUSINESSES.
             </motion.p>

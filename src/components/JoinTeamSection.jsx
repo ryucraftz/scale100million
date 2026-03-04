@@ -13,11 +13,11 @@ export default function JoinTeamSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">
+                    <h2 className="text-2xl md:text-5xl font-bold tracking-tighter mb-6 md:mb-8 leading-tight">
                         JOIN OUR TEAM
                     </h2>
 
-                    <div className="space-y-4 md:space-y-6 text-lg md:text-2xl font-light text-gray-300 leading-relaxed mb-12">
+                    <div className="space-y-3 md:space-y-6 text-base md:text-2xl font-light text-gray-300 leading-snug md:leading-relaxed mb-10 md:mb-12 tracking-tight">
                         <p>WE’RE BUILDING SYSTEMS, NOT SLIDES.</p>
                         <p>IF YOU LIKE STRATEGY, EXECUTION, AND AI-POWERED SCALE,</p>
                         <p>AND YOU WANT <span className="text-white font-semibold">REAL OWNERSHIP IN REAL WORK</span>,</p>

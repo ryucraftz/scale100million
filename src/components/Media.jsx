@@ -57,10 +57,10 @@ export default function Media() {
                         transition={{ duration: 0.8 }}
                         className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start"
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                        <h2 className="text-2xl md:text-5xl font-bold tracking-tighter leading-tight">
                             MEDIA
                         </h2>
-                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        <p className="text-base md:text-xl text-gray-300 leading-snug md:leading-relaxed tracking-tight">
                             We share our thinking, frameworks, and behind-the-scenes work publicly. <br /><br />
                             If you want to see how we think and work, this is the best place to start.
                         </p>

@@ -28,10 +28,10 @@ const FounderClubMentorship = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl md:text-5xl font-bold text-text-primary mb-6 font-['Inter',sans-serif]">
-                                Founder Club <span className="text-primary block mt-2">Mentorship</span>
+                            <h2 className="text-2xl md:text-5xl font-bold text-text-primary mb-4 md:mb-6 leading-tight tracking-tighter font-['Inter',sans-serif]">
+                                Founder Club <span className="text-primary block mt-1 md:mt-2">Mentorship</span>
                             </h2>
-                            <p className="text-lg text-text-secondary leading-relaxed max-w-xl">
+                            <p className="text-base md:text-lg text-text-secondary leading-snug md:leading-relaxed max-w-xl tracking-tight">
                                 Founder Club helps you build the systems required to scale your business to 8 figures.
                             </p>
                         </motion.div>
@@ -48,7 +48,7 @@ const FounderClubMentorship = () => {
                                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                                         <Check className="w-5 h-5 text-primary" />
                                     </div>
-                                    <span className="text-xl text-text-primary font-medium">{benefit}</span>
+                                    <span className="text-lg md:text-xl text-text-primary font-medium tracking-tight">{benefit}</span>
                                 </div>
                             ))}
                         </motion.div>

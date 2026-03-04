@@ -30,12 +30,12 @@ export default function WhyBuilt() {
                     transition={{ duration: 0.6 }}
                     className="text-center md:text-left flex flex-col items-center md:items-start"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                    <h2 className="text-2xl md:text-5xl font-bold tracking-tighter mb-4 md:mb-6 leading-[1.15] md:leading-tight">
                         WHY WE BUILT SCALE100MILLION
                     </h2>
                     <div className="h-1 w-20 bg-primary rounded-full mb-8 mx-auto md:mx-0" />
 
-                    <div className="space-y-6 text-lg md:text-xl text-gray-300">
+                    <div className="space-y-4 md:space-y-6 text-base md:text-xl text-gray-300 tracking-tight leading-snug">
                         <p className="font-medium text-white">FOUNDERS DON’T NEED MORE ADVICE.</p>
                         <p>THEY NEED SYSTEMS THAT:</p>
                     </div>
@@ -75,10 +75,10 @@ export default function WhyBuilt() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="pt-8 border-t border-gray-200 text-center md:text-left flex flex-col items-center md:items-start"
                 >
-                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                    <p className="text-base md:text-xl text-gray-300 leading-snug md:leading-relaxed max-w-2xl tracking-tight">
                         Scale100million was built to <span className="text-primary font-bold">combine strategy, AI, and execution</span> into one operating model.
                     </p>
-                    <p className="mt-6 text-2xl md:text-3xl font-black text-white tracking-tight uppercase">
+                    <p className="mt-4 md:mt-6 text-xl md:text-3xl font-black text-white tracking-tighter uppercase">
                         Built to scale.
                     </p>
                 </motion.div>
