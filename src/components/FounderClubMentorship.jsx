@@ -10,7 +10,7 @@ const FounderClubMentorship = () => {
     ];
 
     return (
-        <section id="mentorship" className="relative w-full pt-36 pb-20 md:py-32 bg-background overflow-hidden">
+        <section id="mentorship" className="relative w-full pt-52 pb-20 md:py-32 bg-background overflow-hidden">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
