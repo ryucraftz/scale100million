@@ -174,14 +174,14 @@ export default function WhyBuilt() {
                     {/* AI Core Immersive Visual */}
                     <motion.div
                         className="absolute top-[30%] md:top-1/3 left-1/2 w-[150vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-40 md:opacity-60"
-                        initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9, rotate: 0 }}
+                        initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9 }}
                         whileInView={{ opacity: 0.6, x: "-50%", y: "-50%", scale: 1 }}
-                        animate={{ y: ["-50%", "-53%", "-50%"], rotate: 360 }}
+                        animate={{ y: ["-50%", "-52%", "-50%", "-48%", "-50%"], rotate: [0, 1, 0, -1, 0] }}
                         transition={{
                             opacity: { duration: 2 },
                             scale: { duration: 2 },
                             y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
-                            rotate: { duration: 120, repeat: Infinity, ease: "linear" }
+                            rotate: { duration: 20, repeat: Infinity, ease: "easeInOut" }
                         }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
@@ -250,22 +250,18 @@ export default function WhyBuilt() {
                         initial={{ opacity: 0, scale: 0.98 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="relative text-[14.5vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
-                        style={{ WebkitTextStroke: '1px rgba(255,255,255,0.08)', color: 'transparent' }}
+                        style={{ WebkitTextStroke: '1px rgba(255,255,255,0.05)', color: 'transparent' }}
                     >
                         <span className="relative z-0">
                             Built to scale
                         </span>
 
-                        {/* Sweeping Gradient over the Stroke */}
+                        {/* Static Faded Fill over the Stroke */}
                         <span
-                            className="absolute left-0 top-0 w-full h-full z-10"
+                            className="absolute left-0 top-0 w-full h-full z-10 opacity-30"
                             style={{
-                                backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(59,130,246,0.8) 50%, transparent 100%)`,
-                                backgroundSize: "200% auto",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                                WebkitTextStroke: '1px transparent',
-                                animation: "gradient-sweep-right 6s linear infinite",
+                                color: 'rgba(59,130,246,0.1)',
+                                WebkitTextFillColor: 'rgba(59,130,246,0.1)',
                             }}
                         >
                             Built to scale
