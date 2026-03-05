@@ -20,12 +20,24 @@ export default function WhatWeDo() {
                         </span>
                         The Problem
                     </div>
-                    <h2 className="text-3xl md:text-5xl lg:text-[4.5rem] font-bold tracking-tight mb-8 leading-[1.1] font-['Inter',sans-serif] text-gray-100">
-                        Most online businesses don't fail from lack of <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-white to-gray-400 font-black">effort.</span>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-[1.1] font-['Inter',sans-serif] text-white">
+                        Most businesses don't fail from lack of{' '}
+                        <span className="relative inline-block">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-[length:200%_auto] animate-gradient-x">
+                                effort.
+                            </span>
+                            <motion.span
+                                className="absolute -bottom-1 lg:-bottom-2 left-0 h-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-full"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: '100%' }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.4 }}
+                            />
+                        </span>
                     </h2>
-                    <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-8 mx-auto md:mx-0" />
+                    <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-8 mx-auto md:mx-0 opacity-50" />
                     <p className="text-xl md:text-2xl text-gray-400 font-light tracking-wide leading-relaxed font-['Inter',sans-serif]">
-                        They fail from <span className="text-blue-400 font-bold tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">unstructured growth.</span>
+                        They fail from <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 font-bold tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">unstructured growth.</span>
                     </p>
                 </motion.div>
 
