@@ -287,14 +287,14 @@ const AIAutomationServices = () => {
                                 <div className="pt-4 md:pt-0 pb-1">
                                     {/* PM certifications */}
                                     {service.title === "Performance Marketing" && (
-                                        <div className="flex items-center gap-2 md:gap-4 mb-4 md:mb-5 text-[8px] md:text-[10px] text-gray-400 font-bold uppercase tracking-wide md:tracking-widest bg-white/5 w-fit px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/10 shadow-lg">
-                                            <span className="flex items-center gap-1.5 md:gap-2">
-                                                <img src="/meta.svg" alt="Meta Logo" className="w-4 h-4 md:w-5 md:h-5 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+                                        <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-5 text-[10px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest md:tracking-widest bg-white/5 w-fit px-4 md:px-4 py-2 md:py-2 rounded-full border border-white/10 shadow-lg">
+                                            <span className="flex items-center gap-2 md:gap-2">
+                                                <img src="/meta.svg" alt="Meta Logo" className="w-5 h-5 md:w-5 md:h-5 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
                                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-200">Meta Partner</span>
                                             </span>
-                                            <span className="w-px h-2.5 md:h-3 bg-white/20" />
-                                            <span className="flex items-center gap-1.5 md:gap-2">
-                                                <img src="/google.svg" alt="Google Logo" className="w-3 h-3 md:w-4 md:h-4 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
+                                            <span className="w-px h-3 md:h-3 bg-white/20" />
+                                            <span className="flex items-center gap-2 md:gap-2">
+                                                <img src="/google.svg" alt="Google Logo" className="w-4 h-4 md:w-4 md:h-4 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
                                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-200">Google Partner</span>
                                             </span>
                                         </div>
