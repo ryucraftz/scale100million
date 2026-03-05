@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring, useDragControls } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BarChart3, Filter, Zap, ArrowRight, MessageCircle, ChevronDown, TrendingUp, Users, Bot } from 'lucide-react';
 
 // Hook to measure element height
@@ -17,10 +17,9 @@ function useMeasure() {
     return [ref, height];
 }
 
-// Smooth accordion that animates to a measured pixel height (not height:auto)
+// Smooth accordion using measured height + spring (no height:"auto" jank)
 function AccordionContent({ isOpen, children }) {
     const [measureRef, measuredHeight] = useMeasure();
-
     return (
         <motion.div
             animate={{
@@ -29,9 +28,9 @@ function AccordionContent({ isOpen, children }) {
             }}
             transition={{
                 height: { type: 'spring', stiffness: 260, damping: 28 },
-                opacity: { duration: 0.25, ease: 'easeInOut' },
+                opacity: { duration: 0.22, ease: 'easeInOut' },
             }}
-            style={{ overflow: 'hidden' }}
+            style={{ overflow: 'hidden', willChange: 'height, opacity' }}
             className="relative z-10"
         >
             <div ref={measureRef}>
@@ -44,12 +43,9 @@ function AccordionContent({ isOpen, children }) {
 const AIAutomationServices = () => {
     const [expandedCard, setExpandedCard] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
-    const [hoveredCard, setHoveredCard] = useState(null);
 
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
         checkMobile();
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
@@ -63,7 +59,6 @@ const AIAutomationServices = () => {
     const services = [
         {
             icon: <BarChart3 className="w-7 h-7" />,
-            accent: 'blue',
             accentColor: '#3b82f6',
             title: "Performance Marketing",
             subtitle: "Drive Revenue with Paid Traffic",
@@ -83,12 +78,11 @@ const AIAutomationServices = () => {
             badgeText: "Meta & Google Partner",
             badgeColor: 'bg-blue-500/10 text-blue-300 border-blue-500/20',
             iconBg: 'bg-blue-500/10 border-blue-500/20 text-blue-400',
-            highlight: 'group-hover:border-blue-500/50',
+            borderHover: 'hover:border-blue-500/50',
             ctaStyle: 'from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 shadow-blue-500/20 hover:shadow-blue-500/40',
         },
         {
             icon: <Filter className="w-7 h-7" />,
-            accent: 'purple',
             accentColor: '#a855f7',
             title: "Funnel Building",
             subtitle: "Turn Traffic Into Revenue",
@@ -108,12 +102,11 @@ const AIAutomationServices = () => {
             badgeText: "Conversion Specialists",
             badgeColor: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
             iconBg: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
-            highlight: 'group-hover:border-purple-500/50',
+            borderHover: 'hover:border-purple-500/50',
             ctaStyle: 'from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 shadow-purple-500/20 hover:shadow-purple-500/40',
         },
         {
             icon: <Zap className="w-7 h-7" />,
-            accent: 'emerald',
             accentColor: '#10b981',
             title: "Customized AI Automations",
             subtitle: "Remove Operational Bottlenecks",
@@ -136,7 +129,7 @@ const AIAutomationServices = () => {
             badgeText: "AI-Powered Operations",
             badgeColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
             iconBg: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400',
-            highlight: 'group-hover:border-emerald-500/50',
+            borderHover: 'hover:border-emerald-500/50',
             ctaStyle: 'from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 shadow-emerald-500/20 hover:shadow-emerald-500/40',
         }
     ];
@@ -152,28 +145,14 @@ const AIAutomationServices = () => {
     return (
         <section id="expert-services" className="relative w-full py-12 md:py-32 bg-black overflow-hidden font-['Satoshi',sans-serif]">
 
-            {/* Animated Background Blobs */}
+            {/* Background Blobs — pure CSS animate-pulse, no JS thread overhead */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <motion.div
-                    animate={{ scale: [1, 1.15, 1], opacity: [0.12, 0.18, 0.12] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-[-15%] right-[-8%] w-[700px] h-[700px] bg-blue-700/20 rounded-full blur-[130px]"
-                />
-                <motion.div
-                    animate={{ scale: [1.1, 1, 1.1], opacity: [0.1, 0.16, 0.1] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute bottom-[5%] left-[-12%] w-[600px] h-[600px] bg-purple-700/20 rounded-full blur-[130px]"
-                />
-                <motion.div
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.08, 0.14, 0.08] }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-                    className="absolute top-[40%] left-[30%] w-[500px] h-[500px] bg-emerald-700/10 rounded-full blur-[150px]"
-                />
-
-                {/* Grid Pattern */}
+                <div className="absolute top-[-15%] right-[-8%] w-[700px] h-[700px] bg-blue-700/20 rounded-full blur-[130px] animate-pulse" style={{ animationDuration: '8s' }} />
+                <div className="absolute bottom-[5%] left-[-12%] w-[600px] h-[600px] bg-purple-700/20 rounded-full blur-[130px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }} />
+                {/* Third blob only on desktop — hidden on mobile to save GPU */}
+                <div className="hidden md:block absolute top-[40%] left-[30%] w-[500px] h-[500px] bg-emerald-700/10 rounded-full blur-[150px] animate-pulse" style={{ animationDuration: '12s', animationDelay: '4s' }} />
+                {/* Grid */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px]" />
-
-                {/* Top gradient fade */}
                 <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent" />
             </div>
 
@@ -185,25 +164,15 @@ const AIAutomationServices = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 0.6 }}
                     >
                         {/* Badge */}
-                        <motion.div
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-md mb-6"
-                        >
-                            <motion.span
-                                animate={{ scale: [1, 1.4, 1] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="w-2 h-2 rounded-full bg-blue-400 inline-block"
-                            />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse inline-block" />
                             <span className="text-xs md:text-sm font-semibold text-blue-300 uppercase tracking-widest">
                                 Proven Growth Systems
                             </span>
-                        </motion.div>
+                        </div>
 
                         <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight font-['Inter',sans-serif]">
                             Build Systems That Turn{' '}
@@ -232,7 +201,7 @@ const AIAutomationServices = () => {
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: 0.5 + i * 0.1 }}
+                                    transition={{ delay: 0.4 + i * 0.1 }}
                                     className="flex items-center gap-2"
                                 >
                                     <div className="w-1.5 h-1.5 bg-blue-500/60 rounded-full" />
@@ -254,8 +223,8 @@ const AIAutomationServices = () => {
                     <h3 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3">Core Services</h3>
                     <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
                         We help businesses grow by improving three core areas: <br />
-                        <span className="text-blue-400 font-medium">Customer acquisition</span> {' '}•{' '}
-                        <span className="text-purple-400 font-medium">Operational automation</span> {' '}•{' '}
+                        <span className="text-blue-400 font-medium">Customer acquisition</span>{' '}•{' '}
+                        <span className="text-purple-400 font-medium">Operational automation</span>{' '}•{' '}
                         <span className="text-emerald-400 font-medium">Business scaling systems</span>
                     </p>
                 </motion.div>
@@ -268,34 +237,28 @@ const AIAutomationServices = () => {
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.15 }}
-                            onHoverStart={() => setHoveredCard(index)}
-                            onHoverEnd={() => setHoveredCard(null)}
+                            transition={{ duration: 0.5, delay: index * 0.12 }}
                             onClick={() => toggleCard(index)}
-                            className={`relative flex flex-col h-full bg-gradient-to-b ${service.gradientFrom} ${service.gradientTo} border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-8 backdrop-blur-sm transition-all duration-500 ${service.highlight} group cursor-pointer md:cursor-default overflow-hidden`}
-                            style={{ boxShadow: hoveredCard === index ? `0 0 60px ${service.glowColor}` : 'none' }}
+                            className={`relative flex flex-col h-full bg-gradient-to-b ${service.gradientFrom} ${service.gradientTo} border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-8 transition-all duration-500 ${service.borderHover} group cursor-pointer md:cursor-default overflow-hidden`}
                             whileHover={!isMobile ? { y: -8, transition: { duration: 0.3 } } : {}}
+                            style={{ willChange: 'transform' }}
                         >
-                            {/* Card hover glow effect */}
-                            <motion.div
+                            {/* Card glow on hover — pure CSS, no JS state */}
+                            <div
                                 className="absolute inset-0 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                                 style={{ background: `radial-gradient(circle at 50% 0%, ${service.glowColor} 0%, transparent 70%)` }}
                             />
 
-                            {/* Shine sweep on hover */}
+                            {/* Shine sweep */}
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none overflow-hidden rounded-2xl md:rounded-3xl">
                                 <div className="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:left-[200%] transition-all duration-1000 ease-in-out" />
                             </div>
 
                             {/* Header row */}
                             <div className="flex items-start justify-between mb-4 md:mb-6 relative z-10">
-                                <motion.div
-                                    whileHover={{ scale: 1.1, rotate: 5 }}
-                                    transition={{ type: 'spring', stiffness: 300 }}
-                                    className={`${service.iconBg} w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center border`}
-                                >
+                                <div className={`${service.iconBg} w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center border`}>
                                     {service.icon}
-                                </motion.div>
+                                </div>
                                 <div className="flex items-center gap-2">
                                     <span className={`text-[10px] hidden sm:block md:text-xs font-semibold px-2.5 py-1 rounded-full border ${service.badgeColor}`}>
                                         {service.badgeText}
@@ -308,14 +271,14 @@ const AIAutomationServices = () => {
 
                             {/* Title & Subtitle */}
                             <h3 className="text-xl md:text-2xl font-black text-white mb-1 relative z-10">{service.title}</h3>
-                            <h4 className={`text-xs md:text-sm font-medium text-gray-400 uppercase tracking-wider relative z-10 ${(!isMobile || expandedCard === index) ? 'mb-4 md:mb-6 pb-4 md:pb-5 border-b border-white/10' : 'mb-0 pb-0 border-none'}`}>
+                            <h4 className={`text-xs md:text-sm font-medium text-gray-400 uppercase tracking-wider relative z-10 ${(!isMobile || expandedCard === index) ? 'mb-4 md:mb-5 pb-4 md:pb-5 border-b border-white/10' : 'mb-0 pb-0 border-none'}`}>
                                 {service.subtitle}
                             </h4>
 
-                            {/* Expandable Content */}
+                            {/* Expandable Content — smooth spring accordion */}
                             <AccordionContent isOpen={!isMobile || expandedCard === index}>
                                 <div className="pt-4 md:pt-0 pb-1">
-                                    {/* Certifications badge for PM */}
+                                    {/* PM certifications */}
                                     {service.title === "Performance Marketing" && (
                                         <div className="flex items-center gap-3 mb-5 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
                                             <span className="flex items-center gap-1.5">
@@ -331,34 +294,25 @@ const AIAutomationServices = () => {
                                         {service.description}
                                     </p>
 
-                                    {/* Details */}
-                                    <div className="mb-5 md:mb-7 flex-grow">
+                                    <div className="mb-5 md:mb-7">
                                         <h5 className="text-xs md:text-sm font-bold text-white mb-3 flex items-center gap-2">
                                             What we handle <ArrowRight className="w-3 h-3 text-gray-500" />
                                         </h5>
                                         <ul className="space-y-2">
                                             {service.details.map((detail, idx) => (
-                                                <motion.li
-                                                    key={idx}
-                                                    initial={{ opacity: 0, x: -10 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: idx * 0.05 }}
-                                                    className="flex items-start gap-2.5 text-xs md:text-sm text-gray-400"
-                                                >
+                                                <li key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-gray-400">
                                                     <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: service.accentColor + '80' }} />
                                                     <span>{detail}</span>
-                                                </motion.li>
+                                                </li>
                                             ))}
                                         </ul>
                                     </div>
 
-                                    {/* Result & CTA */}
                                     <div className="pt-4 md:pt-5 border-t border-white/10">
                                         <p className="text-xs md:text-sm text-white/80 font-medium mb-4 italic">
                                             <span className="text-gray-500 not-italic block mb-1 text-[10px] md:text-xs uppercase tracking-widest">The Result</span>
                                             {service.result}
                                         </p>
-
                                         <a
                                             href={service.link}
                                             target="_blank"
@@ -381,12 +335,12 @@ const AIAutomationServices = () => {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
+                    transition={{ duration: 0.6 }}
                     className="relative mb-16 md:mb-24 overflow-hidden rounded-2xl md:rounded-3xl"
                 >
-                    {/* Stats card background with animated gradient border */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-emerald-600/20 rounded-2xl md:rounded-3xl blur-sm" />
-                    <div className="relative bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12">
+                    {/* backdrop-blur only on desktop — expensive on mobile GPU */}
+                    <div className="relative bg-black/60 md:backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12">
                         <div className="text-center mb-6 md:mb-10">
                             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-gray-500 block mb-2">Our Track Record</span>
                             <h3 className="text-xl md:text-3xl font-black text-white">Metrics That Matter</h3>
@@ -398,8 +352,8 @@ const AIAutomationServices = () => {
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className={`text-center relative ${index === 4 ? 'col-span-2 lg:col-span-1' : ''}`}
+                                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                                    className={`text-center ${index === 4 ? 'col-span-2 lg:col-span-1' : ''}`}
                                 >
                                     <div className="flex justify-center mb-2">{stat.icon}</div>
                                     <div className="text-2xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 mb-1 font-['Inter',sans-serif]">
@@ -417,7 +371,7 @@ const AIAutomationServices = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.7 }}
                     className="max-w-4xl mx-auto text-center relative"
                 >
                     <div className="absolute -inset-x-20 -inset-y-10 bg-gradient-to-r from-blue-500/10 via-purple-500/5 to-blue-500/10 blur-3xl rounded-full opacity-60 pointer-events-none" />
