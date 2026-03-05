@@ -74,16 +74,16 @@ export default function OurGoal() {
                     </div>
                 </div>
 
-                <h2 className="text-3xl leading-[1.1] md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black md:leading-[1.1] tracking-tight md:tracking-tighter uppercase max-w-[100vw] overflow-wrap-anywhere flex flex-col md:block items-center text-center">
+                <h2 className="text-2xl leading-[1.1] sm:text-3xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black md:leading-[1.1] tracking-tight md:tracking-tighter uppercase max-w-[100vw] overflow-wrap-anywhere flex flex-col md:block items-center text-center">
                     <span className="block md:inline">OUR GOAL IS SIMPLE:</span>
-                    <span className="block md:inline mt-2 md:mt-0">
+                    <span className="block md:inline mt-1 md:mt-0">
                         <span className="text-gray-400 inline-block md:mt-5">HELP</span>{" "}
                         <span className="inline-block drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] pr-1 md:pr-1 min-w-[2.5em] md:min-w-[3em]">
                             <Counter to={100} duration={2.5} />
                         </span>{" "}
                         <span className="text-gray-400 inline-block pl-1 md:pl-2">BUSINESSES</span>
                     </span>
-                    <span className="block md:inline mt-2 md:mt-0">
+                    <span className="block md:inline mt-1 md:mt-0">
                         <span className="text-gray-400 inline-block">SCALE TO</span>{" "}
                         <span className="relative inline-block text-white pl-1 md:pl-2">
                             <Counter to={100} prefix="$" suffix=" MILLION." duration={2.5} />
@@ -92,7 +92,7 @@ export default function OurGoal() {
                                 whileInView={{ width: "100%" }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 1, duration: 1.5, ease: "easeInOut" }}
-                                className="absolute -bottom-1 md:-bottom-4 left-0 h-1.5 md:h-2.5 bg-gradient-to-r from-primary to-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
+                                className="absolute -bottom-1 md:-bottom-4 left-0 h-[3px] md:h-2.5 bg-gradient-to-r from-primary to-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
                             />
                         </span>
                     </span>
