@@ -176,11 +176,12 @@ export default function WhyBuilt() {
                         className="absolute top-[30%] md:top-1/3 left-1/2 w-[150vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-40 md:opacity-60"
                         initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9 }}
                         whileInView={{ opacity: 0.6, x: "-50%", y: "-50%", scale: 1 }}
-                        animate={{ y: ["-50%", "-52%", "-50%"] }}
+                        animate={{ y: ["-50%", "-52%", "-50%", "-48%", "-50%"], rotate: [0, 1, 0, -1, 0] }}
                         transition={{
-                            opacity: { duration: 1.5 },
-                            scale: { duration: 1.5 },
-                            y: { duration: 8, repeat: Infinity, ease: "easeInOut" }
+                            opacity: { duration: 2 },
+                            scale: { duration: 2 },
+                            y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
+                            rotate: { duration: 20, repeat: Infinity, ease: "easeInOut" }
                         }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
@@ -188,68 +189,61 @@ export default function WhyBuilt() {
                             src="/ai-core.png"
                             alt="Autonomous Ecosystem Core"
                             className="w-full h-full object-contain"
-                            style={{ WebkitMaskImage: 'radial-gradient(circle, black 40%, transparent 70%)', maskImage: 'radial-gradient(circle, black 40%, transparent 70%)' }}
+                            style={{ WebkitMaskImage: 'radial-gradient(circle, black 25%, transparent 60%)', maskImage: 'radial-gradient(circle, black 25%, transparent 60%)' }}
                         />
                     </motion.div>
 
-                    {/* Minimalist Professional Badge with Continuous Glow */}
-                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-blue-500/20 md:border-blue-500/10 text-gray-300 md:text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-16 bg-blue-500/10 md:bg-blue-900/10 rounded-full backdrop-blur-md transition-all duration-1000 animate-[pulse_4s_ease-in-out_infinite] shadow-[0_0_15px_rgba(59,130,246,0.2)]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+                    {/* Ambient Floating Dust */}
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+                        {[...Array(20)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-1 h-1 bg-blue-400 rounded-full mix-blend-screen"
+                                style={{
+                                    left: `${Math.random() * 100}%`,
+                                    top: `${Math.random() * 100}%`,
+                                    opacity: Math.random() * 0.3 + 0.1
+                                }}
+                                animate={{
+                                    y: [0, -100 - Math.random() * 200],
+                                    x: [0, (Math.random() - 0.5) * 100],
+                                    opacity: [0, Math.random() * 0.4 + 0.1, 0],
+                                    scale: [0, Math.random() * 1 + 0.5, 0]
+                                }}
+                                transition={{
+                                    duration: 10 + Math.random() * 15,
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                    delay: Math.random() * 10
+                                }}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Minimalist Professional Badge */}
+                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                         <span className="relative z-10">The Operation Model</span>
                     </div>
 
-                    {/* Ultra-Refined & Animated Typography */}
-                    <motion.div
-                        className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-20 md:mb-40"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={{
-                            visible: {
-                                transition: { staggerChildren: 0.2, delayChildren: 0.3 }
-                            }
-                        }}
-                    >
-                        {/* Continuous Breathing Animation for the Text Block */}
-                        <motion.div
-                            animate={{ y: ["0%", "-3%", "0%"] }}
-                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            <motion.p
-                                variants={{
-                                    hidden: { opacity: 0, y: 30 },
-                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-                                }}
-                                className="text-2xl md:text-5xl lg:text-7xl text-white/90 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-                            >
-                                Scale100million was built to{' '}
-                                <motion.span
-                                    variants={{
-                                        hidden: { opacity: 0, scale: 0.95 },
-                                        visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
-                                    }}
-                                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-blue-300 font-bold drop-shadow-[0_0_20px_rgba(34,211,238,0.4)] relative inline-block"
-                                >
-                                    combine strategy, AI, & execution
-                                </motion.span>{' '}
-                            </motion.p>
+                    {/* Ultra-Refined Typography */}
+                    <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-20 md:mb-40">
+                        {/* Subtle Text Backdrop for Contrast */}
+                        <div className="absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
-                            <motion.p
-                                variants={{
-                                    hidden: { opacity: 0, y: 30 },
-                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-                                }}
-                                className="text-2xl md:text-5xl lg:text-7xl text-white/90 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] mt-1 md:mt-2"
-                            >
-                                into one{' '}
-                                <span className="relative inline-block mt-2 lg:mt-0">
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-500 font-extrabold pb-2 drop-shadow-[0_0_25px_rgba(99,102,241,0.3)]">
-                                        autonomous ecosystem.
-                                    </span>
+                        <p className="text-2xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10">
+                            Scale100million was built to{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
+                                combine strategy, AI, & execution
+                            </span>{' '}
+                            into one{' '}
+                            <span className="relative inline-block mt-2 lg:mt-0">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 to-blue-500 font-extrabold pb-2 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+                                    autonomous ecosystem.
                                 </span>
-                            </motion.p>
-                        </motion.div>
-                    </motion.div>
+                            </span>
+                        </p>
+                    </div>
 
                     {/* Immersive Black Textured Mega Text - BUILT TO SCALE */}
                     <motion.div
@@ -286,11 +280,11 @@ export default function WhyBuilt() {
                             <span
                                 className="absolute left-0 top-0 w-full h-full z-20 pointer-events-none"
                                 style={{
-                                    backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%)`,
+                                    backgroundImage: `linear-gradient(90deg, transparent 0%, transparent 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.8) 52%, transparent 60%, transparent 100%)`,
                                     backgroundSize: "200% auto",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
-                                    animation: "gradient-x 7s linear infinite",
+                                    animation: "gradient-x 10s cubic-bezier(0.25, 0.1, 0.25, 1) infinite",
                                 }}
                             >
                                 Built to scale
