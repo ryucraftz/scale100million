@@ -171,8 +171,8 @@ export default function WhyBuilt() {
                     <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-lg">
                         <Zap size={14} className="animate-pulse" /> The Operation Model
                     </div>
-                    <p className="text-2xl md:text-4xl text-gray-200 leading-tight max-w-4xl font-light tracking-wide lg:leading-[1.1]">
-                        Scale100million was built to <span className="text-white font-black italic">combine strategy, AI, and execution</span> into one <span className="underline decoration-primary/50 underline-offset-8">autonomous ecosystem</span>.
+                    <p className="text-2xl md:text-5xl text-gray-300 leading-[1.3] max-w-5xl font-light tracking-tight font-['Inter',sans-serif]">
+                        Scale100million was built to <span className="text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">combine strategy, AI, and execution</span> into one <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 font-black tracking-tighter drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">autonomous ecosystem.</span>
                     </p>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
