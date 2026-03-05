@@ -205,7 +205,7 @@ const AIAutomationServices = () => {
                             </span>
                         </motion.div>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight font-['Inter',sans-serif]">
+                        <h2 className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight font-['Inter',sans-serif]">
                             Build Systems That Turn{' '}
                             <span className="relative inline-block">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-[length:200%_auto] animate-gradient-x">
