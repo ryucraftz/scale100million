@@ -194,19 +194,26 @@ const AIAutomationServices = () => {
                             A dedicated team of specialists delivering remarkable results worldwide.
                         </p>
 
-                        <div className="flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wider">
-                            {["5+ Years Experience", "Trusted by 100+ Businesses", "Top Founders & Coaches"].map((item, i) => (
-                                <motion.span
+                        <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-2 md:mt-4 text-[10px] md:text-xs font-bold uppercase tracking-widest z-10 relative">
+                            {[
+                                { text: "5+ Years Experience", color: "from-blue-500/10 to-transparent", border: "border-blue-500/20 hover:border-blue-500/50", dot: "bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]", glow: "group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]" },
+                                { text: "Trusted by 100+ Businesses", color: "from-purple-500/10 to-transparent", border: "border-purple-500/20 hover:border-purple-500/50", dot: "bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.8)]", glow: "group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]" },
+                                { text: "Top Founders & Coaches", color: "from-emerald-500/10 to-transparent", border: "border-emerald-500/20 hover:border-emerald-500/50", dot: "bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]", glow: "group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]" }
+                            ].map((item, i) => (
+                                <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, y: 10 }}
+                                    initial={{ opacity: 0, y: 15 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: 0.4 + i * 0.1 }}
-                                    className="flex items-center gap-2"
+                                    transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
+                                    className={`relative group flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 bg-gradient-to-r ${item.color} border ${item.border} rounded-full backdrop-blur-md transition-all duration-300 cursor-default ${item.glow}`}
                                 >
-                                    <div className="w-1.5 h-1.5 bg-blue-500/60 rounded-full" />
-                                    {item}
-                                </motion.span>
+                                    <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+                                    <div className={`w-1.5 h-1.5 md:w-2 md:h-2 ${item.dot} rounded-full duration-300`} />
+                                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                                        {item.text}
+                                    </span>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>
