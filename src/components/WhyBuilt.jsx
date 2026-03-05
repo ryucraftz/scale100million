@@ -166,14 +166,14 @@ export default function WhyBuilt() {
                 {/* Unbound Immersive Footer Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-24 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
+                    className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
                     {/* Atmospheric Lighting */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-0" />
 
                     {/* AI Core Immersive Visual */}
                     <motion.div
-                        className="absolute top-[30%] md:top-1/3 left-1/2 w-[150vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-40 md:opacity-60 flex items-center justify-center"
+                        className="absolute top-[35%] md:top-1/3 left-1/2 w-[110vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-50 md:opacity-60 flex items-center justify-center"
                         initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9 }}
                         whileInView={{ opacity: 0.6, x: "-50%", y: "-50%", scale: 1 }}
                         transition={{
@@ -223,7 +223,7 @@ export default function WhyBuilt() {
                     </div>
 
                     {/* Minimalist Professional Badge */}
-                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
+                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-16 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                         <span className="relative z-10">The Operation Model</span>
                     </div>
@@ -233,7 +233,7 @@ export default function WhyBuilt() {
                         {/* Subtle Text Backdrop for Contrast */}
                         <div className="absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
-                        <p className="text-2xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10">
+                        <p className="text-3xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.25] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10">
                             Scale100million was built to{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
                                 combine strategy, AI, & execution
@@ -251,7 +251,7 @@ export default function WhyBuilt() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.98 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="relative text-[14.5vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
+                        className="relative text-[18vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
                         style={{ WebkitTextStroke: '1px rgba(255,255,255,0.05)', color: 'transparent' }}
                     >
                         <span className="relative z-0">
@@ -260,9 +260,9 @@ export default function WhyBuilt() {
 
                         {/* Static Faded Blue Fill */}
                         <span
-                            className="absolute left-0 top-0 w-full h-full z-10"
+                            className="absolute left-0 top-0 w-full h-full z-10 transition-opacity"
                             style={{
-                                color: 'rgba(59,130,246,0.35)', // Less dim faded blue
+                                color: 'rgba(59,130,246,0.4)', // Slightly more visible on mobile
                             }}
                         >
                             Built to scale
