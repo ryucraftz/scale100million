@@ -188,8 +188,8 @@ export default function WhyBuilt() {
                         <img
                             src="/ai-core.png"
                             alt="Autonomous Ecosystem Core"
-                            className="w-full h-full object-contain"
-                            style={{ WebkitMaskImage: 'radial-gradient(circle, black 25%, transparent 60%)', maskImage: 'radial-gradient(circle, black 25%, transparent 60%)' }}
+                            className="w-full h-full object-contain mix-blend-screen"
+                            style={{ WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 15%, transparent 55%)', maskImage: 'radial-gradient(circle at 50% 50%, black 15%, transparent 55%)' }}
                         />
                     </motion.div>
 
