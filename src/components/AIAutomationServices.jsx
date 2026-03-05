@@ -393,7 +393,7 @@ const AIAutomationServices = () => {
                         >
                             <span className="relative z-10 flex items-center gap-2 md:gap-3">
                                 <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
-                                Start on WhatsApp
+                                Chat on WhatsApp
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
                         </a>
