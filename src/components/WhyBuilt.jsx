@@ -166,20 +166,20 @@ export default function WhyBuilt() {
                 {/* Unbound Immersive Footer Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
+                    className="mt-24 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
                     {/* Atmospheric Lighting */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[300px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
 
                     {/* Minimalist Professional Badge */}
-                    <div className="relative inline-flex items-center gap-3 px-4 py-2 border border-white/5 text-gray-500 text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] mb-16 mix-blend-screen">
+                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                         <span className="relative z-10">The Operation Model</span>
                     </div>
 
                     {/* Ultra-Refined Typography */}
-                    <div className="max-w-7xl mx-auto px-6 relative z-10 mb-24 md:mb-40">
-                        <p className="text-3xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.15] font-light tracking-[-0.02em] font-['Inter',sans-serif]">
+                    <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-20 md:mb-40">
+                        <p className="text-2xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif]">
                             Scale100million was built to{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold">
                                 combine strategy, AI, & execution
@@ -209,7 +209,7 @@ export default function WhyBuilt() {
                         </svg>
 
                         {/* Base Black Textured Text */}
-                        <h2 className="text-[12vw] xl:text-[14vw] font-black uppercase whitespace-nowrap leading-none tracking-tighter relative group/scaleText">
+                        <h2 className="text-[14.5vw] md:text-[12vw] xl:text-[14vw] font-black uppercase whitespace-nowrap leading-none tracking-tighter relative group/scaleText px-4 md:px-0">
                             {/* Rich Textured Obsidian Fill */}
                             <span
                                 className="relative z-10 block"
