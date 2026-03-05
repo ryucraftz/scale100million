@@ -18,7 +18,6 @@ export default function Home() {
 
   return (
     <div
-      id="mentorship"
       className="relative w-full h-[100dvh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
       onMouseMove={handleMouseMove}
     >
