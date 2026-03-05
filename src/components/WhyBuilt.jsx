@@ -173,24 +173,30 @@ export default function WhyBuilt() {
 
                     {/* AI Core Immersive Visual */}
                     <motion.div
-                        className="absolute top-[30%] md:top-1/3 left-1/2 w-[150vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-40 md:opacity-60"
+                        className="absolute top-[30%] md:top-1/3 left-1/2 w-[150vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-40 md:opacity-60 flex items-center justify-center"
                         initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9 }}
                         whileInView={{ opacity: 0.6, x: "-50%", y: "-50%", scale: 1 }}
-                        animate={{ y: ["-50%", "-52%", "-50%", "-48%", "-50%"], rotate: [0, 1, 0, -1, 0] }}
                         transition={{
                             opacity: { duration: 2 },
-                            scale: { duration: 2 },
-                            y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
-                            rotate: { duration: 20, repeat: Infinity, ease: "easeInOut" }
+                            scale: { duration: 2 }
                         }}
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
-                        <img
-                            src="/ai-core.png"
-                            alt="Autonomous Ecosystem Core"
-                            className="w-full h-full object-contain mix-blend-screen"
-                            style={{ WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 0%, transparent 40%)', maskImage: 'radial-gradient(circle at 50% 50%, black 0%, transparent 40%)' }}
-                        />
+                        <motion.div
+                            className="w-full h-full relative"
+                            animate={{ y: ["0%", "-3%", "0%", "3%", "0%"], rotate: [0, 1.5, 0, -1.5, 0] }}
+                            transition={{
+                                y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
+                                rotate: { duration: 20, repeat: Infinity, ease: "easeInOut" }
+                            }}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
+                            <img
+                                src="/ai-core.png"
+                                alt="Autonomous Ecosystem Core"
+                                className="w-full h-full object-contain mix-blend-screen"
+                                style={{ WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 15%, transparent 55%)', maskImage: 'radial-gradient(circle at 50% 50%, black 15%, transparent 55%)' }}
+                            />
+                        </motion.div>
                     </motion.div>
 
                     {/* Ambient Floating Dust */}
