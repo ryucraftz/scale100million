@@ -256,12 +256,11 @@ export default function WhyBuilt() {
                             Built to scale
                         </span>
 
-                        {/* Static Faded Fill over the Stroke */}
+                        {/* Static Faded Blue Fill */}
                         <span
-                            className="absolute left-0 top-0 w-full h-full z-10 opacity-30"
+                            className="absolute left-0 top-0 w-full h-full z-10"
                             style={{
-                                color: 'rgba(59,130,246,0.1)',
-                                WebkitTextFillColor: 'rgba(59,130,246,0.1)',
+                                color: 'rgba(59,130,246,0.15)', // Dim faded blue
                             }}
                         >
                             Built to scale
