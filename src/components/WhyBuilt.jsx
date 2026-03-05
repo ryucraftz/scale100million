@@ -245,53 +245,33 @@ export default function WhyBuilt() {
                         </p>
                     </div>
 
-                    {/* Immersive Black Textured Mega Text - BUILT TO SCALE */}
+                    {/* Immersive Stroke Mega Text - Built to Scale */}
                     <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="relative w-full flex justify-center text-center select-none"
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="relative text-[14.5vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
+                        style={{ WebkitTextStroke: '1px rgba(255,255,255,0.08)', color: 'transparent' }}
                     >
-                        {/* Hidden SVGs for Filters */}
-                        <svg width="0" height="0" className="hidden">
-                            <filter id="premiumNoise">
-                                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
-                                <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.15 0" />
-                            </filter>
-                        </svg>
+                        <span className="relative z-0">
+                            Built to scale
+                        </span>
 
-                        {/* Base Black Textured Text */}
-                        <h2 className="text-[14.5vw] md:text-[12vw] xl:text-[14vw] font-black uppercase whitespace-nowrap leading-none tracking-tighter relative group/scaleText px-4 md:px-0">
-                            {/* Rich Textured Obsidian Fill */}
-                            <span
-                                className="relative z-10 block"
-                                style={{
-                                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E"), linear-gradient(180deg, #18181b 0%, #000000 100%)`,
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    WebkitTextStroke: '1px rgba(255,255,255,0.06)',
-                                    filter: 'drop-shadow(0 0 40px rgba(255,255,255,0.05))'
-                                }}
-                            >
-                                Built to scale
-                            </span>
+                        {/* Sweeping Gradient over the Stroke */}
+                        <span
+                            className="absolute left-0 top-0 w-full h-full z-10"
+                            style={{
+                                backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(59,130,246,0.8) 50%, transparent 100%)`,
+                                backgroundSize: "200% auto",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                WebkitTextStroke: '1px transparent',
+                                animation: "gradient-x 6s linear infinite",
+                            }}
+                        >
+                            Built to scale
+                        </span>
 
-                            {/* Animated Glass Sweep */}
-                            <span
-                                className="absolute left-0 top-0 w-full h-full z-20 pointer-events-none"
-                                style={{
-                                    backgroundImage: `linear-gradient(90deg, transparent 0%, transparent 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.8) 52%, transparent 60%, transparent 100%)`,
-                                    backgroundSize: "200% auto",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    animation: "gradient-x 10s cubic-bezier(0.25, 0.1, 0.25, 1) infinite",
-                                }}
-                            >
-                                Built to scale
-                            </span>
-                        </h2>
-
-                        {/* Subtle Ground Reflection */}
+                        {/* Deep Fade at Bottom */}
                         <div className="absolute -bottom-10 left-0 w-full h-32 bg-gradient-to-t from-black via-black/90 to-transparent z-20 pointer-events-none" />
                     </motion.div>
                 </motion.div>
