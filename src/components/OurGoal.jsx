@@ -1,15 +1,22 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 
-const Counter = ({ from = 0, to, duration = 2, prefix = "", suffix = "" }) => {
+const Counter = ({ from = 0, to, duration = 3, prefix = "", suffix = "" }) => {
     const ref = useRef(null);
     const count = useMotionValue(from);
     const rounded = useTransform(count, (latest) => `${prefix}${Math.round(latest)}${suffix}`);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    // Increased margin to trigger slightly earlier, ensuring animation runs while scrolling
+    const isInView = useInView(ref, { once: true, margin: "-10%" });
 
     useEffect(() => {
         if (isInView) {
-            const controls = animate(count, to, { duration, ease: "easeOut" });
+            // Using a spring animation instead of easeOut for much smoother deceleration on numbers
+            const controls = animate(count, to, {
+                type: "spring",
+                bounce: 0,
+                duration: duration,
+                delay: 0.2
+            });
             return controls.stop;
         }
     }, [isInView, count, to, duration]);
@@ -67,22 +74,22 @@ export default function OurGoal() {
                     </div>
                 </div>
 
-                <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black leading-[1.1] tracking-tight uppercase">
+                <h2 className="text-[2.5rem] leading-[1.05] md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black md:leading-[1.1] tracking-tight md:tracking-tighter uppercase max-w-[100vw] overflow-wrap-anywhere">
                     OUR GOAL IS SIMPLE: <br className="hidden md:block" />
-                    <span className="text-gray-400 inline-block mt-3 md:mt-5">HELP</span>{" "}
-                    <span className="inline-block drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] pr-1 min-w-[3em]">
+                    <span className="text-gray-400 inline-block mt-4 md:mt-5">HELP</span>{" "}
+                    <span className="inline-block drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] pr-0 md:pr-1 min-w-[2.5em] md:min-w-[3em]">
                         <Counter to={100} duration={2.5} />
                     </span>{" "}
-                    <span className="text-gray-400 inline-block pl-2">BUSINESSES</span> <br className="hidden lg:block" />
-                    <span className="text-gray-400 inline-block">SCALE TO</span>{" "}
-                    <span className="relative inline-block text-white pl-2">
+                    <span className="text-gray-400 inline-block pl-1 md:pl-2">BUSINESSES</span> <br className="hidden lg:block" />
+                    <span className="text-gray-400 inline-block mt-2 md:mt-0">SCALE TO</span>{" "}
+                    <span className="relative inline-block text-white pl-1 md:pl-2 mt-2 md:mt-0">
                         <Counter to={100} prefix="$" suffix=" MILLION." duration={2.5} />
                         <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: "100%" }}
                             viewport={{ once: true }}
                             transition={{ delay: 1, duration: 1.5, ease: "easeInOut" }}
-                            className="absolute -bottom-2 md:-bottom-4 left-0 h-1.5 md:h-2.5 bg-gradient-to-r from-primary to-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
+                            className="absolute -bottom-1 md:-bottom-4 left-0 h-1.5 md:h-2.5 bg-gradient-to-r from-primary to-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
                         />
                     </span>
                 </h2>
