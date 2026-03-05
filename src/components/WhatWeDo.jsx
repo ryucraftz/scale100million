@@ -7,44 +7,56 @@ export default function WhatWeDo() {
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
                 <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center md:text-left"
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-center md:text-left flex flex-col justify-center"
                 >
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 md:mb-6 leading-[1.1] md:leading-tight">
-                        MOST ONLINE BUSINESSES DON’T FAIL FROM LACK OF EFFORT.
+                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-8 w-fit mx-auto md:mx-0 shadow-[0_0_15px_rgba(239,68,68,0.15)]">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                        </span>
+                        The Problem
+                    </div>
+                    <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-black tracking-tighter mb-8 leading-[1.05]">
+                        MOST ONLINE BUSINESSES DON’T FAIL FROM LACK OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-white to-gray-400">EFFORT.</span>
                     </h2>
-                    <p className="text-lg md:text-2xl text-primary font-bold tracking-wide leading-relaxed">
+                    <div className="h-1 w-20 bg-gradient-to-r from-red-500 to-transparent rounded-full mb-8 mx-auto md:mx-0" />
+                    <p className="text-xl md:text-3xl text-red-500 font-black tracking-tight leading-relaxed uppercase drop-shadow-[0_0_10px_rgba(239,68,68,0.3)]">
                         THEY FAIL FROM UNSTRUCTURED GROWTH.
                     </p>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative group h-full"
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    className="relative group h-full flex items-center"
                 >
                     {/* Glowing Backlight */}
-                    <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute -inset-1 bg-gradient-to-tr from-blue-600/30 to-purple-600/30 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-6 -right-6 w-24 h-24 border-t border-r border-white/20 rounded-tr-3xl transition-all duration-700 group-hover:w-32 group-hover:h-32" />
+                    <div className="absolute -bottom-6 -left-6 w-24 h-24 border-b border-l border-white/20 rounded-bl-3xl transition-all duration-700 group-hover:w-32 group-hover:h-32" />
 
                     {/* Image Container */}
-                    <div className="relative aspect-square md:aspect-auto md:h-[450px] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <div className="relative aspect-square md:aspect-[4/3] w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10">
                         <img
                             src="/growth-engine.png"
                             alt="Structured Growth Engine"
-                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                            className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out brightness-90 group-hover:brightness-110"
                         />
                         {/* Overlay Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
 
                         {/* Glassmorphic Text Box */}
-                        <div className="absolute bottom-6 left-6 right-6 p-6 md:p-8 bg-black/40 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl">
-                            <p className="text-base md:text-lg text-gray-200 leading-relaxed font-light tracking-wide">
-                                Scale100million works with founders to <span className="text-white font-bold">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold">AI, automation, and clear growth systems</span>.
+                        <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 p-6 md:p-8 bg-black/60 backdrop-blur-xl rounded-[1.5rem] border border-white/10 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                            <p className="text-sm md:text-lg text-gray-300 leading-relaxed tracking-wide">
+                                Scale100million works with founders to <span className="text-white font-bold drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">AI, automation, and clear growth systems</span>.
                             </p>
                         </div>
                     </div>
