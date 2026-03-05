@@ -260,7 +260,7 @@ export default function WhyBuilt() {
                         <span
                             className="absolute left-0 top-0 w-full h-full z-10"
                             style={{
-                                color: 'rgba(59,130,246,0.15)', // Dim faded blue
+                                color: 'rgba(59,130,246,0.35)', // Less dim faded blue
                             }}
                         >
                             Built to scale
