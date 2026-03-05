@@ -168,8 +168,8 @@ export default function WhyBuilt() {
                     variants={itemVariants}
                     className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
-                    {/* Atmospheric Lighting */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-0" />
+                    {/* Atmospheric Lighting - Desktop Only */}
+                    <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-0" />
 
                     {/* AI Core Immersive Visual - Desktop Only */}
                     <motion.div
@@ -195,8 +195,8 @@ export default function WhyBuilt() {
                         </div>
                     </motion.div>
 
-                    {/* Ambient Floating Dust */}
-                    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+                    {/* Ambient Floating Dust - Desktop Only */}
+                    <div className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden z-0">
                         {[...Array(20)].map((_, i) => (
                             <motion.div
                                 key={i}
@@ -230,8 +230,8 @@ export default function WhyBuilt() {
 
                     {/* Ultra-Refined Typography */}
                     <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-10 md:mb-40">
-                        {/* Subtle Text Backdrop for Contrast */}
-                        <div className="absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
+                        {/* Subtle Text Backdrop for Contrast - Desktop Only */}
+                        <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
                         <p className="text-lg sm:text-xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.4] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10 max-w-[280px] sm:max-w-none mx-auto">
                             Scale100million was built to <br className="block md:hidden" />
