@@ -23,14 +23,13 @@ const AIAutomationServices = () => {
         {
             icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
             title: "Performance Marketing",
-            subtitle: "Data-Driven Customer Acquisition",
-            description: "Running ads is easy. Running ads that consistently produce qualified leads is a different game. We treat your advertising like a performance system, not just a campaign.",
+            subtitle: "Drive Revenue with Paid Traffic",
+            description: "Building profitable acquisition systems using data-driven strategies across Meta, Google, and LinkedIn.",
             details: [
-                "Advertising strategy and campaign architecture",
-                "Creative direction and testing systems",
-                "Audience research and targeting",
-                "Conversion tracking and performance analytics",
-                "Ongoing optimization and scaling"
+                "$10M+ Total Ad Spend Managed",
+                "4x Average ROAS",
+                "25% Reduction in Cost Per Lead",
+                "50M+ Total Reach Across Campaigns"
             ],
             result: "A consistent flow of qualified leads and a customer acquisition system that improves over time.",
             cta: "Book a Performance Marketing Strategy Call",
@@ -42,14 +41,12 @@ const AIAutomationServices = () => {
             icon: <Filter className="w-8 h-8 text-purple-400" />,
             title: "Funnel Building",
             subtitle: "Turn Traffic Into Revenue",
-            description: "Traffic alone doesn't grow a business. What matters is what happens after someone clicks. We build funnels to remove friction and make the next step obvious.",
+            description: "Designing high-conversion funnels that guide visitors through a clear journey from first interest to final decision, focusing on removing friction.",
             details: [
-                "Landing pages and sales pages",
-                "Lead capture systems",
-                "Positioning, offer and messaging",
-                "Funnel structure and user flow",
-                "Conversion optimization",
-                "CMS development"
+                "100+ Funnels Built",
+                "5x Average ROI",
+                "30% Increase in Qualified Leads",
+                "40% Lower Acquisition Costs"
             ],
             result: "A strong funnel ensures the traffic you generate actually turns into leads, customers, and revenue.",
             cta: "Book a Funnel Strategy Call",
@@ -61,15 +58,15 @@ const AIAutomationServices = () => {
             icon: <Zap className="w-8 h-8 text-green-400" />,
             title: "Customized AI Automations",
             subtitle: "Remove Operational Bottlenecks",
-            description: "Many businesses lose valuable time on repetitive processes. We design customized AI automation systems that streamline operations and eliminate unnecessary manual work.",
+            description: "Streamlining operations by automating repetitive processes and integrating with existing tools and workflows.",
             details: [
-                "Marketing automation",
-                "System and data integration",
-                "Business process automation",
-                "WhatsApp and Instagram DM automation",
-                "Email and Short content automation",
-                "Customized AI agents & ChatBots",
-                "CRM automation"
+                "Marketing & Email Automation",
+                "Operational Automation (CRM, internal workflows)",
+                "Social Media Automation (WhatsApp/IG DM)",
+                "Content Automation (Short-form clipping)",
+                "AI Agents & Chatbots",
+                "60% Reduction in Manual Work",
+                "Automations Implemented Across 100+ Businesses"
             ],
             result: "Free up your team's time while making your business run more effectively.",
             cta: "Book an AI Automation Strategy Call",
@@ -80,11 +77,11 @@ const AIAutomationServices = () => {
     ];
 
     const stats = [
-        { label: "Brands Funnels Built", value: "100+" },
-        { label: "Average ROI", value: "5x" },
-        { label: "Profit Margin Yearly", value: "60-65%" },
-        { label: "Increase in Qualified Leads", value: "30%" },
-        { label: "Lower Acquisition Cost", value: "40%" },
+        { label: "Total Ad Spend Managed", value: "$10M+" },
+        { label: "Average ROAS", value: "4x" },
+        { label: "Funnels Built", value: "100+" },
+        { label: "Reduction in Manual Work", value: "60%" },
+        { label: "Total Reach Across Campaigns", value: "50M+" },
     ];
 
     return (
@@ -115,7 +112,7 @@ const AIAutomationServices = () => {
                         </div>
 
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight font-['Inter',sans-serif]">
-                            Optimize Your Customer Acquisition For <span className="text-blue-500">More Profit</span>
+                            Build Systems That Turn <span className="text-blue-500">Marketing Into Profit</span>
                         </h2>
 
                         <p className="text-xl md:text-2xl text-gray-400 font-light mb-8 max-w-3xl mx-auto">
@@ -125,7 +122,7 @@ const AIAutomationServices = () => {
                         <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm font-medium text-gray-400 uppercase tracking-wider">
                             <span className="flex items-center gap-1 md:gap-2"><div className="w-1.5 h-1.5 bg-gray-500 rounded-full" /> 5+ Years Experience</span>
                             <span className="flex items-center gap-1 md:gap-2"><div className="w-1.5 h-1.5 bg-gray-500 rounded-full" /> Trusted by 100+ businesses</span>
-                            <span className="flex items-center gap-1 md:gap-2"><div className="w-1.5 h-1.5 bg-gray-500 rounded-full" /> Worked with top founders</span>
+                            <span className="flex items-center gap-1 md:gap-2"><div className="w-1.5 h-1.5 bg-gray-500 rounded-full" /> Worked with top founders, creators, and coaches</span>
                         </div>
                     </motion.div>
                 </div>
@@ -140,8 +137,8 @@ const AIAutomationServices = () => {
                 >
                     <h3 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-4">Core Services</h3>
                     <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-lg">
-                        We help businesses grow by improving three core parts of their system: <br />
-                        <span className="text-blue-400 font-medium">Customer acquisition</span> • <span className="text-purple-400 font-medium">Conversion infrastructure</span> • <span className="text-green-400 font-medium">Operational automation</span>
+                        We help businesses grow by improving three core areas: <br />
+                        <span className="text-blue-400 font-medium">Customer acquisition</span> • <span className="text-purple-400 font-medium">Operational automation</span> • <span className="text-green-400 font-medium">Business scaling systems</span>
                     </p>
                 </motion.div>
 
