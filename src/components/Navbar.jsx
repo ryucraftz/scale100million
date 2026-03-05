@@ -129,22 +129,30 @@ export default function Navbar() {
 
         {/* Desktop Menu - Right Aligned (Hidden on Mobile) */}
         <div className="hidden lg:flex items-center gap-8 ml-auto">
-          {/* Update text colors based on background */}
-          {["mentorship", "media"].map((item) => (
-            <button
-              key={item}
-              className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
-              onClick={() => navigateAndScroll(item)}
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </button>
-          ))}
+          <button
+            className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
+            onClick={() => navigateAndScroll("mentorship")}
+          >
+            Mentorship
+          </button>
+          <button
+            className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
+            onClick={() => navigateAndScroll("expert-services")}
+          >
+            Services
+          </button>
           <Link
             to="/partner"
             className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
           >
             Partner With Us
           </Link>
+          <button
+            className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
+            onClick={() => navigateAndScroll("media")}
+          >
+            Media
+          </button>
           <Link
             to="/join-team"
             className="text-white/80 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors"
@@ -168,7 +176,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 lg:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
@@ -178,6 +185,12 @@ export default function Navbar() {
           onClick={() => navigateAndScroll("mentorship")}
         >
           Mentorship
+        </button>
+        <button
+          className="text-2xl sm:text-3xl font-black text-white tracking-tight hover:text-primary transition-colors"
+          onClick={() => navigateAndScroll("expert-services")}
+        >
+          Services
         </button>
         <Link
           to="/partner"
@@ -206,7 +219,7 @@ export default function Navbar() {
             setIsOpen(false);
           }}
         >
-          Contact Us
+          Contact
         </Link>
       </div>
     </nav>
