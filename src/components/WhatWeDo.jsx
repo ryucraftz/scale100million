@@ -20,12 +20,12 @@ export default function WhatWeDo() {
                         </span>
                         The Problem
                     </div>
-                    <h2 className="text-2xl md:text-5xl lg:text-[4rem] font-black tracking-tighter mb-8 leading-[1.05]">
-                        MOST ONLINE BUSINESSES DON’T FAIL FROM LACK OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-white to-gray-400">EFFORT.</span>
+                    <h2 className="text-3xl md:text-5xl lg:text-[4.5rem] font-bold tracking-tight mb-8 leading-[1.1] font-['Inter',sans-serif] text-gray-100">
+                        Most online businesses don't fail from lack of <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-white to-gray-400 font-black">effort.</span>
                     </h2>
                     <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-8 mx-auto md:mx-0" />
-                    <p className="text-xl md:text-3xl text-blue-500 font-black tracking-tight leading-relaxed uppercase drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]">
-                        THEY FAIL FROM UNSTRUCTURED GROWTH.
+                    <p className="text-xl md:text-2xl text-gray-400 font-light tracking-wide leading-relaxed font-['Inter',sans-serif]">
+                        They fail from <span className="text-blue-400 font-bold tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">unstructured growth.</span>
                     </p>
                 </motion.div>
 
