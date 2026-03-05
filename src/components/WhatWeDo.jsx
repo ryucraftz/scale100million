@@ -46,8 +46,8 @@ export default function WhatWeDo() {
                     {/* Image Container */}
                     <div className="relative aspect-square md:aspect-[4/3] w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10">
                         <img
-                            src="/growth-engine.png"
-                            alt="Structured Growth Engine"
+                            src="/ai.png"
+                            alt="Structured Growth Engine AI"
                             className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out brightness-90 group-hover:brightness-110"
                         />
                         {/* Overlay Gradient */}
