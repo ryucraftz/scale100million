@@ -169,7 +169,28 @@ export default function WhyBuilt() {
                     className="mt-24 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
                     {/* Atmospheric Lighting */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-0" />
+
+                    {/* AI Core Immersive Visual */}
+                    <motion.div
+                        className="absolute top-[30%] md:top-1/3 left-1/2 w-[150vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-40 md:opacity-60"
+                        initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9 }}
+                        whileInView={{ opacity: 0.6, x: "-50%", y: "-50%", scale: 1 }}
+                        animate={{ y: ["-50%", "-52%", "-50%"] }}
+                        transition={{
+                            opacity: { duration: 1.5 },
+                            scale: { duration: 1.5 },
+                            y: { duration: 8, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
+                        <img
+                            src="/ai-core.png"
+                            alt="Autonomous Ecosystem Core"
+                            className="w-full h-full object-contain"
+                            style={{ WebkitMaskImage: 'radial-gradient(circle, black 40%, transparent 70%)', maskImage: 'radial-gradient(circle, black 40%, transparent 70%)' }}
+                        />
+                    </motion.div>
 
                     {/* Minimalist Professional Badge */}
                     <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
