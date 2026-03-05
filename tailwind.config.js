@@ -26,6 +26,7 @@ export default {
         bounceUpOnce: "bounceUpOnce 0.6s ease-out 1",
         fadeInUp: "fadeInUp 0.8s ease-out forwards",
         shimmer: "shimmer 2s infinite linear",
+        "gradient-x": "gradient-x 4s ease infinite",
       },
       keyframes: {
         shimmer: {
@@ -40,6 +41,10 @@ export default {
         fadeInUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
       },
     },
