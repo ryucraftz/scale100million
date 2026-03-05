@@ -181,13 +181,9 @@ export default function WhyBuilt() {
                             scale: { duration: 2 }
                         }}
                     >
-                        <motion.div
+                        <div
                             className="w-full h-full relative"
-                            animate={{ y: ["0%", "-3%", "0%", "3%", "0%"], rotate: [0, 1.5, 0, -1.5, 0] }}
-                            transition={{
-                                y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
-                                rotate: { duration: 20, repeat: Infinity, ease: "easeInOut" }
-                            }}
+                            style={{ animation: "float-core 20s ease-in-out infinite" }}
                         >
                             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
                             <img
@@ -196,7 +192,7 @@ export default function WhyBuilt() {
                                 className="w-full h-full object-contain mix-blend-screen"
                                 style={{ WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 15%, transparent 55%)', maskImage: 'radial-gradient(circle at 50% 50%, black 15%, transparent 55%)' }}
                             />
-                        </motion.div>
+                        </div>
                     </motion.div>
 
                     {/* Ambient Floating Dust */}
