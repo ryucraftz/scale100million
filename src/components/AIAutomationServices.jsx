@@ -217,10 +217,10 @@ const AIAutomationServices = () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     onClick={(e) => e.stopPropagation()}
-                                                    className="w-full py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 group/btn"
+                                                    className="w-full py-2 md:py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-semibold text-xs md:text-sm transition-colors flex items-center justify-center gap-1.5 md:gap-2 group/btn"
                                                 >
                                                     {service.cta}
-                                                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
                                                 </a>
                                             </div>
                                         </div>
