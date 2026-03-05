@@ -13,18 +13,18 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="text-center md:text-left flex flex-col justify-center"
                 >
-                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-8 w-fit mx-auto md:mx-0 shadow-[0_0_15px_rgba(239,68,68,0.15)]">
+                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs font-black uppercase tracking-[0.2em] mb-8 w-fit mx-auto md:mx-0 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                         </span>
                         The Problem
                     </div>
                     <h2 className="text-2xl md:text-5xl lg:text-[4rem] font-black tracking-tighter mb-8 leading-[1.05]">
                         MOST ONLINE BUSINESSES DON’T FAIL FROM LACK OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-white to-gray-400">EFFORT.</span>
                     </h2>
-                    <div className="h-1 w-20 bg-gradient-to-r from-red-500 to-transparent rounded-full mb-8 mx-auto md:mx-0" />
-                    <p className="text-xl md:text-3xl text-red-500 font-black tracking-tight leading-relaxed uppercase drop-shadow-[0_0_10px_rgba(239,68,68,0.3)]">
+                    <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-8 mx-auto md:mx-0" />
+                    <p className="text-xl md:text-3xl text-blue-500 font-black tracking-tight leading-relaxed uppercase drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]">
                         THEY FAIL FROM UNSTRUCTURED GROWTH.
                     </p>
                 </motion.div>
