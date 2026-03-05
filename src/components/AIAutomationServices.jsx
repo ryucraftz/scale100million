@@ -1,6 +1,45 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring, useDragControls } from 'framer-motion';
 import { BarChart3, Filter, Zap, ArrowRight, MessageCircle, ChevronDown, TrendingUp, Users, Bot } from 'lucide-react';
+
+// Hook to measure element height
+function useMeasure() {
+    const ref = useRef(null);
+    const [height, setHeight] = useState(0);
+    useEffect(() => {
+        if (!ref.current) return;
+        const observer = new ResizeObserver(([entry]) => {
+            setHeight(entry.contentRect.height);
+        });
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
+    return [ref, height];
+}
+
+// Smooth accordion that animates to a measured pixel height (not height:auto)
+function AccordionContent({ isOpen, children }) {
+    const [measureRef, measuredHeight] = useMeasure();
+
+    return (
+        <motion.div
+            animate={{
+                height: isOpen ? measuredHeight : 0,
+                opacity: isOpen ? 1 : 0,
+            }}
+            transition={{
+                height: { type: 'spring', stiffness: 260, damping: 28 },
+                opacity: { duration: 0.25, ease: 'easeInOut' },
+            }}
+            style={{ overflow: 'hidden' }}
+            className="relative z-10"
+        >
+            <div ref={measureRef}>
+                {children}
+            </div>
+        </motion.div>
+    );
+}
 
 const AIAutomationServices = () => {
     const [expandedCard, setExpandedCard] = useState(null);
@@ -274,75 +313,65 @@ const AIAutomationServices = () => {
                             </h4>
 
                             {/* Expandable Content */}
-                            <AnimatePresence initial={false}>
-                                {(!isMobile || expandedCard === index) && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.35 }}
-                                        className="flex flex-col flex-grow overflow-hidden relative z-10"
-                                    >
-                                        <div className="pt-4 md:pt-0 flex flex-col h-full">
-                                            {/* Certifications badge for PM */}
-                                            {service.title === "Performance Marketing" && (
-                                                <div className="flex items-center gap-3 mb-5 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
-                                                    <span className="flex items-center gap-1.5">
-                                                        <span className="w-2 h-2 rounded-full bg-blue-500" /> Meta Partner
-                                                    </span>
-                                                    <span className="flex items-center gap-1.5">
-                                                        <span className="w-2 h-2 rounded-full bg-red-500" /> Google Partner
-                                                    </span>
-                                                </div>
-                                            )}
-
-                                            <p className="text-sm md:text-base text-gray-300 mb-5 md:mb-7 leading-relaxed font-light">
-                                                {service.description}
-                                            </p>
-
-                                            {/* Details */}
-                                            <div className="mb-5 md:mb-7 flex-grow">
-                                                <h5 className="text-xs md:text-sm font-bold text-white mb-3 flex items-center gap-2">
-                                                    What we handle <ArrowRight className="w-3 h-3 text-gray-500" />
-                                                </h5>
-                                                <ul className="space-y-2">
-                                                    {service.details.map((detail, idx) => (
-                                                        <motion.li
-                                                            key={idx}
-                                                            initial={{ opacity: 0, x: -10 }}
-                                                            animate={{ opacity: 1, x: 0 }}
-                                                            transition={{ delay: idx * 0.05 }}
-                                                            className="flex items-start gap-2.5 text-xs md:text-sm text-gray-400"
-                                                        >
-                                                            <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0`} style={{ backgroundColor: service.accentColor + '80' }} />
-                                                            <span>{detail}</span>
-                                                        </motion.li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-
-                                            {/* Result & CTA */}
-                                            <div className="mt-auto pt-4 md:pt-5 border-t border-white/10">
-                                                <p className="text-xs md:text-sm text-white/80 font-medium mb-4 italic">
-                                                    <span className="text-gray-500 not-italic block mb-1 text-[10px] md:text-xs uppercase tracking-widest">The Result</span>
-                                                    {service.result}
-                                                </p>
-
-                                                <a
-                                                    href={service.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    onClick={(e) => e.stopPropagation()}
-                                                    className={`w-full py-2 md:py-3.5 bg-gradient-to-r ${service.ctaStyle} text-white font-bold text-xs md:text-sm rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5 md:gap-2 group/btn shadow-lg`}
-                                                >
-                                                    <span>{service.cta}</span>
-                                                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
-                                                </a>
-                                            </div>
+                            <AccordionContent isOpen={!isMobile || expandedCard === index}>
+                                <div className="pt-4 md:pt-0 pb-1">
+                                    {/* Certifications badge for PM */}
+                                    {service.title === "Performance Marketing" && (
+                                        <div className="flex items-center gap-3 mb-5 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                                            <span className="flex items-center gap-1.5">
+                                                <span className="w-2 h-2 rounded-full bg-blue-500" /> Meta Partner
+                                            </span>
+                                            <span className="flex items-center gap-1.5">
+                                                <span className="w-2 h-2 rounded-full bg-red-500" /> Google Partner
+                                            </span>
                                         </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                                    )}
+
+                                    <p className="text-sm md:text-base text-gray-300 mb-5 md:mb-7 leading-relaxed font-light">
+                                        {service.description}
+                                    </p>
+
+                                    {/* Details */}
+                                    <div className="mb-5 md:mb-7 flex-grow">
+                                        <h5 className="text-xs md:text-sm font-bold text-white mb-3 flex items-center gap-2">
+                                            What we handle <ArrowRight className="w-3 h-3 text-gray-500" />
+                                        </h5>
+                                        <ul className="space-y-2">
+                                            {service.details.map((detail, idx) => (
+                                                <motion.li
+                                                    key={idx}
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    transition={{ delay: idx * 0.05 }}
+                                                    className="flex items-start gap-2.5 text-xs md:text-sm text-gray-400"
+                                                >
+                                                    <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: service.accentColor + '80' }} />
+                                                    <span>{detail}</span>
+                                                </motion.li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    {/* Result & CTA */}
+                                    <div className="pt-4 md:pt-5 border-t border-white/10">
+                                        <p className="text-xs md:text-sm text-white/80 font-medium mb-4 italic">
+                                            <span className="text-gray-500 not-italic block mb-1 text-[10px] md:text-xs uppercase tracking-widest">The Result</span>
+                                            {service.result}
+                                        </p>
+
+                                        <a
+                                            href={service.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className={`w-full py-2 md:py-3.5 bg-gradient-to-r ${service.ctaStyle} text-white font-bold text-xs md:text-sm rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5 md:gap-2 group/btn shadow-lg`}
+                                        >
+                                            <span>{service.cta}</span>
+                                            <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </AccordionContent>
                         </motion.div>
                     ))}
                 </div>
