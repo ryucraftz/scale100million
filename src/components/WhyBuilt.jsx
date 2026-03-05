@@ -192,27 +192,64 @@ export default function WhyBuilt() {
                         />
                     </motion.div>
 
-                    {/* Minimalist Professional Badge */}
-                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                    {/* Minimalist Professional Badge with Continuous Glow */}
+                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-blue-500/20 md:border-blue-500/10 text-gray-300 md:text-gray-400 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-16 bg-blue-500/10 md:bg-blue-900/10 rounded-full backdrop-blur-md transition-all duration-1000 animate-[pulse_4s_ease-in-out_infinite] shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
                         <span className="relative z-10">The Operation Model</span>
                     </div>
 
-                    {/* Ultra-Refined Typography */}
-                    <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-20 md:mb-40">
-                        <p className="text-2xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif]">
-                            Scale100million was built to{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold">
-                                combine strategy, AI, & execution
-                            </span>{' '}
-                            into one{' '}
-                            <span className="relative inline-block mt-2 lg:mt-0">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 font-extrabold pb-2">
-                                    autonomous ecosystem.
+                    {/* Ultra-Refined & Animated Typography */}
+                    <motion.div
+                        className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-20 md:mb-40"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={{
+                            visible: {
+                                transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+                            }
+                        }}
+                    >
+                        {/* Continuous Breathing Animation for the Text Block */}
+                        <motion.div
+                            animate={{ y: ["0%", "-3%", "0%"] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <motion.p
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                                }}
+                                className="text-2xl md:text-5xl lg:text-7xl text-white/90 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                            >
+                                Scale100million was built to{' '}
+                                <motion.span
+                                    variants={{
+                                        hidden: { opacity: 0, scale: 0.95 },
+                                        visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+                                    }}
+                                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-blue-300 font-bold drop-shadow-[0_0_20px_rgba(34,211,238,0.4)] relative inline-block"
+                                >
+                                    combine strategy, AI, & execution
+                                </motion.span>{' '}
+                            </motion.p>
+
+                            <motion.p
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                                }}
+                                className="text-2xl md:text-5xl lg:text-7xl text-white/90 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] mt-1 md:mt-2"
+                            >
+                                into one{' '}
+                                <span className="relative inline-block mt-2 lg:mt-0">
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-500 font-extrabold pb-2 drop-shadow-[0_0_25px_rgba(99,102,241,0.3)]">
+                                        autonomous ecosystem.
+                                    </span>
                                 </span>
-                            </span>
-                        </p>
-                    </div>
+                            </motion.p>
+                        </motion.div>
+                    </motion.div>
 
                     {/* Immersive Black Textured Mega Text - BUILT TO SCALE */}
                     <motion.div
