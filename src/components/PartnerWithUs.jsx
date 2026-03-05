@@ -3,50 +3,52 @@ import { motion } from "framer-motion";
 
 export default function PartnerWithUs() {
     return (
-        <section id="partner" className="min-h-screen pt-20 md:pt-32 pb-16 md:pb-24 px-6 md:px-12 bg-background text-white overflow-hidden relative flex flex-col justify-center">
-            <div className="max-w-4xl mx-auto text-center space-y-8 md:space-y-12 relative z-10 w-full">
+        <section id="partner" className="w-full min-h-screen bg-black text-white pt-24 md:pt-28 pb-16 px-5 md:px-8 relative overflow-hidden">
+
+            {/* Subtle glow */}
+            <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+            <div className="max-w-3xl mx-auto relative z-10">
+
+                {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-8 md:mb-10"
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-800 bg-surface backdrop-blur-md mb-6 md:mb-8">
-                        <span className="w-2 h-2 rounded-full bg-primary" />
-                        <span className="text-xs md:text-sm font-medium text-gray-300 uppercase tracking-wide">
-                            Built Together
-                        </span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                        Built Together
                     </div>
-
-                    <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8">
-                        WE PARTNER AND INVEST IN FOUNDERS
-                    </h2>
-
-                    <p className="text-base md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
+                    <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3">
+                        WE PARTNER AND<br className="hidden md:block" /> INVEST IN FOUNDERS
+                    </h1>
+                    <p className="text-sm md:text-base text-gray-500 max-w-xl leading-relaxed">
                         We partner with founders to build, systemize, and grow their businesses.
                     </p>
-
-                    <div className="mt-6 md:mt-8 flex flex-col items-center gap-1 md:gap-2">
-                        <p className="text-gray-500 font-medium tracking-wide uppercase text-xs md:text-sm">Not advisory.</p>
-                        <p className="text-white font-bold text-lg md:text-xl">Built together.</p>
-                    </div>
-
-                    <div className="mt-8 md:mt-12 w-full flex justify-center">
-                        <iframe
-                            aria-label='Partner With Us'
-                            frameBorder="0"
-                            style={{ height: '700px', width: '99%', border: 'none', filter: 'invert(1) hue-rotate(180deg)' }}
-                            src='https://forms.zohopublic.in/scale100millioncom1/form/PartnerWithUs/formperma/8Qt5_o_Yk6KnSstpUzQOq0pFyA1kvEaL45hhQqSpB7A'
-                        />
+                    <div className="flex items-center gap-3 mt-4">
+                        <span className="text-gray-600 text-xs font-medium uppercase tracking-widest">Not advisory.</span>
+                        <span className="text-white text-sm font-bold">Built together.</span>
                     </div>
                 </motion.div>
-            </div>
 
-            {/* Background Accents */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] opacity-30" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] opacity-30" />
+                {/* Form */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.15 }}
+                    className="w-full rounded-2xl overflow-hidden border border-white/8"
+                >
+                    <iframe
+                        aria-label="Partner With Us"
+                        frameBorder="0"
+                        style={{ height: '700px', width: '100%', border: 'none', filter: 'invert(1) hue-rotate(180deg)' }}
+                        src="https://forms.zohopublic.in/scale100millioncom1/form/PartnerWithUs/formperma/8Qt5_o_Yk6KnSstpUzQOq0pFyA1kvEaL45hhQqSpB7A"
+                    />
+                </motion.div>
             </div>
         </section>
     );
 }
-
