@@ -163,73 +163,81 @@ export default function WhyBuilt() {
                     </div>
                 </div>
 
-                {/* Ultra-Premium Immersive Footer Section */}
+                {/* Unbound Immersive Footer Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-20 md:mt-40 relative group/footer"
+                    className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
-                    {/* Deep Blur Container with Technical Grid */}
-                    <div className="relative p-12 md:p-20 rounded-[2.5rem] bg-black/40 border border-white/5 backdrop-blur-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col items-center text-center">
+                    {/* Atmospheric Lighting */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[300px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-                        {/* Technical Ecosystem Grid */}
-                        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+                    {/* Minimalist Professional Badge */}
+                    <div className="relative inline-flex items-center gap-3 px-4 py-2 border border-white/5 text-gray-500 text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] mb-16 mix-blend-screen">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                        <span className="relative z-10">The Operation Model</span>
+                    </div>
 
-                        {/* Animated Scanning Lazer (Top Border) */}
-                        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-x-full group-hover/footer:translate-x-full transition-transform duration-[2s] ease-in-out" />
-
-                        {/* Subtle Background Lighting (No harsh glows) */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-blue-500/10 blur-[80px] rounded-full pointer-events-none" />
-
-                        {/* Professional Badge */}
-                        <div className="relative inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-black/50 border border-white/10 text-gray-300 text-xs font-bold uppercase tracking-[0.25em] mb-12 backdrop-blur-md">
-                            <Zap size={14} className="text-blue-400" />
-                            <span className="relative z-10">The Operation Model</span>
-                        </div>
-
-                        {/* Precise, High-Contrast Typography */}
-                        <p className="relative z-10 text-3xl md:text-5xl lg:text-6xl text-gray-400 leading-[1.2] max-w-5xl font-light tracking-tight font-['Inter',sans-serif] mb-8">
+                    {/* Ultra-Refined Typography */}
+                    <div className="max-w-7xl mx-auto px-6 relative z-10 mb-24 md:mb-40">
+                        <p className="text-3xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.15] font-light tracking-[-0.02em] font-['Inter',sans-serif]">
                             Scale100million was built to{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-500 font-bold tracking-tighter">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold">
                                 combine strategy, AI, & execution
                             </span>{' '}
                             into one{' '}
-                            <span className="relative inline-block mt-2 md:mt-0">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-black tracking-tighter">
+                            <span className="relative inline-block mt-2 lg:mt-0">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 font-extrabold pb-2">
                                     autonomous ecosystem.
                                 </span>
                             </span>
                         </p>
+                    </div>
 
-                        {/* Immersive Stroke Mega Text - Built to Scale */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            className="mt-16 relative text-[5rem] md:text-[8rem] lg:text-[11rem] font-black tracking-tighter uppercase select-none hidden md:block w-full text-center overflow-hidden"
-                            style={{ WebkitTextStroke: '1px rgba(255,255,255,0.08)', color: 'transparent' }}
+                    {/* Immersive Black Textured Mega Text - BUILT TO SCALE */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="relative w-full flex justify-center text-center select-none"
+                    >
+                        {/* Hidden SVGs for Filters */}
+                        <svg width="0" height="0" className="hidden">
+                            <filter id="premiumNoise">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+                                <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.15 0" />
+                            </filter>
+                        </svg>
+
+                        {/* Base Black Textured Text */}
+                        <h2
+                            className="text-[12vw] xl:text-[14vw] font-black uppercase whitespace-nowrap leading-none tracking-tighter"
+                            style={{
+                                color: '#030303',
+                                WebkitTextStroke: '1px rgba(255,255,255,0.03)',
+                                filter: 'drop-shadow(0 -10px 40px rgba(59,130,246,0.1))',
+                                position: 'relative'
+                            }}
                         >
-                            <span className="relative z-0">
-                                Built to scale
-                            </span>
-
-                            {/* Sweeping Gradient over the Stroke */}
+                            Built to scale
+                            {/* Noise Overlay applied exactly to the text shape */}
                             <span
-                                className="absolute left-0 top-0 w-full h-full z-10"
+                                className="absolute inset-0 pointer-events-none"
                                 style={{
-                                    backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(59,130,246,0.8) 50%, transparent 100%)`,
-                                    backgroundSize: "200% auto",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    WebkitTextStroke: '1px transparent',
-                                    animation: "gradient-x 6s linear infinite",
+                                    content: '""',
+                                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E")`,
+                                    backgroundRepeat: 'repeat',
+                                    mixBlendMode: 'overlay',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
                                 }}
                             >
                                 Built to scale
                             </span>
+                        </h2>
 
-                            {/* Deep Fade at Bottom */}
-                            <div className="absolute -bottom-4 left-0 w-full h-24 bg-gradient-to-t from-black via-black/80 to-transparent z-20 pointer-events-none" />
-                        </motion.div>
-                    </div>
+                        {/* Subtle Ground Reflection */}
+                        <div className="absolute -bottom-10 left-0 w-full h-32 bg-gradient-to-t from-black via-black/90 to-transparent z-20 pointer-events-none" />
+                    </motion.div>
                 </motion.div>
             </motion.div>
         </section>
