@@ -111,21 +111,8 @@ export default function WhatWeDo() {
                             </div>
                         </div>
                     </motion.div>
-                    src="/ai.png"
-                    alt="Structured Growth Engine AI"
-                    className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-out brightness-90 group-hover:brightness-110"
-                        />
-                    {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
 
-                    {/* Glassmorphic Text Box */}
-                    <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 p-6 md:p-8 bg-black/60 backdrop-blur-xl rounded-[1.5rem] border border-white/10 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                        <p className="text-sm md:text-lg text-gray-300 leading-relaxed tracking-wide">
-                            Scale100million works with founders to <span className="text-white font-bold drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">build, systemize, and scale</span> their businesses using <span className="text-primary font-bold drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">AI, automation, and clear growth systems</span>.
-                        </p>
-                    </div>
-            </div>
-        </motion.div>
+                </motion.div>
 
             </div >
         </section >
