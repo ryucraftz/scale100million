@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3, Filter, Zap, ArrowRight, MessageCircle, ChevronDown, TrendingUp, Users, Bot } from 'lucide-react';
-import { FaMeta, FaGoogle } from 'react-icons/fa6';
 
 // Hook to measure element height
 function useMeasure() {
@@ -290,12 +289,12 @@ const AIAutomationServices = () => {
                                     {service.title === "Performance Marketing" && (
                                         <div className="flex items-center gap-4 mb-5 text-[10px] text-gray-400 font-bold uppercase tracking-widest bg-white/5 w-fit px-4 py-2 rounded-full border border-white/10 shadow-lg">
                                             <span className="flex items-center gap-2">
-                                                <FaMeta className="w-4 h-4 text-blue-500 drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+                                                <img src="/meta.svg" alt="Meta Logo" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
                                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-200">Meta Partner</span>
                                             </span>
                                             <span className="w-px h-3 bg-white/20" />
                                             <span className="flex items-center gap-2">
-                                                <FaGoogle className="w-4 h-4 text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
+                                                <img src="/google.svg" alt="Google Logo" className="w-4 h-4 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
                                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-200">Google Partner</span>
                                             </span>
                                         </div>
