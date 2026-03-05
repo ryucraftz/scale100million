@@ -209,26 +209,30 @@ export default function WhyBuilt() {
                         </svg>
 
                         {/* Base Black Textured Text */}
-                        <h2
-                            className="text-[12vw] xl:text-[14vw] font-black uppercase whitespace-nowrap leading-none tracking-tighter"
-                            style={{
-                                color: '#030303',
-                                WebkitTextStroke: '1px rgba(255,255,255,0.03)',
-                                filter: 'drop-shadow(0 -10px 40px rgba(59,130,246,0.1))',
-                                position: 'relative'
-                            }}
-                        >
-                            Built to scale
-                            {/* Noise Overlay applied exactly to the text shape */}
+                        <h2 className="text-[12vw] xl:text-[14vw] font-black uppercase whitespace-nowrap leading-none tracking-tighter relative group/scaleText">
+                            {/* Rich Textured Obsidian Fill */}
                             <span
-                                className="absolute inset-0 pointer-events-none"
+                                className="relative z-10 block"
                                 style={{
-                                    content: '""',
-                                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E")`,
-                                    backgroundRepeat: 'repeat',
-                                    mixBlendMode: 'overlay',
+                                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E"), linear-gradient(180deg, #18181b 0%, #000000 100%)`,
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
+                                    WebkitTextStroke: '1px rgba(255,255,255,0.06)',
+                                    filter: 'drop-shadow(0 0 40px rgba(255,255,255,0.05))'
+                                }}
+                            >
+                                Built to scale
+                            </span>
+
+                            {/* Animated Glass Sweep */}
+                            <span
+                                className="absolute left-0 top-0 w-full h-full z-20 pointer-events-none"
+                                style={{
+                                    backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%)`,
+                                    backgroundSize: "200% auto",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    animation: "gradient-x 7s linear infinite",
                                 }}
                             >
                                 Built to scale
