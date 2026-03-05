@@ -163,39 +163,72 @@ export default function WhyBuilt() {
                     </div>
                 </div>
 
-                {/* Footer Message */}
+                {/* Premium Footer Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-12 md:mt-32 pt-10 md:pt-16 border-t border-white/5 flex flex-col items-center text-center"
+                    className="mt-16 md:mt-32 relative group/footer"
                 >
-                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.2em] mb-10 shadow-lg">
-                        <Zap size={14} className="animate-pulse" /> The Operation Model
-                    </div>
-                    <p className="text-2xl md:text-5xl text-gray-300 leading-[1.3] max-w-5xl font-light tracking-tight font-['Inter',sans-serif]">
-                        Scale100million was built to <span className="text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">combine strategy, AI, and execution</span> into one <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 font-black tracking-tighter drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">autonomous ecosystem.</span>
-                    </p>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        className="mt-12 relative text-5xl md:text-7xl lg:text-9xl font-black tracking-[0.05em] uppercase select-none hidden md:block group cursor-crosshair w-full text-center"
-                    >
-                        <span className="text-white/5 transition-opacity duration-700 group-hover:opacity-0 relative z-0">
-                            Built to scale
-                        </span>
-                        <span
-                            className="absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-700 bg-clip-text text-transparent pointer-events-none z-10"
-                            style={{
-                                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E"), linear-gradient(110deg, #71717a 0%, #ffffff 50%, #71717a 100%)`,
-                                backgroundSize: "120px 120px, 200% auto",
-                                backgroundBlendMode: "multiply",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                                filter: "drop-shadow(0 0 25px rgba(255,255,255,0.3))"
-                            }}
+                    {/* Glassmorphic Container */}
+                    <div className="relative p-10 md:p-16 rounded-[3rem] bg-zinc-900/30 border border-white/5 backdrop-blur-xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.5)] flex flex-col items-center text-center">
+                        {/* Interactive Background Glow */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover/footer:opacity-100 transition-opacity duration-1000" />
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] animate-pulse pointer-events-none" style={{ animationDelay: '2s' }} />
+
+                        {/* Enhanced Badge */}
+                        <div className="relative inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-black uppercase tracking-[0.25em] mb-12 shadow-[0_0_20px_rgba(59,130,246,0.2)] overflow-hidden group/badge hover:scale-105 transition-transform duration-300">
+                            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover/badge:translate-x-[100%] transition-transform duration-1000" />
+                            <Zap size={14} className="animate-pulse relative z-10" />
+                            <span className="relative z-10">The Operation Model</span>
+                        </div>
+
+                        {/* Refined Typography */}
+                        <p className="relative z-10 text-2xl md:text-5xl text-gray-300 leading-[1.35] max-w-5xl font-light tracking-tight font-['Inter',sans-serif] mb-6">
+                            Scale100million was built to <span className="text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">combine strategy, AI, and execution</span> into one{' '}
+                            <span className="relative inline-block">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-400 bg-[length:200%_auto] animate-gradient-x font-black tracking-tighter drop-shadow-[0_0_15px_rgba(59,130,246,0.4)]">
+                                    autonomous ecosystem.
+                                </span>
+                                <motion.span
+                                    className="absolute -bottom-1 md:-bottom-2 left-0 h-[2px] md:h-[3px] bg-gradient-to-r from-blue-500 via-emerald-500 to-transparent rounded-full"
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: '100%' }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                                />
+                            </span>
+                        </p>
+
+                        {/* Mega Text - Built to Scale */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            className="mt-16 relative text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase select-none hidden md:block w-full text-center overflow-hidden"
                         >
-                            Built to scale
-                        </span>
-                    </motion.div>
+                            {/* Base Dark Text */}
+                            <span className="text-white/5 relative z-0 mix-blend-overlay">
+                                Built to scale
+                            </span>
+
+                            {/* Animated Gradient Overlay */}
+                            <span
+                                className="absolute left-0 top-0 w-full h-full bg-clip-text text-transparent pointer-events-none z-10 opacity-80"
+                                style={{
+                                    backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.8) 50%, transparent 100%)`,
+                                    backgroundSize: "200% auto",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    animation: "gradient-x 8s linear infinite",
+                                    filter: "drop-shadow(0 0 30px rgba(255,255,255,0.2))"
+                                }}
+                            >
+                                Built to scale
+                            </span>
+
+                            {/* Floor Reflection Effect */}
+                            <div className="absolute -bottom-10 left-0 w-full h-20 bg-gradient-to-t from-black via-black/80 to-transparent z-20" />
+                        </motion.div>
+                    </div>
                 </motion.div>
             </motion.div>
         </section>
