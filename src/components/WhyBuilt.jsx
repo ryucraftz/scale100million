@@ -174,14 +174,14 @@ export default function WhyBuilt() {
                     {/* AI Core Immersive Visual */}
                     <motion.div
                         className="absolute top-[30%] md:top-1/3 left-1/2 w-[150vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-40 md:opacity-60"
-                        initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9 }}
+                        initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9, rotate: 0 }}
                         whileInView={{ opacity: 0.6, x: "-50%", y: "-50%", scale: 1 }}
-                        animate={{ y: ["-50%", "-52%", "-50%", "-48%", "-50%"], rotate: [0, 1, 0, -1, 0] }}
+                        animate={{ y: ["-50%", "-53%", "-50%"], rotate: 360 }}
                         transition={{
                             opacity: { duration: 2 },
                             scale: { duration: 2 },
                             y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
-                            rotate: { duration: 20, repeat: Infinity, ease: "easeInOut" }
+                            rotate: { duration: 120, repeat: Infinity, ease: "linear" }
                         }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
@@ -265,7 +265,7 @@ export default function WhyBuilt() {
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 WebkitTextStroke: '1px transparent',
-                                animation: "gradient-x 6s linear infinite",
+                                animation: "gradient-sweep-right 6s linear infinite",
                             }}
                         >
                             Built to scale
