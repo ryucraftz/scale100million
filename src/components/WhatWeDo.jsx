@@ -47,7 +47,10 @@ export default function WhatWeDo() {
                             />
                         </span>
                     </h2>
-                    <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-8 mx-auto md:mx-0 opacity-50" />
+                    <div className="flex items-center gap-4 mb-10 mx-auto md:mx-0 opacity-80 w-full max-w-sm">
+                        <div className="h-[2px] w-12 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
+                        <div className="h-[1px] flex-1 bg-gradient-to-r from-blue-500/50 to-transparent" />
+                    </div>
                     <p className="text-xl md:text-2xl text-gray-400 font-light tracking-wide leading-relaxed font-['Inter',sans-serif]">
                         They fail from <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 font-bold tracking-tight drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">unstructured growth.</span>
                     </p>
