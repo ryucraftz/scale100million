@@ -1,8 +1,7 @@
 import { useState, useEffect, useLayoutEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logoOriginal from "../assets/logooriginal.png";
-import logoWhite from "../assets/logowhite.png";
+// Logo removed and replaced by public/logo.svg directly in the img tag
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,7 +119,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center z-50" onClick={scrollToTopIfHome}>
           <img
-            src={logoWhite}
+            src="/logo.svg"
             alt="Scale100Million"
             className="h-10 w-auto object-contain cursor-pointer"
             onClick={() => window.scrollTo(0, 0)}

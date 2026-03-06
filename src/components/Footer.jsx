@@ -3,7 +3,7 @@ import { Instagram, Youtube, Send, ArrowRight, MessageCircle } from "lucide-reac
 import { FaWhatsapp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import logoWhite from "../assets/logowhite.png";
+// logoWhite removed and replaced by public/logo.svg directly in the img tag
 
 export default function Footer() {
   const socialLinks = [
@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6 text-center md:text-left">
             <Link to="/" className="inline-block">
               <img
-                src={logoWhite}
+                src="/logo.svg"
                 alt="Scale100Million"
                 className="h-12 md:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
