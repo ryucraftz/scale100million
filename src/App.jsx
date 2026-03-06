@@ -55,7 +55,6 @@ function AppContent() {
     <Suspense fallback={<PageLoader />}>
       <SmoothScroll>
         <FilmGrain />
-        <MouseSpotlight />
         <ScrollToTop />
         {!isThankYouPage && <Navbar />}
         <Routes>
