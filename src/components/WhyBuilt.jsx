@@ -44,6 +44,15 @@ export default function WhyBuilt() {
 
     return (
         <section id="why-built" className="py-20 md:py-32 px-5 md:px-12 bg-black text-white relative overflow-hidden">
+            {/* SVG Noise Filter for Text Texture */}
+            <svg className="absolute w-0 h-0 overflow-hidden pointer-events-none">
+                <filter id="textNoise">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.5 0" />
+                    <feComposite operator="in" in2="SourceGraphic" />
+                </filter>
+            </svg>
+
             {/* Background Decorative Elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
