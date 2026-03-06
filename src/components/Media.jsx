@@ -44,10 +44,10 @@ export default function Media() {
     ];
 
     return (
-        <section id="media" className="py-20 md:py-32 px-5 md:px-12 bg-background text-text-primary relative border-t border-gray-800">
+        <section id="media" className="pt-4 pb-12 md:py-32 px-5 md:px-12 bg-background text-text-primary relative border-t border-gray-800">
             <SectionLabel number="02" />
             <div className="max-w-6xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
 
                     {/* Text Content */}
                     <motion.div
@@ -55,13 +55,14 @@ export default function Media() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start"
+                        className="space-y-4 md:space-y-8 text-center md:text-left flex flex-col items-center md:items-start"
                     >
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] md:leading-tight mb-2">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] md:leading-tight mb-1 md:mb-2">
                             MEDIA
                         </h2>
-                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light tracking-wide md:tracking-normal">
-                            We share our thinking, frameworks, and behind-the-scenes work publicly. <br /><br />
+                        <p className="text-base md:text-xl text-gray-300 leading-snug md:leading-relaxed font-light tracking-wide md:tracking-normal w-full max-w-sm md:max-w-none">
+                            We share our thinking, frameworks, and behind-the-scenes work publicly. <br className="hidden md:block" />
+                            <span className="md:hidden mt-2 block"></span>
                             If you want to see how we think and work, this is the best place to start.
                         </p>
 
@@ -69,10 +70,10 @@ export default function Media() {
                             href="https://www.youtube.com/@scale100million-yt"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 px-6 py-3 bg-gray-100 border border-gray-200 hover:bg-gray-200 hover:border-gray-400 rounded-full transition-all duration-300 group"
+                            className="inline-flex items-center gap-2 md:gap-3 px-5 py-2.5 md:px-6 md:py-3 bg-gray-100 border border-gray-200 hover:bg-gray-200 hover:border-gray-400 rounded-full transition-all duration-300 group text-sm md:text-base mt-2 md:mt-0"
                         >
                             <span className="font-semibold text-gray-900">EXPLORE OUR CONTENT</span>
-                            <Play className="w-4 h-4 text-gray-900 fill-gray-900 group-hover:translate-x-1 transition-transform" />
+                            <Play className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-900 fill-gray-900 group-hover:translate-x-1 transition-transform" />
                         </a>
                     </motion.div>
 
@@ -82,7 +83,7 @@ export default function Media() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-4"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-3 md:gap-4 mt-4 md:mt-0 w-full max-w-sm md:max-w-none mx-auto"
                     >
                         {socialLinks.map((link, index) => (
                             <a
@@ -90,17 +91,17 @@ export default function Media() {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`flex items-center gap-4 p-5 bg-surface border border-gray-800 rounded-2xl transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden ${link.borderColor} hover:bg-gray-800/80`}
+                                className={`flex items-center gap-3 md:gap-4 p-3.5 md:p-5 bg-surface border border-gray-800 rounded-xl md:rounded-2xl transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden ${link.borderColor} hover:bg-gray-800/80`}
                             >
                                 {/* Hover Glow Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                                <div className={`shrink-0 p-3 bg-white/5 rounded-xl border border-white/10 transition-colors duration-300 ${link.bgColor} ${link.borderColor}`}>
-                                    {React.cloneElement(link.icon, { className: `w-6 h-6 md:w-8 md:h-8 ${link.color}` })}
+                                <div className={`shrink-0 p-2 md:p-3 bg-white/5 rounded-lg md:rounded-xl border border-white/10 transition-colors duration-300 ${link.bgColor} ${link.borderColor}`}>
+                                    {React.cloneElement(link.icon, { className: `w-5 h-5 md:w-8 md:h-8 ${link.color}` })}
                                 </div>
-                                <div className="flex flex-col">
-                                    <span className={`text-sm md:text-base font-bold text-white mb-0.5 transition-colors group-hover:text-white`}>{link.name}</span>
-                                    <span className="text-xs text-gray-400 font-medium">{link.text}</span>
+                                <div className="flex flex-col text-left">
+                                    <span className={`text-sm md:text-base font-bold text-white mb-0 md:mb-0.5 transition-colors group-hover:text-white`}>{link.name}</span>
+                                    <span className="text-[10px] md:text-xs text-gray-400 font-medium">{link.text}</span>
                                 </div>
                             </a>
                         ))}

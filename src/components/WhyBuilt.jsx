@@ -43,7 +43,7 @@ export default function WhyBuilt() {
     };
 
     return (
-        <section id="why-built" className="py-20 md:py-32 px-5 md:px-12 bg-black text-white relative overflow-hidden">
+        <section id="why-built" className="py-12 md:py-32 px-4 md:px-12 bg-black text-white relative overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
@@ -82,19 +82,19 @@ export default function WhyBuilt() {
                 className="max-w-6xl mx-auto relative z-10"
             >
                 {/* Header */}
-                <motion.div variants={itemVariants} className="text-center mb-16 md:mb-24">
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight">
+                <motion.div variants={itemVariants} className="text-center mb-10 md:mb-24">
+                    <h2 className="text-3xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 md:mb-6 leading-tight">
                         WHY WE BUILT <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-blue-600">
                             SCALE100MILLION
                         </span>
                     </h2>
-                    <div className="flex flex-col items-center gap-4">
-                        <div className="h-1.5 w-24 bg-primary rounded-full mb-4 shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
-                        <p className="text-xl md:text-2xl text-gray-300 font-medium tracking-wide">
+                    <div className="flex flex-col items-center gap-3 md:gap-4">
+                        <div className="h-1 md:h-1.5 w-16 md:w-24 bg-primary rounded-full mb-2 md:mb-4 shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
+                        <p className="text-lg md:text-2xl text-gray-300 font-medium tracking-wide">
                             FOUNDERS DON’T NEED MORE ADVICE.
                         </p>
-                        <p className="text-sm md:text-base text-gray-500 font-bold uppercase tracking-[0.3em]">
+                        <p className="text-xs md:text-base text-gray-500 font-bold uppercase tracking-[0.3em]">
                             They need systems.
                         </p>
                     </div>
@@ -125,7 +125,7 @@ export default function WhyBuilt() {
                         </svg>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8 md:gap-10">
+                    <div className="grid md:grid-cols-3 gap-5 md:gap-10">
                         {reasons.map((item, index) => (
                             <motion.div
                                 key={index}
@@ -134,7 +134,7 @@ export default function WhyBuilt() {
                                 className="group relative"
                             >
                                 {/* 3D Tilt Wrapper Placeholder (using framer-motion for interaction) */}
-                                <div className="relative p-8 md:p-10 rounded-[2.5rem] bg-zinc-900/40 border border-white/5 group-hover:border-primary/40 transition-all duration-500 hover:bg-zinc-900/80 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.2)] overflow-hidden h-full flex flex-col items-center text-center">
+                                <div className="relative p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-zinc-900/40 border border-white/5 group-hover:border-primary/40 transition-all duration-500 hover:bg-zinc-900/80 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.2)] overflow-hidden h-full flex flex-col items-center text-center">
                                     {/* Inner Glow */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -142,16 +142,16 @@ export default function WhyBuilt() {
                                     <motion.div
                                         whileHover={{ rotateY: 180, scale: 1.1 }}
                                         transition={{ duration: 0.6 }}
-                                        className="relative w-24 h-24 mb-8 rounded-3xl bg-black/60 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all duration-500 shadow-2xl overflow-hidden"
+                                        className="relative w-16 h-16 md:w-24 md:h-24 mb-5 md:mb-8 rounded-2xl md:rounded-3xl bg-black/60 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all duration-500 shadow-2xl overflow-hidden"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                                        <item.icon className="w-10 h-10 text-primary group-hover:text-black transition-colors duration-500" />
+                                        <item.icon className="w-8 h-8 md:w-10 md:h-10 text-primary group-hover:text-black transition-colors duration-500" />
                                     </motion.div>
 
-                                    <h3 className="text-xl md:text-2xl font-black text-white mb-4 tracking-tight uppercase group-hover:text-primary transition-colors">
+                                    <h3 className="text-lg md:text-2xl font-black text-white mb-2 md:mb-4 tracking-tight uppercase group-hover:text-primary transition-colors">
                                         {item.text}
                                     </h3>
-                                    <p className="text-gray-400 font-light leading-relaxed group-hover:text-gray-200 transition-colors">
+                                    <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed group-hover:text-gray-200 transition-colors">
                                         {item.description}
                                     </p>
 
@@ -166,7 +166,7 @@ export default function WhyBuilt() {
                 {/* Unbound Immersive Footer Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
+                    className="mt-8 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
                     {/* Atmospheric Lighting - Desktop Only */}
                     <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-[-1]" />
@@ -223,27 +223,32 @@ export default function WhyBuilt() {
                     </div>
 
                     {/* Minimalist Professional Badge */}
-                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[12px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-20 md:mb-24 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
+                    <div className="relative hidden md:inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] md:text-[12px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-4 md:mb-24 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                         <span className="relative z-10">The Operation Model</span>
                     </div>
 
                     {/* Ultra-Refined Typography */}
-                    <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-10 md:mb-40 pt-12 md:pt-20">
+                    <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 mb-6 md:mb-40 pt-0 md:pt-20">
                         {/* Subtle Text Backdrop for Contrast - Desktop Only */}
                         <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
-                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-5xl text-gray-400 leading-[1.3] md:leading-[1.2] font-light tracking-tighter font-['Lexend_Peta',sans-serif] uppercase relative drop-shadow-xl z-10 max-w-[280px] sm:max-w-xl md:max-w-4xl lg:max-w-5xl mx-auto">
-                            SCALE100MILLION WAS
-                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
-                                {" "}BUILT TO COMBINE STRATEGY,
+                        <p className="text-[9.5px] sm:text-2xl md:text-3xl lg:text-5xl text-gray-400 leading-tight md:leading-[1.2] font-light tracking-tighter font-['Lexend_Peta',sans-serif] uppercase relative drop-shadow-xl z-10 w-full px-2 sm:max-w-xl md:max-w-4xl lg:max-w-5xl mx-auto flex flex-col pt-4 items-center text-center">
+                            <span className="whitespace-nowrap">
+                                SCALE100MILLION WAS
+                                <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
+                                    {" "}BUILT TO COMBINE
+                                </span>
                             </span>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
-                                {" "}AI, & EXECUTION INTO ONE
+                            <span className="whitespace-nowrap">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
+                                    STRATEGY, AI, & EXECUTION
+                                </span>
+                                {" "}INTO ONE
                             </span>
-                            <span className="relative inline-block lg:mt-0">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 to-blue-500 font-extrabold pb-2 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
-                                    {" "}AUTONOMOUS ECOSYSTEM.
+                            <span className="relative inline-block mt-1 lg:mt-0 whitespace-nowrap">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 to-blue-500 font-extrabold pb-0 md:pb-2 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+                                    AUTONOMOUS ECOSYSTEM.
                                 </span>
                             </span>
                         </p>

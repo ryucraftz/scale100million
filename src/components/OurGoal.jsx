@@ -10,12 +10,12 @@ const Counter = ({ from = 0, to, duration = 3, prefix = "", suffix = "" }) => {
 
     useEffect(() => {
         if (isInView) {
-            // Using a spring animation instead of easeOut for much smoother deceleration on numbers
+            // Using a high-quality easing (expo out) for an ultra-smooth counting animation
             const controls = animate(count, to, {
-                type: "spring",
-                bounce: 0,
+                type: "tween",
+                ease: [0.16, 1, 0.3, 1], // Expo out for smooth deceleration
                 duration: duration,
-                delay: 0.2
+                delay: 0.1
             });
             return controls.stop;
         }
@@ -37,7 +37,7 @@ const Counter = ({ from = 0, to, duration = 3, prefix = "", suffix = "" }) => {
 
 export default function OurGoal() {
     return (
-        <section id="our-goal" className="py-24 md:py-40 px-5 md:px-12 bg-black text-white flex items-center justify-center relative overflow-hidden">
+        <section id="our-goal" className="pt-6 pb-16 md:py-40 px-5 md:px-12 bg-black text-white flex items-center justify-center relative overflow-hidden">
             {/* Background Decorative Rings */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
                 <motion.div
@@ -64,35 +64,33 @@ export default function OurGoal() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="relative z-10 max-w-6xl mx-auto text-center"
             >
-                <div className="flex justify-center mb-8 md:mb-12">
-                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-                        <span className="relative flex h-2 w-2">
+                <div className="flex justify-center mb-6 md:mb-12">
+                    <div className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] md:text-xs font-black uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                        <span className="relative flex h-1.5 w-1.5 md:h-2 md:w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2 md:w-2 bg-primary"></span>
                         </span>
                         Our Mission
                     </div>
                 </div>
 
-                <h2 className="text-2xl leading-[1.1] sm:text-3xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black md:leading-[1.1] tracking-tight md:tracking-tighter uppercase max-w-[100vw] overflow-wrap-anywhere flex flex-col md:block items-center text-center">
-                    <span className="block md:inline">OUR GOAL IS SIMPLE:</span>
-                    <span className="block md:inline mt-1 md:mt-0">
-                        <span className="text-gray-400 inline-block md:mt-5">HELP</span>{" "}
-                        <span className="inline-block drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] pr-1 md:pr-1 min-w-[2.5em] md:min-w-[3em]">
+                <h2 className="text-2xl leading-[1.2] sm:text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black tracking-tight md:tracking-tighter uppercase max-w-5xl mx-auto overflow-wrap-anywhere text-center">
+                    <span className="block mb-1 md:mb-5">OUR GOAL IS SIMPLE:</span>
+                    <span className="inline-flex flex-wrap justify-center items-center gap-x-2 md:gap-x-4">
+                        <span className="text-gray-400">HELP</span>
+                        <span className="inline-block drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                             <Counter to={100} duration={2.5} />
-                        </span>{" "}
-                        <span className="text-gray-400 inline-block pl-1 md:pl-2">BUSINESSES</span>
-                    </span>
-                    <span className="block md:inline mt-1 md:mt-0">
-                        <span className="text-gray-400 inline-block">SCALE TO</span>{" "}
-                        <span className="relative inline-block text-white pl-1 md:pl-2">
+                        </span>
+                        <span className="text-gray-400">BUSINESSES</span>
+                        <span className="text-gray-400">SCALE TO</span>
+                        <span className="relative inline-block text-white">
                             <Counter to={100} prefix="$" suffix=" MILLION." duration={2.5} />
                             <motion.div
                                 initial={{ width: 0 }}
                                 whileInView={{ width: "100%" }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 1, duration: 1.5, ease: "easeInOut" }}
-                                className="absolute -bottom-1 md:-bottom-4 left-0 h-[3px] md:h-2.5 bg-gradient-to-r from-primary to-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
+                                className="absolute -bottom-1 md:-bottom-3 left-0 h-[2px] md:h-2.5 bg-gradient-to-r from-primary to-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
                             />
                         </span>
                     </span>
