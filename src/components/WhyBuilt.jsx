@@ -166,7 +166,7 @@ export default function WhyBuilt() {
                 {/* Unbound Immersive Footer Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-40 md:mt-64 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
+                    className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
                     {/* Atmospheric Lighting - Desktop Only */}
                     <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-[-1]" />

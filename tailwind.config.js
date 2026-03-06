@@ -27,7 +27,6 @@ export default {
         fadeInUp: "fadeInUp 0.8s ease-out forwards",
         shimmer: "shimmer 2s infinite linear",
         "gradient-x": "gradient-x 4s ease infinite",
-        "gradient-sweep-right": "gradient-sweep-right 6s linear infinite",
       },
       keyframes: {
         shimmer: {
@@ -46,10 +45,6 @@ export default {
         "gradient-x": {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
-        },
-        "gradient-sweep-right": {
-          "0%": { backgroundPosition: "200% 50%" },
-          "100%": { backgroundPosition: "-200% 50%" },
         },
       },
     },
