@@ -264,7 +264,7 @@ export default function WhyBuilt() {
                         <span
                             className="absolute left-0 top-0 w-full h-full z-10 transition-opacity"
                             style={{
-                                color: 'rgba(59,130,246,0.4)', // Slightly more visible
+                                color: 'rgba(59,130,246,0.25)', // Further dimmed blue
                             }}
                         >
                             Built to scale
