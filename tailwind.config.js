@@ -7,7 +7,7 @@ export default {
         background: "#000000", // Pure Black
         surface: "#121212", // Dark Gray
         primary: "#3B82F6", // Scale100M Blue (Vibrant)
-        secondary: "#18181b", // Zinc 900
+        secondary: "#070707ff", // Zinc 900
         "text-primary": "#f3f4f6", // Off-white (Gray 100)
         "text-secondary": "#9ca3af", // Gray 400
         "text-accent": "#FF4444",

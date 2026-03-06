@@ -103,7 +103,7 @@ export default function Home() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 rounded-full blur-md opacity-60 group-hover/btn:opacity-100 transition-opacity duration-500 animate-pulse" />
                 <button
                   onClick={() => {
-                    const section = document.getElementById('expert-services');
+                    const section = document.getElementById('mentorship');
                     if (section) section.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className="relative w-full sm:w-auto text-center group px-10 py-4 bg-gradient-to-r from-blue-700 via-primary to-blue-500 hover:from-blue-600 hover:via-blue-500 hover:to-blue-400 text-white text-sm md:text-base font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_rgba(59,130,246,0.8)] hover:-translate-y-1 hover:scale-105 flex justify-center items-center gap-3 overflow-hidden border border-blue-400/30"
