@@ -233,17 +233,17 @@ export default function WhyBuilt() {
                         {/* Subtle Text Backdrop for Contrast - Desktop Only */}
                         <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
-                        <p className="text-2xl sm:text-xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10 max-w-[320px] sm:max-w-none mx-auto">
-                            Scale100million was <br className="block md:hidden" />
+                        <p className="text-2xl sm:text-xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['IBM_Plex_Mono',monospace] uppercase relative drop-shadow-xl z-10 max-w-[320px] sm:max-w-none mx-auto">
+                            SCALE100MILLION WAS <br className="block md:hidden" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
-                                built to combine strategy,
+                                BUILT TO COMBINE STRATEGY,
                             </span> <br className="block md:hidden" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
-                                AI, & execution into one
+                                AI, & EXECUTION INTO ONE
                             </span> <br className="block md:hidden" />
                             <span className="relative inline-block mt-2 lg:mt-0">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 to-blue-500 font-extrabold pb-2 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
-                                    autonomous ecosystem.
+                                    AUTONOMOUS ECOSYSTEM.
                                 </span>
                             </span>
                         </p>
