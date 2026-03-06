@@ -62,7 +62,7 @@ const FounderClubMentorship = () => {
                         >
                             <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6">
                                 <motion.a
-                                    href="https://nas.io/scale100million"
+                                    href="https://foundersclub.scale100million.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     whileHover={{ scale: 1.05, backgroundColor: "#2563EB" }} // Blue-600

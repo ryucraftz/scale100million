@@ -17,7 +17,7 @@ export default function Services() {
             title: "FOUNDER CLUB MENTORSHIP",
             description: "A step-by-step 'Zero to Hero Success System' to grow your service business to 8 Figure income with weekly mentorship.",
             image: serviceImg2,
-            link: "https://scale100million.com/founders-club/",
+            link: "https://foundersclub.scale100million.com/",
             cta: "Join the Club",
             external: true
         }
