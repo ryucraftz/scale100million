@@ -69,19 +69,19 @@ export default function RefundPolicy() {
 
     return (
         <LegalLayout title="Refund Policy" icon={RefreshCw}>
-            <div className="mb-12 text-center md:text-left">
-                <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            <div className="mb-5 md:mb-12 text-center md:text-left">
+                <p className="text-gray-400 text-sm md:text-lg leading-relaxed">
                     At Scale100Million, we deliver high-value digital products and services. Please review our refund policy carefully.
                 </p>
             </div>
 
-            <div className="space-y-10">
+            <div className="space-y-4 md:space-y-10">
                 {sections.map((section, idx) => (
-                    <div key={idx} className="border-b border-white/5 pb-8 last:border-0 last:pb-0">
-                        <h2 className="text-lg md:text-xl font-semibold text-white mb-4">
+                    <div key={idx} className="border-b border-white/5 pb-4 md:pb-8 last:border-0 last:pb-0">
+                        <h2 className="text-base md:text-xl font-semibold text-white mb-3 md:mb-4">
                             {idx + 1}. {section.title}
                         </h2>
-                        <div className="text-sm md:text-base text-gray-300 leading-relaxed">
+                        <div className="text-xs md:text-base text-gray-300 leading-relaxed font-light">
                             {section.content}
                         </div>
                     </div>
