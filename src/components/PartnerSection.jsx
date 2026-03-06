@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function PartnerSection() {
     return (
-        <section id="partner" className="py-20 md:py-32 px-5 md:px-12 bg-background text-white overflow-hidden relative">
+        <section id="partner" className="py-12 md:py-32 px-5 md:px-12 bg-background text-white overflow-hidden relative">
             <div className="max-w-4xl mx-auto text-center space-y-12 md:space-y-16 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -13,33 +13,33 @@ export default function PartnerSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-800 bg-surface backdrop-blur-md mb-8">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-800 bg-surface backdrop-blur-md mb-6 md:mb-8">
                         <span className="w-2 h-2 rounded-full bg-primary" />
                         <span className="text-sm font-medium text-gray-300 uppercase tracking-wide">
                             Built Together
                         </span>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black tracking-tight mb-6 md:mb-8 leading-[1.1] md:leading-tight">
+                    <h2 className="text-2xl md:text-5xl lg:text-7xl font-black tracking-tight mb-4 md:mb-8 leading-[1.1] md:leading-tight">
                         WE PARTNER AND INVEST IN FOUNDERS
                     </h2>
 
-                    <p className="text-lg md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto tracking-wide md:tracking-normal">
+                    <p className="text-base md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto tracking-wide md:tracking-normal">
                         We partner with founders to build, systemize, and grow their businesses.
                     </p>
 
-                    <div className="mt-8 flex flex-col items-center gap-2 mb-12">
+                    <div className="mt-6 md:mt-8 flex flex-col items-center gap-2 mb-8 md:mb-12">
                         <p className="text-gray-500 font-medium tracking-wide uppercase text-sm">Not advisory.</p>
-                        <p className="text-white font-bold text-xl">Built together.</p>
+                        <p className="text-white font-bold text-lg md:text-xl">Built together.</p>
                     </div>
 
                     <div className="flex justify-center">
                         <Link
                             to="/partner"
-                            className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                            className="group inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-white text-black rounded-full font-bold text-base md:text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                         >
                             Apply Now
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
                 </motion.div>
