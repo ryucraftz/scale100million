@@ -43,7 +43,7 @@ export default function WhyBuilt() {
     };
 
     return (
-        <section id="why-built" className="py-20 md:py-32 px-5 md:px-12 bg-black text-white relative border-t border-gray-900 overflow-hidden">
+        <section id="why-built" className="py-20 md:py-32 px-5 md:px-12 bg-black text-white relative overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
@@ -234,11 +234,13 @@ export default function WhyBuilt() {
                         <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
                         <p className="text-2xl sm:text-xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10 max-w-[320px] sm:max-w-none mx-auto">
-                            Scale100million was built to <br className="block md:hidden" />
+                            Scale100million was <br className="block md:hidden" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
-                                combine strategy, AI, & execution
+                                built to combine strategy,
                             </span> <br className="block md:hidden" />
-                            into one{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
+                                AI, & execution into one
+                            </span> <br className="block md:hidden" />
                             <span className="relative inline-block mt-2 lg:mt-0">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-400 to-blue-500 font-extrabold pb-2 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
                                     autonomous ecosystem.

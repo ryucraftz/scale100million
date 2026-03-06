@@ -37,7 +37,7 @@ const Counter = ({ from = 0, to, duration = 3, prefix = "", suffix = "" }) => {
 
 export default function OurGoal() {
     return (
-        <section id="our-goal" className="py-24 md:py-40 px-5 md:px-12 bg-black text-white flex items-center justify-center relative overflow-hidden border-t border-white/5">
+        <section id="our-goal" className="py-24 md:py-40 px-5 md:px-12 bg-black text-white flex items-center justify-center relative overflow-hidden">
             {/* Background Decorative Rings */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
                 <motion.div
