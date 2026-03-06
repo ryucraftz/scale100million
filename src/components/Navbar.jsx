@@ -121,7 +121,7 @@ export default function Navbar() {
           <img
             src="/logo.svg"
             alt="Scale100Million"
-            className="h-10 w-auto object-contain cursor-pointer"
+            className="h-14 md:h-16 w-auto object-contain cursor-pointer"
             onClick={() => window.scrollTo(0, 0)}
           />
         </Link>

@@ -28,7 +28,7 @@ export default function Footer() {
               <img
                 src="/logo.svg"
                 alt="Scale100Million"
-                className="h-12 md:h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                className="h-16 md:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
