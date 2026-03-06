@@ -1,11 +1,13 @@
 import React from "react";
-import { Instagram, Youtube, Send, ArrowRight } from "lucide-react";
+import { Instagram, Youtube, Send, ArrowRight, MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logoWhite from "../assets/logowhite.png";
 
 export default function Footer() {
   const socialLinks = [
+    { icon: <FaWhatsapp size={24} />, href: "https://wa.me/919370452416", label: "WhatsApp", color: "hover:text-[#25D366]" },
     { icon: <Instagram size={24} />, href: "https://www.instagram.com/scale100million/", label: "Instagram", color: "hover:text-[#E1306C]" },
     { icon: <Send size={24} />, href: "https://t.me/+t5a5E6TJ7JowNjg1", label: "Telegram", color: "hover:text-[#229ED9]" },
     { icon: <Youtube size={24} />, href: "https://www.youtube.com/@scale100million-yt", label: "YouTube", color: "hover:text-[#FF0000]" },

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Instagram, Youtube, Send, FileText, ArrowRight, MessageSquare, Loader2 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
@@ -91,6 +92,12 @@ export default function ContactUs() {
                                     <a href="tel:+918806400205" className="hover:text-blue-400 transition-colors">+91 8806400205</a>
                                 </div>,
                                 glow: "rgba(139,92,246,0.08)"
+                            },
+                            {
+                                icon: <FaWhatsapp size={18} />,
+                                title: "WhatsApp",
+                                content: <a href="https://wa.me/919370452416" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">+91 9370452416</a>,
+                                glow: "rgba(37,211,102,0.08)"
                             },
                             {
                                 icon: <Mail size={18} />,
