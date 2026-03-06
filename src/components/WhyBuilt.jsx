@@ -44,15 +44,6 @@ export default function WhyBuilt() {
 
     return (
         <section id="why-built" className="py-20 md:py-32 px-5 md:px-12 bg-black text-white relative overflow-hidden">
-            {/* SVG Noise Filter for Text Texture */}
-            <svg className="absolute w-0 h-0 overflow-hidden pointer-events-none">
-                <filter id="textNoise">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.5 0" />
-                    <feComposite operator="in" in2="SourceGraphic" />
-                </filter>
-            </svg>
-
             {/* Background Decorative Elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
@@ -178,11 +169,11 @@ export default function WhyBuilt() {
                     className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
                     {/* Atmospheric Lighting - Desktop Only */}
-                    <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-0" />
+                    <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-[-1]" />
 
                     {/* AI Core Immersive Visual - Desktop Only */}
                     <motion.div
-                        className="hidden md:flex absolute top-[35%] md:top-1/3 left-1/2 w-[110vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-0 mix-blend-screen opacity-50 md:opacity-60 items-center justify-center"
+                        className="hidden md:flex absolute top-[35%] md:top-1/3 left-1/2 w-[110vw] md:w-[80vw] max-w-[1000px] aspect-square pointer-events-none z-[-1] mix-blend-screen opacity-50 md:opacity-60 items-center justify-center"
                         initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.9 }}
                         whileInView={{ opacity: 0.6, x: "-50%", y: "-50%", scale: 1 }}
                         transition={{
@@ -262,10 +253,10 @@ export default function WhyBuilt() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.98 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="hidden md:block relative text-[18vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
+                        className="hidden md:block relative z-10 text-[18vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
                         style={{ WebkitTextStroke: '1px rgba(255,255,255,0.03)', color: 'transparent' }}
                     >
-                        <span className="relative z-0" style={{ filter: 'url(#textNoise)' }}>
+                        <span className="relative z-0">
                             Built to scale
                         </span>
 
@@ -274,7 +265,6 @@ export default function WhyBuilt() {
                             className="absolute left-0 top-0 w-full h-full z-10 transition-opacity"
                             style={{
                                 color: 'rgba(59,130,246,0.12)', // Ultra-dimmed blue
-                                filter: 'url(#textNoise)',
                             }}
                         >
                             Built to scale
