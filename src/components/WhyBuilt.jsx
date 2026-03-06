@@ -232,11 +232,11 @@ export default function WhyBuilt() {
                         </div>
 
                         {/* Ultra-Refined Typography */}
-                        <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-10 md:mb-16">
+                        <div className="max-w-[1400px] mx-auto px-5 md:px-6 relative z-10 mb-10 md:mb-20">
                             {/* Subtle Text Backdrop for Contrast - Desktop Only */}
                             <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
-                            <p className="text-2xl sm:text-xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10 max-w-[320px] sm:max-w-none mx-auto">
+                            <p className="text-2xl sm:text-xl md:text-6xl lg:text-8xl text-gray-400 leading-[1.3] md:leading-[1.1] font-light tracking-tight md:tracking-[-0.03em] font-['Inter',sans-serif] relative drop-shadow-xl z-10 max-w-[320px] sm:max-w-none mx-auto">
                                 Scale100million was <br className="block md:hidden" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
                                     built to combine strategy,
@@ -256,7 +256,7 @@ export default function WhyBuilt() {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.98 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            className="hidden md:block relative text-[18vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
+                            className="hidden md:block relative text-[18vw] md:text-[15vw] xl:text-[18vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
                             style={{ WebkitTextStroke: '1px rgba(255,255,255,0.05)', color: 'transparent' }}
                         >
                             <span className="relative z-0">
