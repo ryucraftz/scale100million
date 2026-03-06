@@ -166,7 +166,7 @@ export default function WhyBuilt() {
                 {/* Unbound Immersive Footer Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-32 md:mt-48 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
+                    className="mt-40 md:mt-64 relative w-screen -ml-[50vw] left-1/2 flex flex-col items-center text-center overflow-hidden"
                 >
                     {/* Atmospheric Lighting - Desktop Only */}
                     <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[80vw] h-[200px] md:h-[300px] bg-blue-500/10 md:bg-blue-500/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none z-[-1]" />
@@ -223,13 +223,13 @@ export default function WhyBuilt() {
                     </div>
 
                     {/* Minimalist Professional Badge */}
-                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[12px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-24 md:mb-32 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
+                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[12px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-20 md:mb-24 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                         <span className="relative z-10">The Operation Model</span>
                     </div>
 
                     {/* Ultra-Refined Typography */}
-                    <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-10 md:mb-40 pt-16 md:pt-32">
+                    <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 mb-10 md:mb-40 pt-12 md:pt-20">
                         {/* Subtle Text Backdrop for Contrast - Desktop Only */}
                         <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
