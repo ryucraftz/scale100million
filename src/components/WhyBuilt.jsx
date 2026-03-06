@@ -254,7 +254,7 @@ export default function WhyBuilt() {
                         initial={{ opacity: 0, scale: 0.98 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="hidden md:block relative text-[18vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
-                        style={{ WebkitTextStroke: '1px rgba(255,255,255,0.05)', color: 'transparent' }}
+                        style={{ WebkitTextStroke: '1px rgba(255,255,255,0.03)', color: 'transparent' }}
                     >
                         <span className="relative z-0">
                             Built to scale
@@ -264,7 +264,7 @@ export default function WhyBuilt() {
                         <span
                             className="absolute left-0 top-0 w-full h-full z-10 transition-opacity"
                             style={{
-                                color: 'rgba(59,130,246,0.25)', // Further dimmed blue
+                                color: 'rgba(59,130,246,0.12)', // Ultra-dimmed blue
                             }}
                         >
                             Built to scale
