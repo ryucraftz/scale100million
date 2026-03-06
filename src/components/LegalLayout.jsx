@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function LegalLayout({ title, icon: Icon, children }) {
     return (
-        <section className="min-h-screen bg-black text-white py-6 md:py-20 px-3 md:px-8 flex justify-center items-start">
+        <section className="min-h-screen bg-black text-white pt-24 pb-6 md:py-20 px-3 md:px-8 flex justify-center items-start">
             <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
