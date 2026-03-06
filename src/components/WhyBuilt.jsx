@@ -223,7 +223,7 @@ export default function WhyBuilt() {
                     </div>
 
                     {/* Minimalist Professional Badge */}
-                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[9px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-16 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
+                    <div className="relative inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 border border-white/10 md:border-white/5 text-gray-400 md:text-gray-500 text-[12px] sm:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] mb-16 md:mb-16 mix-blend-screen bg-black/50 md:bg-transparent rounded-full backdrop-blur-md md:backdrop-blur-none">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                         <span className="relative z-10">The Operation Model</span>
                     </div>
@@ -233,7 +233,7 @@ export default function WhyBuilt() {
                         {/* Subtle Text Backdrop for Contrast - Desktop Only */}
                         <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
-                        <p className="text-lg sm:text-xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.4] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10 max-w-[280px] sm:max-w-none mx-auto">
+                        <p className="text-2xl sm:text-xl md:text-5xl lg:text-7xl text-gray-400 leading-[1.3] md:leading-[1.15] font-light tracking-tight md:tracking-[-0.02em] font-['Inter',sans-serif] relative drop-shadow-xl z-10 max-w-[320px] sm:max-w-none mx-auto">
                             Scale100million was built to <br className="block md:hidden" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
                                 combine strategy, AI, & execution
