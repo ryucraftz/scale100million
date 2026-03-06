@@ -260,12 +260,9 @@ export default function WhyBuilt() {
                             Built to scale
                         </span>
 
-                        {/* Static Faded Blue Fill */}
+                        {/* Vertical Gradient Fill */}
                         <span
-                            className="absolute left-0 top-0 w-full h-full z-10 transition-opacity"
-                            style={{
-                                color: 'rgba(59,130,246,0.12)', // Ultra-dimmed blue
-                            }}
+                            className="absolute left-0 top-0 w-full h-full z-10 transition-opacity text-transparent bg-clip-text bg-gradient-to-b from-blue-500/20 via-blue-500/10 to-transparent"
                         >
                             Built to scale
                         </span>
