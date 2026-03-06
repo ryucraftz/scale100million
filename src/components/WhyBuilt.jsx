@@ -265,7 +265,7 @@ export default function WhyBuilt() {
                         className="hidden md:block relative text-[18vw] md:text-[12vw] xl:text-[14vw] font-black tracking-tighter uppercase select-none w-full text-center overflow-hidden whitespace-nowrap leading-none px-4 md:px-0"
                         style={{ WebkitTextStroke: '1px rgba(255,255,255,0.03)', color: 'transparent' }}
                     >
-                        <span className="relative z-0">
+                        <span className="relative z-0" style={{ filter: 'url(#textNoise)' }}>
                             Built to scale
                         </span>
 
@@ -274,6 +274,7 @@ export default function WhyBuilt() {
                             className="absolute left-0 top-0 w-full h-full z-10 transition-opacity"
                             style={{
                                 color: 'rgba(59,130,246,0.12)', // Ultra-dimmed blue
+                                filter: 'url(#textNoise)',
                             }}
                         >
                             Built to scale
