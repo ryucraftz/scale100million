@@ -35,7 +35,7 @@ export default function WhatWeDo() {
                     <h2 className="text-2xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 md:mb-8 leading-[1.1] font-['Inter',sans-serif] text-white">
                         Most businesses don't fail from lack of{' '}
                         <span className="relative inline-block">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-[length:200%_auto] animate-gradient-x">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
                                 effort.
                             </span>
                             <motion.span
