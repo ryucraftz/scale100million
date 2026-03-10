@@ -51,10 +51,10 @@ export default function Media() {
 
                     {/* Text Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
+                        initial={{ opacity: 0, x: typeof window !== 'undefined' && window.innerWidth < 768 ? -15 : -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8 }}
                         className="space-y-4 md:space-y-8 text-center md:text-left flex flex-col items-center md:items-start"
                     >
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] md:leading-tight mb-1 md:mb-2">
@@ -79,10 +79,10 @@ export default function Media() {
 
                     {/* Links Grid */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
+                        initial={{ opacity: 0, x: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2 }}
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-3 md:gap-4 mt-4 md:mt-0 w-full max-w-sm md:max-w-none mx-auto"
                     >
                         {socialLinks.map((link, index) => (
