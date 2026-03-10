@@ -10,6 +10,9 @@ export default function Home() {
 
 
   const handleMouseMove = (e) => {
+    // Disable mouse follow on mobile to prevent excessive re-renders
+    if (window.innerWidth < 768) return;
+
     const { clientX, clientY } = e;
     const moveX = clientX - window.innerWidth / 2;
     const moveY = clientY - window.innerHeight / 2;
@@ -30,9 +33,9 @@ export default function Home() {
         {/* Neural Network Animation */}
         <NeuralBackground />
 
-        {/* Moving Spotlight (Follows Mouse) */}
+        {/* Moving Spotlight (Follows Mouse) - Disabled on Mobile for performance */}
         <motion.div
-          className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-screen"
+          className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-screen hidden md:block"
           animate={{
             x: mousePosition.x,
             y: mousePosition.y
@@ -47,36 +50,28 @@ export default function Home() {
       {/* Navbar Gradient - Strong Top Scrim */}
       <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black via-black/60 to-transparent z-0 pointer-events-none" />
 
-      {/* Decorative Gradient Blobs with Parallax */}
+      {/* Decorative Gradient Blobs with Parallax - Disabled on Mobile */}
       <motion.div
         animate={{ x: mousePosition.x * 0.02, y: mousePosition.y * 0.02 }}
-        className="absolute top-20 right-0 w-72 h-72 bg-blue-400/10 rounded-full blur-[100px] pointer-events-none"
+        className="absolute top-20 right-0 w-72 h-72 bg-blue-400/10 rounded-full blur-[100px] pointer-events-none hidden md:block"
       />
       <motion.div
         animate={{ x: mousePosition.x * -0.02, y: mousePosition.y * -0.02 }}
-        className="absolute bottom-20 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
+        className="absolute bottom-20 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none hidden md:block"
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-16 md:pt-12">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2
-              }
-            }
-          }}
-          className="max-w-5xl space-y-6 md:space-y-12 text-center"
-        >
+      <div
+        className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-16 md:pt-12"
+        style={{ backfaceVisibility: 'hidden', transformStyle: 'preserve-3d', willChange: 'opacity, transform' }}
+      >
+        <div className="max-w-5xl space-y-6 md:space-y-12 text-center">
           {/* Main Headline */}
           <motion.h1
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-7xl font-black text-text-primary leading-[1.15] md:leading-[1.1] tracking-tight md:tracking-tighter font-['Inter',sans-serif]"
           >
             WE HELP ONLINE <br className="hidden md:block" />
@@ -86,7 +81,10 @@ export default function Home() {
           {/* Subheading */}
           <div className="space-y-6 flex flex-col items-center">
             <motion.p
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed font-light text-center tracking-wide md:tracking-normal uppercase"
             >
               THE ENGINE BEHIND GROWING BUSINESSES.
@@ -94,7 +92,10 @@ export default function Home() {
 
             {/* CTAs */}
             <motion.div
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4"
             >
               {/* Glow ring wrapper */}
@@ -117,7 +118,7 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Bottom Area: Scroll Indicator & Socials */}

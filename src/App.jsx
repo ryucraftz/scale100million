@@ -61,7 +61,7 @@ function AppContent() {
         <Route
           path="/"
           element={
-            <>
+            <div className="relative z-[1]">
               <HomePage />
               <Suspense fallback={<div className="min-h-[20vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
                 <FounderClubMentorship />
@@ -74,7 +74,7 @@ function AppContent() {
                 <JoinTeamSection />
                 <DesignYourGrowthEngine />
               </Suspense>
-            </>
+            </div>
           }
         />
 
