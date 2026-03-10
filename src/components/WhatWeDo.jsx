@@ -6,8 +6,8 @@ export default function WhatWeDo() {
         <section id="what-we-do" className="py-12 md:py-40 px-5 md:px-12 bg-black text-white overflow-hidden relative border-t border-white/5">
             {/* Background Effects */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
-                <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s' }} />
+                <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" style={typeof window !== 'undefined' && window.innerWidth < 768 ? {} : { animation: 'pulse 8s infinite' }} />
+                <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]" style={typeof window !== 'undefined' && window.innerWidth < 768 ? {} : { animation: 'pulse 12s infinite' }} />
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
                 <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
@@ -24,7 +24,7 @@ export default function WhatWeDo() {
                 >
                     {/* Glowing Orb behind text */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
-                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-[0.25em] mb-6 md:mb-10 w-fit mx-auto md:mx-0 shadow-[0_0_20px_rgba(59,130,246,0.15)] backdrop-blur-md relative overflow-hidden group">
+                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-[0.25em] mb-6 md:mb-10 w-fit mx-auto md:mx-0 shadow-[0_0_20px_rgba(59,130,246,0.15)] md:backdrop-blur-md relative overflow-hidden group">
                         <div className="absolute inset-0 bg-blue-400/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -71,7 +71,7 @@ export default function WhatWeDo() {
                     >
                         {/* Glowing Backlight */}
                         <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600/40 to-emerald-600/20 rounded-[3rem] blur-3xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
-                        <div className="absolute inset-10 bg-purple-600/30 blur-[80px] rounded-full mix-blend-screen pointer-events-none" />
+                        <div className="absolute inset-10 bg-purple-600/30 blur-[80px] rounded-full md:mix-blend-screen pointer-events-none" />
 
                         {/* Floating Decorative Elements */}
                         <motion.div
@@ -86,7 +86,7 @@ export default function WhatWeDo() {
                         />
 
                         {/* Image Container */}
-                        <div className="relative aspect-square w-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_70px_rgba(0,0,0,0.7)] z-10 bg-black/50">
+                        <div className="relative aspect-square w-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_70px_rgba(0,0,0,0.7)] z-10 bg-black/50 [will-change:transform,opacity]">
                             <img
                                 src="/ai.png"
                                 alt="Structured Growth Engine AI"
