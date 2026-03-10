@@ -44,8 +44,8 @@ export default function WhyBuilt() {
 
     return (
         <section id="why-built" className="py-12 md:py-32 px-4 md:px-12 bg-black text-white relative overflow-hidden">
-            {/* Background Decorative Elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {/* Background Decorative Elements - Hidden on mobile for performance */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
                 <motion.div
                     animate={{
                         scale: [1, 1.2, 1],

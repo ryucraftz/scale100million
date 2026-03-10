@@ -43,8 +43,8 @@ export default function Home() {
           transition={{ type: "tween", ease: "linear", duration: 0.2 }}
         />
 
-        {/* Top Ambient Light */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent shadow-[0_0_80px_rgba(59,130,246,0.5)]" />
+        {/* Top Ambient Light - Simplified on mobile */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent md:shadow-[0_0_80px_rgba(59,130,246,0.5)]" />
       </div>
 
       {/* Navbar Gradient - Strong Top Scrim */}

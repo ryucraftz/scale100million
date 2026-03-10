@@ -5,6 +5,9 @@ export default function MouseSpotlight() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
+        // Disable on mobile
+        if (window.innerWidth < 768) return;
+
         const updateMousePosition = (e) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
         };
@@ -15,6 +18,8 @@ export default function MouseSpotlight() {
             window.removeEventListener('mousemove', updateMousePosition);
         };
     }, []);
+
+    if (typeof window !== 'undefined' && window.innerWidth < 768) return null;
 
     return (
         <motion.div

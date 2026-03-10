@@ -72,57 +72,59 @@ export default function NeuralBackground() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             const edges = getEdges();
-            spawnPulses(edges);
+            if (!isMobile) spawnPulses(edges);
 
             // Draw connections — more visible, highlighted
             edges.forEach(({ i, j, dist }) => {
-                const alpha = (1 - dist / MAX_DIST) * 0.55;
+                const alpha = (1 - dist / MAX_DIST) * (isMobile ? 0.25 : 0.55);
                 ctx.beginPath();
                 ctx.moveTo(nodes[i].x, nodes[i].y);
                 ctx.lineTo(nodes[j].x, nodes[j].y);
                 ctx.strokeStyle = `rgba(59,130,246,${alpha})`;
-                ctx.lineWidth = 1.2;
+                ctx.lineWidth = isMobile ? 0.8 : 1.2;
                 ctx.stroke();
             });
 
-            // Draw pulses (data flowing along edges)
-            pulses = pulses.filter((p) => {
-                p.t += PULSE_SPEED / Math.max(
-                    Math.hypot(nodes[p.i].x - nodes[p.j].x, nodes[p.i].y - nodes[p.j].y),
-                    1
-                );
-                if (p.t > 1) return false;
+            // Draw pulses (data flowing along edges) - Skip on mobile
+            if (!isMobile) {
+                pulses = pulses.filter((p) => {
+                    p.t += PULSE_SPEED / Math.max(
+                        Math.hypot(nodes[p.i].x - nodes[p.j].x, nodes[p.i].y - nodes[p.j].y),
+                        1
+                    );
+                    if (p.t > 1) return false;
 
-                const src = p.dir === 1 ? nodes[p.i] : nodes[p.j];
-                const dst = p.dir === 1 ? nodes[p.j] : nodes[p.i];
-                const px = src.x + (dst.x - src.x) * p.t;
-                const py = src.y + (dst.y - src.y) * p.t;
+                    const src = p.dir === 1 ? nodes[p.i] : nodes[p.j];
+                    const dst = p.dir === 1 ? nodes[p.j] : nodes[p.i];
+                    const px = src.x + (dst.x - src.x) * p.t;
+                    const py = src.y + (dst.y - src.y) * p.t;
 
-                // Glow
-                const grad = ctx.createRadialGradient(px, py, 0, px, py, 8);
-                grad.addColorStop(0, "rgba(147,210,255,0.9)");
-                grad.addColorStop(0.4, "rgba(59,130,246,0.5)");
-                grad.addColorStop(1, "rgba(59,130,246,0)");
-                ctx.beginPath();
-                ctx.arc(px, py, 8, 0, Math.PI * 2);
-                ctx.fillStyle = grad;
-                ctx.fill();
+                    // Glow
+                    const grad = ctx.createRadialGradient(px, py, 0, px, py, 8);
+                    grad.addColorStop(0, "rgba(147,210,255,0.9)");
+                    grad.addColorStop(0.4, "rgba(59,130,246,0.5)");
+                    grad.addColorStop(1, "rgba(59,130,246,0)");
+                    ctx.beginPath();
+                    ctx.arc(px, py, 8, 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
 
-                // Core dot
-                ctx.beginPath();
-                ctx.arc(px, py, 2, 0, Math.PI * 2);
-                ctx.fillStyle = "rgba(200,230,255,0.95)";
-                ctx.fill();
+                    // Core dot
+                    ctx.beginPath();
+                    ctx.arc(px, py, 2, 0, Math.PI * 2);
+                    ctx.fillStyle = "rgba(200,230,255,0.95)";
+                    ctx.fill();
 
-                // Light the destination node briefly
-                dst.pulse = 1;
+                    // Light the destination node briefly
+                    dst.pulse = 1;
 
-                return true;
-            });
+                    return true;
+                });
+            }
 
             // Draw nodes
             nodes.forEach((n) => {
-                const glow = n.pulse > 0 ? n.pulse : 0;
+                const glow = !isMobile && n.pulse > 0 ? n.pulse : 0;
                 if (glow > 0) {
                     const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, 10);
                     g.addColorStop(0, `rgba(59,130,246,${glow * 0.4})`);
@@ -136,7 +138,7 @@ export default function NeuralBackground() {
 
                 ctx.beginPath();
                 ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(80,140,220,${(isMobile ? 0.08 : 0.18) + (glow * 0.25)})`;
+                ctx.fillStyle = `rgba(80,140,220,${(isMobile ? 0.05 : 0.18) + (glow * 0.25)})`;
                 ctx.fill();
 
                 // Move
