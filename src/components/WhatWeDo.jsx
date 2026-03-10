@@ -57,10 +57,10 @@ export default function WhatWeDo() {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 0.8, delay: 0.2, ease: "easeOut" }}
                     className="relative group h-full flex items-center justify-center md:justify-end"
                 >
                     {/* Continuous Levitation Animation */}
@@ -90,14 +90,14 @@ export default function WhatWeDo() {
                             <img
                                 src="/ai.png"
                                 alt="Structured Growth Engine AI"
-                                className="w-full h-full object-cover transform scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out opacity-90 group-hover:opacity-100 mix-blend-luminosity hover:mix-blend-normal"
+                                className="w-full h-full object-cover transform scale-[1.02] md:group-hover:scale-110 transition-transform duration-[2s] ease-out opacity-90 md:group-hover:opacity-100 mix-blend-luminosity hover:mix-blend-normal"
                             />
                             {/* Overlay Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-70" />
                             <div className="absolute inset-0 bg-blue-900/10 mix-blend-color pointer-events-none" />
 
                             {/* Premium Glassmorphic Text Box */}
-                            <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 p-4 md:p-8 bg-black/40 backdrop-blur-2xl rounded-[1.5rem] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out overflow-hidden">
+                            <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 p-4 md:p-8 bg-black/40 md:backdrop-blur-2xl rounded-[1.5rem] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-700 ease-out overflow-hidden">
                                 <div className="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:left-[200%] transition-all duration-[1.5s] ease-in-out" />
                                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-50" />
 
