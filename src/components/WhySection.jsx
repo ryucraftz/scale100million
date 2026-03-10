@@ -50,9 +50,9 @@ export default function WhySection() {
                     {features.map((feature, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.1, duration: 0.5 }}
+                            transition={{ delay: idx * 0.1, duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.3 : 0.5 }}
                             viewport={{ once: true }}
                             className="group p-8 rounded-2xl bg-secondary border border-white/5 hover:border-primary/50 transition-colors duration-300"
                         >

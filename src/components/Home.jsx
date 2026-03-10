@@ -68,10 +68,10 @@ export default function Home() {
         <div className="max-w-5xl space-y-6 md:space-y-12 text-center">
           {/* Main Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 0.8 }}
             className="text-4xl sm:text-5xl md:text-7xl font-black text-text-primary leading-[1.15] md:leading-[1.1] tracking-tight md:tracking-tighter font-['Inter',sans-serif]"
           >
             WE HELP ONLINE <br className="hidden md:block" />
@@ -81,10 +81,10 @@ export default function Home() {
           {/* Subheading */}
           <div className="space-y-6 flex flex-col items-center">
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 0.8, delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2 }}
               className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed font-light text-center tracking-wide md:tracking-normal uppercase"
             >
               THE ENGINE BEHIND GROWING BUSINESSES.
@@ -92,10 +92,10 @@ export default function Home() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 0.8, delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.4 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4"
             >
               {/* Glow ring wrapper */}

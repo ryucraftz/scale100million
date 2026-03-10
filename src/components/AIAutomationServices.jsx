@@ -161,10 +161,10 @@ const AIAutomationServices = () => {
                 {/* Header */}
                 <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6 }}
                     >
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6">
@@ -185,7 +185,7 @@ const AIAutomationServices = () => {
                                     initial={{ width: 0 }}
                                     whileInView={{ width: '100%' }}
                                     viewport={{ once: true }}
-                                    transition={{ duration: 0.8, delay: 0.4 }}
+                                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.4 }}
                                 />
                             </span>
                         </h2>
@@ -202,10 +202,10 @@ const AIAutomationServices = () => {
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, y: 15 }}
+                                    initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 15 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
+                                    transition={{ delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 + i * 0.1 : 0.5 + i * 0.15, duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.3 : 0.5 }}
                                     className={`relative group flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 bg-gradient-to-r ${item.color} border ${item.border} rounded-full backdrop-blur-md transition-all duration-300 cursor-default ${item.glow}`}
                                 >
                                     <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
@@ -221,10 +221,10 @@ const AIAutomationServices = () => {
 
                 {/* Core Services Label */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.3 : 0.5, delay: 0.2 }}
                     className="text-center mb-8 md:mb-14"
                 >
                     <h3 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3">Core Services</h3>
@@ -241,10 +241,10 @@ const AIAutomationServices = () => {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.12 }}
+                            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.3 : 0.5, delay: index * 0.12 }}
                             onClick={() => toggleCard(index)}
                             className={`relative flex flex-col h-full bg-gradient-to-b ${service.gradientFrom} ${service.gradientTo} border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-8 transition-all duration-500 ${service.borderHover} group cursor-pointer md:cursor-default overflow-hidden`}
                             whileHover={!isMobile ? { y: -8, transition: { duration: 0.3 } } : {}}
@@ -342,10 +342,10 @@ const AIAutomationServices = () => {
 
                 {/* Stats Section */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6 }}
                     className="relative mb-16 md:mb-24 overflow-hidden rounded-2xl md:rounded-3xl"
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-emerald-600/20 rounded-2xl md:rounded-3xl blur-sm" />
@@ -362,7 +362,7 @@ const AIAutomationServices = () => {
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.4, delay: index * 0.08 }}
                                     className={`text-center ${index === 4 ? 'col-span-2 lg:col-span-1' : ''}`}
                                 >
                                     <div className="flex justify-center mb-2">{stat.icon}</div>
@@ -378,10 +378,10 @@ const AIAutomationServices = () => {
 
                 {/* Bottom CTA */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
+                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.7 }}
                     className="max-w-4xl mx-auto text-center relative"
                 >
                     <div className="absolute -inset-x-20 -inset-y-10 bg-gradient-to-r from-blue-500/10 via-purple-500/5 to-blue-500/10 blur-3xl rounded-full opacity-60 pointer-events-none" />

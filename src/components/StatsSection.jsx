@@ -33,9 +33,9 @@ export default function StatsSection() {
         <section className="py-20 bg-black text-white relative border-y border-white/10">
             <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 0.8 }}
                     viewport={{ once: true }}
                 >
                     <p className="text-gray-400 text-lg md:text-xl font-medium mb-2">From 2 College Boys</p>

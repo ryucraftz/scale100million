@@ -23,10 +23,10 @@ const FounderClubMentorship = () => {
                     {/* Content Side */}
                     <div className="space-y-8 text-center md:text-left flex flex-col items-center md:items-start">
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
+                            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6 }}
                         >
                             <h2 className="text-3xl md:text-6xl lg:text-7xl font-black text-text-primary mb-4 md:mb-8 leading-[1.1] tracking-tight font-['Inter',sans-serif]">
                                 FOUNDER CLUB <span className="text-primary block mt-2">MENTORSHIP</span>
@@ -37,10 +37,10 @@ const FounderClubMentorship = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6, delay: 0.1 }}
                             className="space-y-3 md:space-y-4 flex flex-col w-fit mx-auto md:mx-0"
                         >
                             {benefits.map((benefit, index) => (
@@ -54,10 +54,10 @@ const FounderClubMentorship = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 10 : 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
+                            transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6, delay: 0.2 }}
                             className="pt-4 flex flex-col items-center md:items-start"
                         >
                             <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6">
@@ -81,10 +81,10 @@ const FounderClubMentorship = () => {
 
                     {/* Visual Side */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 0.8 }}
                         className="relative w-full flex justify-center lg:justify-end"
                     >
                         <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface/50 backdrop-blur-sm p-2 md:p-4 w-full max-w-[600px]">

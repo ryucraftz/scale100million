@@ -16,10 +16,10 @@ export default function WhatWeDo() {
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-24 items-center relative z-10">
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-10%" }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6, ease: "easeOut" }}
                     className="text-center md:text-left flex flex-col justify-center relative"
                 >
                     {/* Glowing Orb behind text */}
@@ -43,7 +43,7 @@ export default function WhatWeDo() {
                                 initial={{ width: 0 }}
                                 whileInView={{ width: '100%' }}
                                 viewport={{ once: true, margin: "-10%" }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
+                                transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6, delay: 0.2 }}
                             />
                         </span>
                     </h2>
@@ -66,7 +66,7 @@ export default function WhatWeDo() {
                     {/* Continuous Levitation Animation */}
                     <motion.div
                         className="relative w-full max-w-lg"
-                        animate={{ y: [-10, 10, -10] }}
+                        animate={typeof window !== 'undefined' && window.innerWidth < 768 ? {} : { y: [-10, 10, -10] }}
                         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                     >
                         {/* Glowing Backlight */}

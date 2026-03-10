@@ -27,18 +27,18 @@ export default function WhyBuilt() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3
+                staggerChildren: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2,
+                delayChildren: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.3
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 30 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, ease: "easeOut" }
+            transition: { duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 0.8, ease: "easeOut" }
         }
     };
 
@@ -183,7 +183,7 @@ export default function WhyBuilt() {
                     >
                         <div
                             className="w-full h-full relative"
-                            style={{ animation: "float-core 20s ease-in-out infinite" }}
+                            style={typeof window !== 'undefined' && window.innerWidth < 768 ? {} : { animation: "float-core 20s ease-in-out infinite" }}
                         >
                             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] z-10" />
                             <img
