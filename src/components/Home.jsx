@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div
-      className="relative w-full min-h-[100svh] md:min-h-screen overflow-hidden bg-background font-['Satoshi',sans-serif] z-10"
+      className="relative w-full h-[100svh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}
@@ -58,7 +58,7 @@ export default function Home() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-10 md:pt-12">
+      <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 md:px-12 flex flex-col justify-center items-center pt-16 md:pt-12">
         <motion.div
           initial="hidden"
           animate="visible"
