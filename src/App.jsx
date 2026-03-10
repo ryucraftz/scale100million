@@ -64,15 +64,15 @@ function AppContent() {
             <>
               <HomePage />
               <Suspense fallback={<div className="min-h-[20vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
-                <RevealOnScroll delay={0.1}><FounderClubMentorship /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><AIAutomationServices /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><PartnerSection /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><WhatWeDo /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><WhyBuilt /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><OurGoal /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><Media /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><JoinTeamSection /></RevealOnScroll>
-                <RevealOnScroll delay={0.1}><DesignYourGrowthEngine /></RevealOnScroll>
+                <FounderClubMentorship />
+                <AIAutomationServices />
+                <PartnerSection />
+                <WhatWeDo />
+                <WhyBuilt />
+                <OurGoal />
+                <Media />
+                <JoinTeamSection />
+                <DesignYourGrowthEngine />
               </Suspense>
             </>
           }

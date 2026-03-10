@@ -18,8 +18,8 @@ export default function WhatWeDo() {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-10%" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center md:text-left flex flex-col justify-center relative"
                 >
                     {/* Glowing Orb behind text */}
@@ -42,8 +42,8 @@ export default function WhatWeDo() {
                                 className="absolute -bottom-1 lg:-bottom-2 left-0 h-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-full"
                                 initial={{ width: 0 }}
                                 whileInView={{ width: '100%' }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
+                                viewport={{ once: true, margin: "-10%" }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
                             />
                         </span>
                     </h2>
