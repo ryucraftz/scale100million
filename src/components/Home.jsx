@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div
-      className="relative w-full h-[100dvh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
+      className="relative w-full h-[100svh] md:h-screen overflow-hidden bg-background font-['Satoshi',sans-serif]"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image/Video */}

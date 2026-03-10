@@ -33,10 +33,6 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* keyframes for shine */
 @keyframes shine {
   0% {

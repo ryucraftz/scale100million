@@ -18,10 +18,19 @@ export default function NeuralBackground() {
         const PULSE_SPEED = isMobile ? 0.45 : 0.9;
         const PULSE_SPAWN_RATE = isMobile ? 0.003 : 0.008;
 
+        let prevWidth = window.innerWidth;
         function resize() {
+            const currentWidth = window.innerWidth;
             canvas.width = canvas.offsetWidth;
             canvas.height = canvas.offsetHeight;
-            initNodes();
+            // Only re-init nodes if width changes significantly (e.g., orientation change)
+            // Height changes (like mobile address bar) shouldn't reset the animation
+            if (Math.abs(currentWidth - prevWidth) > 50) {
+                initNodes();
+                prevWidth = currentWidth;
+            } else if (nodes.length === 0) {
+                initNodes();
+            }
         }
 
         function initNodes() {
