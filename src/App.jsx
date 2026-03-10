@@ -52,18 +52,18 @@ function AppContent() {
   const isThankYouPage = location.pathname === '/thank-you';
 
   return (
-    <Suspense fallback={<PageLoader />}>
-      <SmoothScroll>
-        <FilmGrain />
-        <ScrollToTop />
-        {!isThankYouPage && <Navbar />}
-        <Routes>
-          {/* Home Page */}
-          <Route
-            path="/"
-            element={
-              <>
-                <HomePage />
+    <SmoothScroll>
+      <FilmGrain />
+      <ScrollToTop />
+      {!isThankYouPage && <Navbar />}
+      <Routes>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <HomePage />
+              <Suspense fallback={<div className="min-h-[20vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
                 <RevealOnScroll delay={0.1}><FounderClubMentorship /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><AIAutomationServices /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><PartnerSection /></RevealOnScroll>
@@ -73,53 +73,29 @@ function AppContent() {
                 <RevealOnScroll delay={0.1}><Media /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><JoinTeamSection /></RevealOnScroll>
                 <RevealOnScroll delay={0.1}><DesignYourGrowthEngine /></RevealOnScroll>
+              </Suspense>
+            </>
+          }
+        />
 
-              </>
-            }
-          />
+        {/* Other Pages */}
+        <Route path="/contact" element={<Suspense fallback={<PageLoader />}><ContactUs /></Suspense>} />
+        <Route path="/partner" element={<Suspense fallback={<PageLoader />}><PartnerWithUs /></Suspense>} />
+        <Route path="/join-team" element={<Suspense fallback={<PageLoader />}><JoinOurTeam /></Suspense>} />
+        <Route path="/privacy-policy" element={<Suspense fallback={<PageLoader />}><PrivacyPolicy /></Suspense>} />
+        <Route path="/doneforyou" element={<Suspense fallback={<PageLoader />}><DoneForYou /></Suspense>} />
+        <Route path="/shipping-policy" element={<Suspense fallback={<PageLoader />}><ShippingPolicy /></Suspense>} />
+        <Route path="/refund-policy" element={<Suspense fallback={<PageLoader />}><RefundPolicy /></Suspense>} />
+        <Route path="/terms-and-conditions" element={<Suspense fallback={<PageLoader />}><TermsAndConditions /></Suspense>} />
+        <Route path="/cancellation-policy" element={<Suspense fallback={<PageLoader />}><CancellationPolicy /></Suspense>} />
+        <Route path="/about-us" element={<Suspense fallback={<PageLoader />}><AboutUs /></Suspense>} />
+        <Route path="/thank-you" element={<Suspense fallback={<PageLoader />}><ThankYou /></Suspense>} />
+        <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
+      </Routes>
 
-          {/* Contact Page */}
-          <Route path="/contact" element={<ContactUs />} />
-
-          {/* Partner With Us Page */}
-          <Route path="/partner" element={<PartnerWithUs />} />
-
-          {/* Join Our Team Page */}
-          <Route path="/join-team" element={<JoinOurTeam />} />
-
-          {/* Privacy Policy Page */}
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
-          {/* Done For You Page */}
-          <Route path="/doneforyou" element={<DoneForYou />} />
-
-          {/* Shipping Policy Page */}
-          <Route path="/shipping-policy" element={<ShippingPolicy />} />
-
-          {/* Refund Policy Page */}
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-
-          {/* Terms and Conditions Page */}
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-
-          {/* Cancellation Policy Page */}
-          <Route path="/cancellation-policy" element={<CancellationPolicy />} />
-
-          {/* About Us Page */}
-          <Route path="/about-us" element={<AboutUs />} />
-
-          {/* Thank You Page */}
-          <Route path="/thank-you" element={<ThankYou />} />
-
-          {/* 404 Page (Must be last) */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-
-        {!isThankYouPage && <Footer />}
-
-        <BackToTop />
-      </SmoothScroll>
-    </Suspense>
+      {!isThankYouPage && <Footer />}
+      <BackToTop />
+    </SmoothScroll>
   );
 }
 
