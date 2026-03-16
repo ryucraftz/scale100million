@@ -69,30 +69,6 @@ The interface utilizes a modern, optimized layout ecosystem consisting of high-d
 
 ---
 
-## ⚙️ LOCAL SETUP
-
-Deploy the workflow architecture on local developer machines following these steps:
-
-#### 1. Clone the repository
-```bash
-git clone https://github.com/[your-username]/Scale100Million.git
-cd Scale100Million
-```
-
-#### 2. Install nodes & packages
-```bash
-npm install
-```
-
-#### 3. Ignite local workspace
-```bash
-npm run dev
-```
-
-The server will initialize at `http://localhost:5173/`.
-
----
-
 <div align="center">
   <p>Designed with ❤️ for premium modern user frameworks.</p>
 </div>
