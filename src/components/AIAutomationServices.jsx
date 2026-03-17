@@ -113,6 +113,7 @@ const AIAutomationServices = () => {
             description: "Streamlining operations by automating repetitive processes and integrating with existing tools and workflows.",
             details: [
                 "Marketing & Email Automation",
+                "AI Voice Agents (Call Automation)",
                 "Operational Automation (CRM, internal workflows)",
                 "Social Media Automation (WhatsApp/IG DM)",
                 "Content Automation (Short-form clipping)",
