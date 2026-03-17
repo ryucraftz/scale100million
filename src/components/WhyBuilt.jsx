@@ -233,7 +233,7 @@ export default function WhyBuilt() {
                         {/* Subtle Text Backdrop for Contrast - Desktop Only */}
                         <div className="hidden md:block absolute inset-0 bg-black/40 blur-[40px] rounded-full pointer-events-none -z-10" />
 
-                        <p className="text-[9.5px] sm:text-2xl md:text-3xl lg:text-5xl text-gray-400 leading-tight md:leading-[1.2] font-light tracking-tighter font-['Lexend_Peta',sans-serif] uppercase relative drop-shadow-xl z-10 w-full px-2 sm:max-w-xl md:max-w-4xl lg:max-w-5xl mx-auto flex flex-col pt-4 items-center text-center">
+                        <p className="text-[9.5px] sm:text-2xl md:text-3xl lg:text-4xl text-gray-400 leading-tight md:leading-[1.2] font-light tracking-tighter font-['Lexend_Peta',sans-serif] uppercase relative drop-shadow-xl z-10 w-full px-2 sm:max-w-xl md:max-w-4xl lg:max-w-5xl mx-auto flex flex-col pt-4 items-center text-center">
                             <span className="whitespace-nowrap">
                                 SCALE100MILLION WAS
                                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-300 to-gray-500 font-bold drop-shadow-md">
