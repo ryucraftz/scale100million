@@ -1,5 +1,5 @@
 import React from "react";
-import { Instagram, Youtube, Send, ArrowRight } from "lucide-react";
+import { Instagram, Youtube, Send, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 // logoWhite removed and replaced by public/logo.svg directly in the img tag
@@ -91,6 +91,10 @@ export default function Footer() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
+            <div className="flex items-start gap-2 text-xs text-gray-400 max-w-xs mt-3">
+              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-gray-500" />
+              <span className="leading-relaxed">C-709, Nirman AjinkyaTara, Vadgaon Budruk, Sinhgad College, Pune- 411041, Maharashtra</span>
+            </div>
 
           </div>
         </div>

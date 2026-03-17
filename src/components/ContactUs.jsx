@@ -81,7 +81,7 @@ export default function ContactUs() {
                             {
                                 icon: <MapPin size={18} />,
                                 title: "Headquarters",
-                                content: "NIRMAN AJINKYATARA, VADGAON BUDRUK 411041, MH",
+                                content: "C-709,Nirman AjinkyaTara, Vadgaon Budruk, Sinhgad College, Pune- 411041,Maharashtra",
                                 glow: "rgba(59,130,246,0.08)"
                             },
                             {
