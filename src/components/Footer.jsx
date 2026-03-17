@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
           <p>© {new Date().getFullYear()} SCALE100MILLION. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Built for visionaries by ryucraftz.</span>
+            <span>Crafted by ryucraftz.</span>
           </div>
         </div>
       </div>
